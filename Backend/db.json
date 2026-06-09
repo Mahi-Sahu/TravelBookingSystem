@@ -1,0 +1,1838 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "role": "CUSTOMER",
+      "firstName": "Rahul",
+      "lastName": "Sharma",
+      "email": "rahul@gmail.com",
+      "password": "rahul123",
+      "phone": "9876543210",
+      "city": "Delhi"
+    },
+    {
+      "id": 2,
+      "role": "CUSTOMER",
+      "firstName": "Priya",
+      "lastName": "Verma",
+      "email": "priya@gmail.com",
+      "password": "priya123",
+      "phone": "9876543211",
+      "city": "Mumbai"
+    },
+    {
+      "id": 3,
+      "role": "CUSTOMER",
+      "firstName": "Amit",
+      "lastName": "Singh",
+      "email": "amit@gmail.com",
+      "password": "amit123",
+      "phone": "9876543212",
+      "city": "Lucknow"
+    },
+    {
+      "id": 4,
+      "role": "CUSTOMER",
+      "firstName": "Sneha",
+      "lastName": "Patel",
+      "email": "sneha@gmail.com",
+      "password": "sneha123",
+      "phone": "9876543213",
+      "city": "Ahmedabad"
+    },
+    {
+      "id": 5,
+      "role": "CUSTOMER",
+      "firstName": "Rohan",
+      "lastName": "Gupta",
+      "email": "rohan@gmail.com",
+      "password": "rohan123",
+      "phone": "9876543214",
+      "city": "Pune"
+    },
+    {
+      "id": 6,
+      "role": "CUSTOMER",
+      "firstName": "Anjali",
+      "lastName": "Jain",
+      "email": "anjali@gmail.com",
+      "password": "anjali123",
+      "phone": "9876543215",
+      "city": "Jaipur"
+    },
+    {
+      "id": 7,
+      "role": "CUSTOMER",
+      "firstName": "Karan",
+      "lastName": "Yadav",
+      "email": "karan@gmail.com",
+      "password": "karan123",
+      "phone": "9876543216",
+      "city": "Kanpur"
+    },
+    {
+      "id": 8,
+      "role": "CUSTOMER",
+      "firstName": "Meera",
+      "lastName": "Kapoor",
+      "email": "meera@gmail.com",
+      "password": "meera123",
+      "phone": "9876543217",
+      "city": "Chandigarh"
+    },
+    {
+      "id": 9,
+      "role": "ADMIN",
+      "firstName": "Admin",
+      "lastName": "One",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "phone": "9999999999",
+      "city": "Delhi"
+    },
+    {
+      "id": 10,
+      "role": "ADMIN",
+      "firstName": "Super",
+      "lastName": "Admin",
+      "email": "superadmin@gmail.com",
+      "password": "admin456",
+      "phone": "9999999998",
+      "city": "Mumbai"
+    }
+  ],
+
+  "travelers": [
+    {
+      "id": 1,
+      "userId": 1,
+      "fullName": "Rahul Sharma",
+      "age": 28,
+      "gender": "Male",
+      "passportNumber": "IND12345",
+      "relationship": "Self"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "fullName": "Pooja Sharma",
+      "age": 25,
+      "gender": "Female",
+      "passportNumber": "IND12346",
+      "relationship": "Spouse"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "fullName": "Priya Verma",
+      "age": 27,
+      "gender": "Female",
+      "passportNumber": "IND12347",
+      "relationship": "Self"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "fullName": "Amit Singh",
+      "age": 31,
+      "gender": "Male",
+      "passportNumber": "IND12348",
+      "relationship": "Self"
+    },
+    {
+      "id": 5,
+      "userId": 3,
+      "fullName": "Neha Singh",
+      "age": 29,
+      "gender": "Female",
+      "passportNumber": "IND12349",
+      "relationship": "Spouse"
+    },
+    {
+      "id": 6,
+      "userId": 4,
+      "fullName": "Sneha Patel",
+      "age": 26,
+      "gender": "Female",
+      "passportNumber": "IND12350",
+      "relationship": "Self"
+    },
+    {
+      "id": 7,
+      "userId": 5,
+      "fullName": "Rohan Gupta",
+      "age": 30,
+      "gender": "Male",
+      "passportNumber": "IND12351",
+      "relationship": "Self"
+    },
+    {
+      "id": 8,
+      "userId": 5,
+      "fullName": "Aryan Gupta",
+      "age": 8,
+      "gender": "Male",
+      "passportNumber": "IND12352",
+      "relationship": "Child"
+    },
+    {
+      "id": 9,
+      "userId": 6,
+      "fullName": "Anjali Jain",
+      "age": 29,
+      "gender": "Female",
+      "passportNumber": "IND12353",
+      "relationship": "Self"
+    },
+    {
+      "id": 10,
+      "userId": 7,
+      "fullName": "Karan Yadav",
+      "age": 33,
+      "gender": "Male",
+      "passportNumber": "IND12354",
+      "relationship": "Self"
+    },
+    {
+      "id": 11,
+      "userId": 8,
+      "fullName": "Meera Kapoor",
+      "age": 24,
+      "gender": "Female",
+      "passportNumber": "IND12355",
+      "relationship": "Self"
+    },
+    {
+      "id": 12,
+      "userId": 8,
+      "fullName": "Riya Kapoor",
+      "age": 21,
+      "gender": "Female",
+      "passportNumber": "IND12356",
+      "relationship": "Sister"
+    },
+    {
+      "id": 13,
+      "userId": 2,
+      "fullName": "Raj Verma",
+      "age": 55,
+      "gender": "Male",
+      "passportNumber": "IND12357",
+      "relationship": "Father"
+    },
+    {
+      "id": 14,
+      "userId": 4,
+      "fullName": "Harsh Patel",
+      "age": 5,
+      "gender": "Male",
+      "passportNumber": "IND12358",
+      "relationship": "Child"
+    },
+    {
+      "id": 15,
+      "userId": 6,
+      "fullName": "Sanjay Jain",
+      "age": 58,
+      "gender": "Male",
+      "passportNumber": "IND12359",
+      "relationship": "Father"
+    }
+  ],
+
+  "destinations": [
+    {
+      "id": 1,
+      "name": "Goa",
+      "country": "India",
+      "price": 15000,
+      "duration": "3 Days",
+      "rating": 4.5,
+      "type": "Beach"
+    },
+    {
+      "id": 2,
+      "name": "Manali",
+      "country": "India",
+      "price": 12000,
+      "duration": "4 Days",
+      "rating": 4.7,
+      "type": "Hill Station"
+    },
+    {
+      "id": 3,
+      "name": "Shimla",
+      "country": "India",
+      "price": 11000,
+      "duration": "3 Days",
+      "rating": 4.4,
+      "type": "Hill Station"
+    },
+    {
+      "id": 4,
+      "name": "Dubai",
+      "country": "UAE",
+      "price": 55000,
+      "duration": "5 Days",
+      "rating": 4.8,
+      "type": "International"
+    },
+    {
+      "id": 5,
+      "name": "Singapore",
+      "country": "Singapore",
+      "price": 65000,
+      "duration": "6 Days",
+      "rating": 4.9,
+      "type": "International"
+    },
+    {
+      "id": 6,
+      "name": "Thailand",
+      "country": "Thailand",
+      "price": 45000,
+      "duration": "5 Days",
+      "rating": 4.6,
+      "type": "International"
+    },
+    {
+      "id": 7,
+      "name": "Kerala",
+      "country": "India",
+      "price": 18000,
+      "duration": "5 Days",
+      "rating": 4.8,
+      "type": "Nature"
+    },
+    {
+      "id": 8,
+      "name": "Kashmir",
+      "country": "India",
+      "price": 22000,
+      "duration": "6 Days",
+      "rating": 4.9,
+      "type": "Nature"
+    },
+    {
+      "id": 9,
+      "name": "Jaipur",
+      "country": "India",
+      "price": 14000,
+      "duration": "3 Days",
+      "rating": 4.3,
+      "type": "Heritage"
+    },
+    {
+      "id": 10,
+      "name": "Agra",
+      "country": "India",
+      "price": 10000,
+      "duration": "2 Days",
+      "rating": 4.2,
+      "type": "Heritage"
+    },
+    {
+      "id": 11,
+      "name": "Andaman",
+      "country": "India",
+      "price": 28000,
+      "duration": "5 Days",
+      "rating": 4.8,
+      "type": "Beach"
+    },
+    {
+      "id": 12,
+      "name": "Ladakh",
+      "country": "India",
+      "price": 35000,
+      "duration": "7 Days",
+      "rating": 4.9,
+      "type": "Adventure"
+    },
+    {
+      "id": 13,
+      "name": "Rishikesh",
+      "country": "India",
+      "price": 13000,
+      "duration": "3 Days",
+      "rating": 4.5,
+      "type": "Adventure"
+    },
+    {
+      "id": 14,
+      "name": "Udaipur",
+      "country": "India",
+      "price": 16000,
+      "duration": "4 Days",
+      "rating": 4.6,
+      "type": "Heritage"
+    },
+    {
+      "id": 15,
+      "name": "Bali",
+      "country": "Indonesia",
+      "price": 70000,
+      "duration": "6 Days",
+      "rating": 4.9,
+      "type": "International"
+    },
+    {
+      "id": 16,
+      "name": "Maldives",
+      "country": "Maldives",
+      "price": 85000,
+      "duration": "5 Days",
+      "rating": 5.0,
+      "type": "Luxury"
+    },
+    {
+      "id": 17,
+      "name": "Ooty",
+      "country": "India",
+      "price": 14000,
+      "duration": "4 Days",
+      "rating": 4.4,
+      "type": "Hill Station"
+    },
+    {
+      "id": 18,
+      "name": "Darjeeling",
+      "country": "India",
+      "price": 17000,
+      "duration": "5 Days",
+      "rating": 4.6,
+      "type": "Hill Station"
+    },
+    {
+      "id": 19,
+      "name": "Paris",
+      "country": "France",
+      "price": 120000,
+      "duration": "7 Days",
+      "rating": 4.9,
+      "type": "International"
+    },
+    {
+      "id": 20,
+      "name": "London",
+      "country": "United Kingdom",
+      "price": 110000,
+      "duration": "6 Days",
+      "rating": 4.8,
+      "type": "International"
+    }
+  ],
+
+  "bookings": [
+    {
+      "id": 1,
+      "userId": 1,
+      "destinationId": 1,
+      "bookingDate": "2026-06-01",
+      "travelDate": "2026-07-15",
+      "travelers": 2,
+      "status": "CONFIRMED",
+      "totalPrice": 30000
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "destinationId": 4,
+      "bookingDate": "2026-05-25",
+      "travelDate": "2026-08-10",
+      "travelers": 1,
+      "status": "PENDING",
+      "totalPrice": 55000
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "destinationId": 7,
+      "bookingDate": "2026-05-15",
+      "travelDate": "2026-07-01",
+      "travelers": 2,
+      "status": "CONFIRMED",
+      "totalPrice": 36000
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "destinationId": 8,
+      "bookingDate": "2026-05-18",
+      "travelDate": "2026-07-20",
+      "travelers": 3,
+      "status": "CONFIRMED",
+      "totalPrice": 66000
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "destinationId": 2,
+      "bookingDate": "2026-05-22",
+      "travelDate": "2026-06-28",
+      "travelers": 2,
+      "status": "PENDING",
+      "totalPrice": 24000
+    },
+    {
+      "id": 6,
+      "userId": 6,
+      "destinationId": 15,
+      "bookingDate": "2026-05-25",
+      "travelDate": "2026-08-05",
+      "travelers": 2,
+      "status": "CONFIRMED",
+      "totalPrice": 140000
+    },
+    {
+      "id": 7,
+      "userId": 7,
+      "destinationId": 11,
+      "bookingDate": "2026-05-28",
+      "travelDate": "2026-07-10",
+      "travelers": 4,
+      "status": "CANCELLED",
+      "totalPrice": 112000
+    },
+    {
+      "id": 8,
+      "userId": 8,
+      "destinationId": 14,
+      "bookingDate": "2026-06-01",
+      "travelDate": "2026-07-18",
+      "travelers": 2,
+      "status": "CONFIRMED",
+      "totalPrice": 32000
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "destinationId": 16,
+      "bookingDate": "2026-06-02",
+      "travelDate": "2026-09-01",
+      "travelers": 2,
+      "status": "PENDING",
+      "totalPrice": 170000
+    },
+    {
+      "id": 10,
+      "userId": 2,
+      "destinationId": 9,
+      "bookingDate": "2026-06-03",
+      "travelDate": "2026-06-25",
+      "travelers": 1,
+      "status": "RESCHEDULED",
+      "totalPrice": 14000
+    },
+    {
+      "id": 11,
+      "userId": 3,
+      "destinationId": 19,
+      "bookingDate": "2026-05-30",
+      "travelDate": "2026-09-15",
+      "travelers": 2,
+      "status": "CONFIRMED",
+      "totalPrice": 240000
+    },
+    {
+      "id": 12,
+      "userId": 4,
+      "destinationId": 3,
+      "bookingDate": "2026-06-01",
+      "travelDate": "2026-07-05",
+      "travelers": 5,
+      "status": "CONFIRMED",
+      "totalPrice": 55000
+    },
+    {
+      "id": 13,
+      "userId": 5,
+      "destinationId": 18,
+      "bookingDate": "2026-06-04",
+      "travelDate": "2026-08-01",
+      "travelers": 2,
+      "status": "CANCELLED",
+      "totalPrice": 34000
+    },
+    {
+      "id": 14,
+      "userId": 6,
+      "destinationId": 6,
+      "bookingDate": "2026-06-05",
+      "travelDate": "2026-08-12",
+      "travelers": 3,
+      "status": "CONFIRMED",
+      "totalPrice": 135000
+    },
+    {
+      "id": 15,
+      "userId": 8,
+      "destinationId": 20,
+      "bookingDate": "2026-06-06",
+      "travelDate": "2026-10-10",
+      "travelers": 2,
+      "status": "PENDING",
+      "totalPrice": 220000
+    }
+  ],
+
+  "notifications": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "Booking Confirmed",
+      "message": "Your Goa trip has been confirmed.",
+      "type": "BOOKING",
+      "isRead": false,
+      "createdAt": "2026-06-05T10:00:00"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "title": "Travel Reminder",
+      "message": "Your Dubai trip starts in 7 days.",
+      "type": "REMINDER",
+      "isRead": false,
+      "createdAt": "2026-06-06T09:30:00"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "title": "Booking Confirmed",
+      "message": "Your Kerala trip booking has been confirmed.",
+      "type": "BOOKING",
+      "isRead": true,
+      "createdAt": "2026-05-16T11:20:00"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "title": "Travel Reminder",
+      "message": "Your Kashmir trip starts in 5 days.",
+      "type": "REMINDER",
+      "isRead": false,
+      "createdAt": "2026-07-15T08:00:00"
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "title": "Booking Pending",
+      "message": "Your Manali booking is awaiting payment confirmation.",
+      "type": "BOOKING",
+      "isRead": false,
+      "createdAt": "2026-05-22T14:45:00"
+    },
+    {
+      "id": 6,
+      "userId": 6,
+      "title": "Booking Confirmed",
+      "message": "Your Bali vacation package has been successfully booked.",
+      "type": "BOOKING",
+      "isRead": true,
+      "createdAt": "2026-05-25T18:10:00"
+    },
+    {
+      "id": 7,
+      "userId": 7,
+      "title": "Booking Cancelled",
+      "message": "Your Andaman trip has been cancelled successfully.",
+      "type": "CANCELLATION",
+      "isRead": false,
+      "createdAt": "2026-06-01T10:30:00"
+    },
+    {
+      "id": 8,
+      "userId": 8,
+      "title": "Booking Confirmed",
+      "message": "Your Udaipur booking is confirmed.",
+      "type": "BOOKING",
+      "isRead": true,
+      "createdAt": "2026-06-02T09:15:00"
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "title": "Payment Received",
+      "message": "Payment received for your Maldives booking.",
+      "type": "PAYMENT",
+      "isRead": false,
+      "createdAt": "2026-06-03T16:00:00"
+    },
+    {
+      "id": 10,
+      "userId": 2,
+      "title": "Trip Rescheduled",
+      "message": "Your Jaipur trip has been rescheduled as requested.",
+      "type": "UPDATE",
+      "isRead": false,
+      "createdAt": "2026-06-03T13:30:00"
+    },
+    {
+      "id": 11,
+      "userId": 3,
+      "title": "Travel Reminder",
+      "message": "Your Paris trip starts in 10 days.",
+      "type": "REMINDER",
+      "isRead": false,
+      "createdAt": "2026-09-05T08:00:00"
+    },
+    {
+      "id": 12,
+      "userId": 4,
+      "title": "Special Travel Deal",
+      "message": "Get 20% off on your next international booking.",
+      "type": "PROMOTION",
+      "isRead": true,
+      "createdAt": "2026-06-04T12:00:00"
+    },
+    {
+      "id": 13,
+      "userId": 5,
+      "title": "Booking Cancelled",
+      "message": "Your Darjeeling booking has been cancelled.",
+      "type": "CANCELLATION",
+      "isRead": false,
+      "createdAt": "2026-06-05T15:20:00"
+    },
+    {
+      "id": 14,
+      "userId": 6,
+      "title": "Booking Confirmed",
+      "message": "Your Thailand vacation package is confirmed.",
+      "type": "BOOKING",
+      "isRead": true,
+      "createdAt": "2026-06-05T17:45:00"
+    },
+    {
+      "id": 15,
+      "userId": 8,
+      "title": "Upcoming Journey",
+      "message": "Your London trip is scheduled in 30 days.",
+      "type": "REMINDER",
+      "isRead": false,
+      "createdAt": "2026-09-10T09:00:00"
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "title": "Profile Updated",
+      "message": "Your traveler preferences have been saved successfully.",
+      "type": "ACCOUNT",
+      "isRead": true,
+      "createdAt": "2026-06-06T11:00:00"
+    },
+    {
+      "id": 17,
+      "userId": 2,
+      "title": "Document Verification",
+      "message": "Your passport details have been verified.",
+      "type": "ACCOUNT",
+      "isRead": false,
+      "createdAt": "2026-06-06T12:10:00"
+    }
+  ],
+
+  "travelServices": [
+  {
+    "id": 1,
+    "destinationId": 1,
+    "serviceName": "Goa Beach Package",
+    "serviceType": "PACKAGE",
+    "provider": "MakeMyTrip",
+    "price": 15000,
+    "duration": "3 Days",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "destinationId": 1,
+    "serviceName": "Goa Resort Stay",
+    "serviceType": "HOTEL",
+    "provider": "Taj Hotels",
+    "price": 8000,
+    "duration": "2 Nights",
+    "rating": 4.7
+  },
+  {
+    "id": 3,
+    "destinationId": 2,
+    "serviceName": "Manali Adventure Tour",
+    "serviceType": "PACKAGE",
+    "provider": "Yatra",
+    "price": 12000,
+    "duration": "4 Days",
+    "rating": 4.6
+  },
+  {
+    "id": 4,
+    "destinationId": 4,
+    "serviceName": "Dubai Flight",
+    "serviceType": "FLIGHT",
+    "provider": "Emirates",
+    "price": 30000,
+    "duration": "4 Hours",
+    "rating": 4.8
+  },
+  {
+    "id": 5,
+    "destinationId": 4,
+    "serviceName": "Dubai Luxury Package",
+    "serviceType": "PACKAGE",
+    "provider": "Thomas Cook",
+    "price": 55000,
+    "duration": "5 Days",
+    "rating": 4.9
+  },
+  {
+    "id": 6,
+    "destinationId": 5,
+    "serviceName": "Singapore Explorer",
+    "serviceType": "PACKAGE",
+    "provider": "EaseMyTrip",
+    "price": 65000,
+    "duration": "6 Days",
+    "rating": 4.8
+  },
+  {
+    "id": 7,
+    "destinationId": 7,
+    "serviceName": "Kerala Backwater Tour",
+    "serviceType": "PACKAGE",
+    "provider": "TravelTriangle",
+    "price": 18000,
+    "duration": "5 Days",
+    "rating": 4.8
+  },
+  {
+    "id": 8,
+    "destinationId": 8,
+    "serviceName": "Kashmir Delight",
+    "serviceType": "PACKAGE",
+    "provider": "Goibibo",
+    "price": 22000,
+    "duration": "6 Days",
+    "rating": 4.9
+  },
+  {
+    "id": 9,
+    "destinationId": 12,
+    "serviceName": "Ladakh Bike Expedition",
+    "serviceType": "PACKAGE",
+    "provider": "Thrillophilia",
+    "price": 35000,
+    "duration": "7 Days",
+    "rating": 4.9
+  },
+  {
+    "id": 10,
+    "destinationId": 15,
+    "serviceName": "Bali Honeymoon Package",
+    "serviceType": "PACKAGE",
+    "provider": "MakeMyTrip",
+    "price": 70000,
+    "duration": "6 Days",
+    "rating": 4.9
+  },
+  {
+    "id": 11,
+    "destinationId": 16,
+    "serviceName": "Maldives Water Villa",
+    "serviceType": "HOTEL",
+    "provider": "Club Med",
+    "price": 85000,
+    "duration": "5 Days",
+    "rating": 5.0
+  },
+  {
+    "id": 12,
+    "destinationId": 19,
+    "serviceName": "Paris Discovery Tour",
+    "serviceType": "PACKAGE",
+    "provider": "Thomas Cook",
+    "price": 120000,
+    "duration": "7 Days",
+    "rating": 4.9
+  },
+  {
+    "id": 13,
+    "destinationId": 20,
+    "serviceName": "London Heritage Tour",
+    "serviceType": "PACKAGE",
+    "provider": "Yatra",
+    "price": 110000,
+    "duration": "6 Days",
+    "rating": 4.8
+  },
+  {
+    "id": 14,
+    "destinationId": 6,
+    "serviceName": "Thailand Family Package",
+    "serviceType": "PACKAGE",
+    "provider": "Goibibo",
+    "price": 45000,
+    "duration": "5 Days",
+    "rating": 4.7
+  },
+  {
+    "id": 15,
+    "destinationId": 11,
+    "serviceName": "Andaman Island Tour",
+    "serviceType": "PACKAGE",
+    "provider": "TravelTriangle",
+    "price": 28000,
+    "duration": "5 Days",
+    "rating": 4.8
+  }
+],
+
+"itineraries": [
+  {
+    "id": 1,
+    "bookingId": 1,
+    "userId": 1,
+    "destinationId": 1,
+    "title": "Goa Summer Vacation",
+    "startDate": "2026-07-15",
+    "endDate": "2026-07-18",
+    "status": "UPCOMING"
+  },
+  {
+    "id": 2,
+    "bookingId": 3,
+    "userId": 3,
+    "destinationId": 7,
+    "title": "Kerala Nature Tour",
+    "startDate": "2026-07-01",
+    "endDate": "2026-07-05",
+    "status": "UPCOMING"
+  },
+  {
+    "id": 3,
+    "bookingId": 4,
+    "userId": 4,
+    "destinationId": 8,
+    "title": "Kashmir Adventure",
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-26",
+    "status": "UPCOMING"
+  },
+  {
+    "id": 4,
+    "bookingId": 6,
+    "userId": 6,
+    "destinationId": 15,
+    "title": "Bali Honeymoon",
+    "startDate": "2026-08-05",
+    "endDate": "2026-08-11",
+    "status": "UPCOMING"
+  },
+  {
+    "id": 5,
+    "bookingId": 9,
+    "userId": 1,
+    "destinationId": 16,
+    "title": "Maldives Escape",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-06",
+    "status": "UPCOMING"
+  },
+  {
+    "id": 6,
+    "bookingId": 11,
+    "userId": 3,
+    "destinationId": 19,
+    "title": "Paris Discovery",
+    "startDate": "2026-09-15",
+    "endDate": "2026-09-22",
+    "status": "UPCOMING"
+  },
+  {
+    "id": 7,
+    "bookingId": 14,
+    "userId": 6,
+    "destinationId": 6,
+    "title": "Thailand Family Tour",
+    "startDate": "2026-08-12",
+    "endDate": "2026-08-17",
+    "status": "UPCOMING"
+  },
+  {
+    "id": 8,
+    "bookingId": 15,
+    "userId": 8,
+    "destinationId": 20,
+    "title": "London Vacation",
+    "startDate": "2026-10-10",
+    "endDate": "2026-10-16",
+    "status": "UPCOMING"
+  },
+  {
+    "id": 9,
+    "bookingId": 8,
+    "userId": 8,
+    "destinationId": 14,
+    "title": "Udaipur Heritage Tour",
+    "startDate": "2026-07-18",
+    "endDate": "2026-07-22",
+    "status": "UPCOMING"
+  },
+  {
+    "id": 10,
+    "bookingId": 2,
+    "userId": 2,
+    "destinationId": 4,
+    "title": "Dubai Luxury Tour",
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-15",
+    "status": "UPCOMING"
+  }
+],
+
+"itineraryDays": [
+  {
+  "id": 1,
+  "itineraryId": 1,
+  "dayNumber": 1,
+  "date": "2026-07-15",
+  "transportType": "Flight",
+  "transportFrom": "Delhi",
+  "transportTo": "Goa",
+  "transportTime": "09:00 AM",
+  "hotel": "Taj Resort Goa",
+  "checkInTime": "02:00 PM",
+  "activities": [
+    {
+      "activityName": "Beach Visit",
+      "activityTime": "04:00 PM"
+    },
+    {
+      "activityName": "Water Sports",
+      "activityTime": "06:00 PM"
+    }
+  ]
+},
+  {
+  "id": 2,
+  "itineraryId": 1,
+  "dayNumber": 2,
+  "date": "2026-07-16",
+  "transportType": "Local Cab",
+  "transportFrom": "North Goa",
+  "transportTo": "South Goa",
+  "transportTime": "10:00 AM",
+  "hotel": "Taj Resort Goa",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Dudhsagar Falls",
+      "activityTime": "11:00 AM"
+    },
+    {
+      "activityName": "Local Market",
+      "activityTime": "05:00 PM"
+    }
+  ]
+},
+  {
+  "id": 3,
+  "itineraryId": 1,
+  "dayNumber": 3,
+  "date": "2026-07-17",
+  "transportType": "Cruise",
+  "transportFrom": "Goa Port",
+  "transportTo": "Mandovi River",
+  "transportTime": "06:00 PM",
+  "hotel": "Taj Resort Goa",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Cruise Dinner",
+      "activityTime": "07:00 PM"
+    },
+    {
+      "activityName": "Live Music Show",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+  {
+  "id": 4,
+  "itineraryId": 2,
+  "dayNumber": 1,
+  "date": "2026-07-01",
+  "transportType": "Flight",
+  "transportFrom": "Lucknow",
+  "transportTo": "Kochi",
+  "transportTime": "08:30 AM",
+  "hotel": "Backwater Resort",
+  "checkInTime": "01:00 PM",
+  "activities": [
+    {
+      "activityName": "Fort Kochi Visit",
+      "activityTime": "07:00 PM"
+    },
+    {
+      "activityName": "Kathakali Show",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 5,
+  "itineraryId": 2,
+  "dayNumber": 2,
+  "date": "2026-07-02",
+  "transportType": "Boat",
+  "transportFrom": "Alleppey",
+  "transportTo": "Backwaters",
+  "transportTime": "09:00 AM",
+  "hotel": "Backwater Resort",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Houseboat Cruise",
+      "activityTime": "07:00 PM"
+    },
+    {
+      "activityName": "Village Walk",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 6,
+  "itineraryId": 2,
+  "dayNumber": 3,
+  "date": "2026-07-03",
+  "transportType": "Cab",
+  "transportFrom": "Kochi",
+  "transportTo": "Munnar",
+  "transportTime": "08:00 AM",
+  "hotel": "Hill View Resort",
+  "checkInTime": "01:00 PM",
+  "activities": [
+    {
+      "activityName": "Tea Garden Visit",
+      "activityTime": "3:30 PM"
+    },
+    {
+      "activityName": "Sunset Point",
+      "activityTime": "06:00 PM"
+    }
+  ]
+},
+{
+  "id": 7,
+  "itineraryId": 3,
+  "dayNumber": 1,
+  "date": "2026-07-20",
+  "transportType": "Flight",
+  "transportFrom": "Ahmedabad",
+  "transportTo": "Srinagar",
+  "transportTime": "07:45 AM",
+  "hotel": "Dal Lake Residency",
+  "checkInTime": "12:00 PM",
+  "activities": [
+    {
+      "activityName": "Dal Lake Visit",
+      "activityTime": "06:00 PM"
+    },
+    {
+      "activityName": "Shikara Ride",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 8,
+  "itineraryId": 3,
+  "dayNumber": 2,
+  "date": "2026-07-21",
+  "transportType": "Cab",
+  "transportFrom": "Srinagar",
+  "transportTo": "Gulmarg",
+  "transportTime": "09:00 AM",
+  "hotel": "Dal Lake Residency",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Gondala Ride",
+      "activityTime": "07:00 PM"
+    },
+    {
+      "activityName": "Snow Activities",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 9,
+  "itineraryId": 3,
+  "dayNumber": 3,
+  "date": "2026-07-22",
+  "transportType": "Cab",
+  "transportFrom": "Gulmarg",
+  "transportTo": "Srinagar",
+  "transportTime": "05:00 PM",
+  "hotel": "Dal Lake Residency",
+  "checkInTime": "08:00 AM",
+  "activities": [
+    {
+      "activityName": "Local Shopping",
+      "activityTime": "11:00 AM"
+    },
+    {
+      "activityName": "Mughal Gardens",
+      "activityTime": "04:30 PM"
+    }
+  ]
+},
+{
+  "id": 10,
+  "itineraryId": 4,
+  "dayNumber": 1,
+  "date": "2026-08-05",
+  "transportType": "Flight",
+  "transportFrom": "Delhi",
+  "transportTo": "Bali",
+  "transportTime": "10:00 AM",
+  "hotel": "Bali Beach Resort",
+  "checkInTime": "08:00 AM",
+  "activities": [
+    {
+      "activityName": "Ubud Temple Tour",
+      "activityTime": "11:00 AM"
+    },
+    {
+      "activityName": "Coffee Plantation Visit",
+      "activityTime": "06:30 PM"
+    }
+  ]
+},
+{
+  "id": 11,
+  "itineraryId": 4,
+  "dayNumber": 2,
+  "date": "2026-08-06",
+  "transportType": "Cab",
+  "transportFrom": "Kuta",
+  "transportTo": "Ubud",
+  "transportTime": "09:00 AM",
+  "hotel": "Bali Beach Resort",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Beach Walk",
+      "activityTime": "07:00 PM"
+    },
+    {
+      "activityName": "Romantic Dinner",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 12,
+  "itineraryId": 4,
+  "dayNumber": 3,
+  "date": "2026-08-07",
+  "transportType": "Boat",
+  "transportFrom": "Bali Harbor",
+  "transportTo": "Nusa Penida",
+  "transportTime": "08:30 AM",
+  "hotel": "Bali Beach Resort",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Island Hopping",
+      "activityTime": "07:00 PM"
+    },
+    {
+      "activityName": "Snorkeling",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 13,
+  "itineraryId": 4,
+  "dayNumber": 4,
+  "date": "2026-08-08",
+  "transportType": "Cab",
+  "transportFrom": "Ubud",
+  "transportTo": "Kuta",
+  "transportTime": "11:00 AM",
+  "hotel": "Bali Beach Resort",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Shooping Tour",
+      "activityTime": "07:00 PM"
+    }
+  ]
+},
+{
+  "id": 14,
+  "itineraryId": 5,
+  "dayNumber": 1,
+  "date": "2026-09-01",
+  "transportType": "Flight",
+  "transportFrom": "Delhi",
+  "transportTo": "Male",
+  "transportTime": "11:30 AM",
+  "hotel": "Water Villa Resort",
+  "checkInTime": "03:00 PM",
+  "activities": [
+    {
+      "activityName": "Island Tour",
+      "activityTime": "07:00 PM"
+    }
+  ]
+},
+{
+  "id": 15,
+  "itineraryId": 5,
+  "dayNumber": 2,
+  "date": "2026-09-02",
+  "transportType": "Boat",
+  "transportFrom": "Male",
+  "transportTo": "Private Island",
+  "transportTime": "10:00 AM",
+  "hotel": "Water Villa Resort",
+  "checkInTime": "11:00 AM",
+  "activities": [
+    {
+      "activityName": "Scuba Diving",
+      "activityTime": "11:30 AM"
+    },
+    {
+      "activityName": "Beach Relaxation",
+      "activityTime": "06:30 PM"
+    }
+  ]
+},
+{
+  "id": 16,
+  "itineraryId": 5,
+  "dayNumber": 3,
+  "date": "2026-09-03",
+  "transportType": "Boat",
+  "transportFrom": "Private Island",
+  "transportTo": "Male",
+  "transportTime": "06:00 PM",
+  "hotel": "Water Villa Resort",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Jet Ski Ride",
+      "activityTime": "05:00 PM"
+    },
+    {
+      "activityName": "Seafood Dinner",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 17,
+  "itineraryId": 6,
+  "dayNumber": 1,
+  "date": "2026-09-15",
+  "transportType": "Flight",
+  "transportFrom": "Delhi",
+  "transportTo": "Paris",
+  "transportTime": "06:00 AM",
+  "hotel": "Paris Grand Hotel",
+  "checkInTime": "02:00 PM",
+  "activities": [
+    {
+      "activityName": "Eiffel Tower Visit",
+      "activityTime": "05:00 PM"
+    },
+    {
+      "activityName": "Seine River Cruise",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 18,
+  "itineraryId": 6,
+  "dayNumber": 2,
+  "date": "2026-09-16",
+  "transportType": "Metro",
+  "transportFrom": "Central Paris",
+  "transportTo": "Eiffel Tower",
+  "transportTime": "09:00 AM",
+  "hotel": "Paris Grand Hotel",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Louvre Mueseum Tour",
+      "activityTime": "01:00 PM"
+    },
+    {
+      "activityName": "Paris Cafe Visit",
+      "activityTime": "06:30 PM"
+    }
+  ]
+},
+{
+  "id": 19,
+  "itineraryId": 6,
+  "dayNumber": 3,
+  "date": "2026-09-17",
+  "transportType": "Metro",
+  "transportFrom": "Paris",
+  "transportTo": "Louvre Museum",
+  "transportTime": "10:00 AM",
+  "hotel": "Paris Grand Hotel",
+  "checkInTime": "03:00 PM",
+  "activities": [
+    {
+      "activityName": "Notre Dame Visit",
+      "activityTime": "07:00 PM"
+    }
+  ]
+},
+{
+  "id": 20,
+  "itineraryId": 6,
+  "dayNumber": 4,
+  "date": "2026-09-18",
+  "transportType": "Train",
+  "transportFrom": "Paris",
+  "transportTo": "Versailles",
+  "transportTime": "08:00 AM",
+  "hotel": "Paris Grand Hotel",
+  "checkInTime": "10:00 AM",
+  "activities": [
+    {
+      "activityName": "Versailles Paris Tour",
+      "activityTime": "11:00 AM"
+    },
+    {
+      "activityName": "Garden Walk",
+      "activityTime": "05:30 PM"
+    }
+  ]
+},
+{
+  "id": 21,
+  "itineraryId": 7,
+  "dayNumber": 1,
+  "date": "2026-08-12",
+  "transportType": "Flight",
+  "transportFrom": "Delhi",
+  "transportTo": "Bangkok",
+  "transportTime": "08:00 AM",
+  "hotel": "Bangkok Family Suites",
+  "checkInTime": "01:00 PM",
+  "activities": [
+    {
+      "activityName": "Bangkok Temple Tour",
+      "activityTime": "03:00 PM"
+    },
+    {
+      "activityName": "Night Market",
+      "activityTime": "07:30 PM"
+    }
+  ]
+},
+{
+  "id": 22,
+  "itineraryId": 7,
+  "dayNumber": 2,
+  "date": "2026-08-13",
+  "transportType": "Cab",
+  "transportFrom": "Bangkok",
+  "transportTo": "Pattaya",
+  "transportTime": "09:00 AM",
+  "hotel": "Bangkok Family Suites",
+  "checkInTime": "10:30 AM",
+  "activities": [
+    {
+      "activityName": "Walking Strret",
+      "activityTime": "11:00 AM"
+    },
+    {
+      "activityName": "Pattaya Beach Visit",
+      "activityTime": "06:30 PM"
+    }
+  ]
+},
+{
+  "id": 23,
+  "itineraryId": 7,
+  "dayNumber": 3,
+  "date": "2026-08-14",
+  "transportType": "Boat",
+  "transportFrom": "Pattaya",
+  "transportTo": "Coral Island",
+  "transportTime": "08:30 AM",
+  "hotel": "Bangkok Family Suites",
+  "checkInTime": "10:30",
+  "activities": [
+    {
+      "activityName": "Coral Island Adventure",
+      "activityTime": "11:30 AM"
+    },
+    {
+      "activityName": "Parasailing",
+      "activityTime": "05:30 PM"
+    }
+  ]
+},
+{
+  "id": 24,
+  "itineraryId": 8,
+  "dayNumber": 1,
+  "date": "2026-10-10",
+  "transportType": "Flight",
+  "transportFrom": "Delhi",
+  "transportTo": "London",
+  "transportTime": "05:30 AM",
+  "hotel": "Royal London Hotel",
+  "checkInTime": "03:00 PM",
+  "activities": [
+    {
+      "activityName": "London Eye",
+      "activityTime": "07:00 PM"
+    },
+    {
+      "activityName": "Thames Cruise",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 25,
+  "itineraryId": 8,
+  "dayNumber": 2,
+  "date": "2026-10-11",
+  "transportType": "Metro",
+  "transportFrom": "Central London",
+  "transportTo": "London Eye",
+  "transportTime": "09:00 AM",
+  "hotel": "Royal London Hotel",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Buckingham Palace",
+      "activityTime": "04:00 PM"
+    },
+    {
+      "activityName": "Hyde Park",
+      "activityTime": "07:30 PM"
+    }
+  ]
+},
+{
+  "id": 26,
+  "itineraryId": 8,
+  "dayNumber": 3,
+  "date": "2026-10-12",
+  "transportType": "Metro",
+  "transportFrom": "London",
+  "transportTo": "Tower Bridge",
+  "transportTime": "10:00 AM",
+  "hotel": "Royal London Hotel",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Tower Bridge Visit",
+      "activityTime": "07:00 PM"
+    },
+    {
+      "activityName": "Bourogh Market",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 27,
+  "itineraryId": 8,
+  "dayNumber": 4,
+  "date": "2026-10-13",
+  "transportType": "Train",
+  "transportFrom": "London",
+  "transportTo": "Windsor",
+  "transportTime": "08:00 AM",
+  "hotel": "Royal London Hotel",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Windsor Castel Tour",
+      "activityTime": "07:00 PM"
+    }
+  ]
+},
+{
+  "id": 28,
+  "itineraryId": 9,
+  "dayNumber": 1,
+  "date": "2026-07-18",
+  "transportType": "Train",
+  "transportFrom": "Chandigarh",
+  "transportTo": "Udaipur",
+  "transportTime": "07:00 AM",
+  "hotel": "Lake Palace Hotel",
+  "checkInTime": "01:00 PM",
+  "activities": [
+    {
+      "activityName": "City Palace Tour",
+      "activityTime": "04:00 PM"
+    },
+    {
+      "activityName": "Lake Pichola Boat Ride",
+      "activityTime": "06:30 PM"
+    }
+  ]
+},
+{
+  "id": 29,
+  "itineraryId": 9,
+  "dayNumber": 2,
+  "date": "2026-07-19",
+  "transportType": "Cab",
+  "transportFrom": "City Center",
+  "transportTo": "City Palace",
+  "transportTime": "10:00 AM",
+  "hotel": "Lake Palace Hotel",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Jag Mandir Visit",
+      "activityTime": "07:00 PM"
+    },
+    {
+      "activityName": "Cultural Show",
+      "activityTime": "08:30 PM"
+    }
+  ]
+},
+{
+  "id": 30,
+  "itineraryId": 10,
+  "dayNumber": 1,
+  "date": "2026-08-10",
+  "transportType": "Flight",
+  "transportFrom": "Mumbai",
+  "transportTo": "Dubai",
+  "transportTime": "09:15 AM",
+  "hotel": "Burj View Hotel",
+  "checkInTime": "02:00 PM",
+  "activities": [
+    {
+      "activityName": "Dubai Mall Visit",
+      "activityTime": "06:00 PM"
+    },
+    {
+      "activityName": "Fountain Show",
+      "activityTime": "07:30 PM"
+    }
+  ]
+},
+{
+  "id": 31,
+  "itineraryId": 10,
+  "dayNumber": 2,
+  "date": "2026-08-11",
+  "transportType": "Metro",
+  "transportFrom": "Dubai Marina",
+  "transportTo": "Dubai Mall",
+  "transportTime": "10:00 AM",
+  "hotel": "Burj View Hotel",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Burj Khalifa Observation Desk",
+      "activityTime": "01:00 PM"
+    },
+    {
+      "activityName": "Aquarium Visit",
+      "activityTime": "06:30 PM"
+    }
+  ]
+},
+{
+  "id": 32,
+  "itineraryId": 10,
+  "dayNumber": 3,
+  "date": "2026-08-12",
+  "transportType": "Cab",
+  "transportFrom": "Downtown Dubai",
+  "transportTo": "Desert Safari",
+  "transportTime": "03:00 PM",
+  "hotel": "Burj View Hotel",
+  "checkInTime": "-",
+  "activities": [
+    {
+      "activityName": "Desert Safari",
+      "activityTime": "07:00 PM"
+    },
+    {
+      "activityName": "BBQ Dinner",
+      "activityTime": "08:30 PM"
+    }
+  ]
+}
+],
+
+
+"priceRules": [
+  {
+    "id": 1,
+    "serviceType": "FLIGHT",
+    "season": "PEAK",
+    "multiplier": 1.25
+  },
+  {
+    "id": 2,
+    "serviceType": "FLIGHT",
+    "season": "OFF_SEASON",
+    "multiplier": 0.9
+  },
+  {
+    "id": 3,
+    "serviceType": "HOTEL",
+    "season": "PEAK",
+    "multiplier": 1.3
+  },
+  {
+    "id": 4,
+    "serviceType": "HOTEL",
+    "season": "OFF_SEASON",
+    "multiplier": 0.85
+  },
+  {
+    "id": 5,
+    "serviceType": "PACKAGE",
+    "season": "PEAK",
+    "multiplier": 1.2
+  },
+  {
+    "id": 6,
+    "serviceType": "PACKAGE",
+    "season": "OFF_SEASON",
+    "multiplier": 0.95
+  },
+  {
+    "id": 7,
+    "serviceType": "PACKAGE",
+    "season": "WEEKEND",
+    "multiplier": 1.1
+  },
+  {
+    "id": 8,
+    "serviceType": "FLIGHT",
+    "season": "WEEKEND",
+    "multiplier": 1.15
+  },
+  {
+    "id": 9,
+    "serviceType": "HOTEL",
+    "season": "FESTIVAL",
+    "multiplier": 1.4
+  },
+  {
+    "id": 10,
+    "serviceType": "PACKAGE",
+    "season": "FESTIVAL",
+    "multiplier": 1.35
+  }
+],
+
+"availability": [
+  {
+    "id": 1,
+    "serviceId": 1,
+    "availableSlots": 25,
+    "status": "AVAILABLE"
+  },
+  {
+    "id": 2,
+    "serviceId": 2,
+    "availableSlots": 8,
+    "status": "LIMITED"
+  },
+  {
+    "id": 3,
+    "serviceId": 3,
+    "availableSlots": 15,
+    "status": "AVAILABLE"
+  },
+  {
+    "id": 4,
+    "serviceId": 4,
+    "availableSlots": 50,
+    "status": "AVAILABLE"
+  },
+  {
+    "id": 5,
+    "serviceId": 5,
+    "availableSlots": 5,
+    "status": "LIMITED"
+  },
+  {
+    "id": 6,
+    "serviceId": 6,
+    "availableSlots": 12,
+    "status": "AVAILABLE"
+  },
+  {
+    "id": 7,
+    "serviceId": 7,
+    "availableSlots": 0,
+    "status": "FULL"
+  },
+  {
+    "id": 8,
+    "serviceId": 8,
+    "availableSlots": 6,
+    "status": "LIMITED"
+  },
+  {
+    "id": 9,
+    "serviceId": 9,
+    "availableSlots": 10,
+    "status": "AVAILABLE"
+  },
+  {
+    "id": 10,
+    "serviceId": 10,
+    "availableSlots": 4,
+    "status": "LIMITED"
+  },
+  {
+    "id": 11,
+    "serviceId": 11,
+    "availableSlots": 2,
+    "status": "LIMITED"
+  },
+  {
+    "id": 12,
+    "serviceId": 12,
+    "availableSlots": 20,
+    "status": "AVAILABLE"
+  },
+  {
+    "id": 13,
+    "serviceId": 13,
+    "availableSlots": 18,
+    "status": "AVAILABLE"
+  },
+  {
+    "id": 14,
+    "serviceId": 14,
+    "availableSlots": 14,
+    "status": "AVAILABLE"
+  },
+  {
+    "id": 15,
+    "serviceId": 15,
+    "availableSlots": 3,
+    "status": "LIMITED"
+  }
+]
+}
