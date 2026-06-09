@@ -1,1 +1,18 @@
-<p>travel-card-component works!</p>
+<div class="travel-card">
+  <div class="card-header">
+    <span class="type-badge">{{ item.serviceType | uppercase }}</span>
+    <span class="rating-badge">⭐ {{ item.rating }}</span>
+  </div>
+  <div class="card-content">
+    <h4>{{ item.destination }}</h4>
+    <p class="meta-text">Available: {{ item.travelDate }} | Duration: {{ item.duration }}</p>
+    <h3 class="price-tag">{{ item.price | currency:'USD' }}</h3>
+    @if (item.availability <= 3) {
+      <div class="availability-alert">🚨 Only {{ item.availability }} openings remaining!</div>
+    }
+  </div>
+  <div class="card-footer">
+    <button (click)="compare.emit(item)" class="btn-compare-action">Compare Option</button>
+    <button (click)="book.emit(item)" class="btn-book-action">Select & Book</button>
+  </div>
+</div>

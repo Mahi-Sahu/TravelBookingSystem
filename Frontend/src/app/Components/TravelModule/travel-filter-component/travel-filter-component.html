@@ -1,1 +1,21 @@
-<p>travel-filter-component works!</p>
+<div class="filter-sidebar">
+  <h4>Refine Listings</h4>
+  <div class="filter-group">
+    <label>Maximum Budget: ${{ travelService.filters().budgetRange }}</label>
+    <input type="range" min="100" max="1500" step="50" 
+           [value]="travelService.filters().budgetRange" 
+           (input)="onBudgetRangeChange($event)" class="range-slider" />
+  </div>
+  <div class="filter-group">
+    <label>Minimum Review Score</label>
+    <div class="rating-options">
+      @for (ratingValue of [3, 4, 4.5]; track ratingValue) {
+        <button (click)="onRatingSelect(ratingValue)" 
+                [class.active]="travelService.filters().rating === ratingValue" class="btn-filter">
+          {{ ratingValue }}+ ⭐
+        </button>
+      }
+      <button (click)="onRatingSelect(0)" class="btn-clear">Reset</button>
+    </div>
+  </div>
+</div>

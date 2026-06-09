@@ -1,1 +1,20 @@
-<p>travel-comaparison-component works!</p>
+@if (travelService.comparedItems().length > 0) {
+  <div class="comparison-board">
+    <h3>Service Feature Comparison Dashboard</h3>
+    <div class="comparison-flex">
+      @for (comparedItem of travelService.comparedItems(); track comparedItem.id) {
+        <div class="comparison-item-column">
+          <button (click)="travelService.removeFromComparison(comparedItem.id)" class="btn-drop">Dismiss ❌</button>
+          <h4>{{ comparedItem.destination }}</h4>
+          <p class="highlight-price">{{ comparedItem.price | currency:'USD' }}</p>
+          <p><strong>Timeline Status:</strong> {{ comparedItem.timing }}</p>
+          <ul class="features-list">
+            @for (feature of comparedItem.features; track feature) {
+              <li>✓ {{ feature }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+}
