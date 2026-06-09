@@ -1,1 +1,18 @@
-<p>travel-list-component works!</p>
+<div class="travel-catalog-wrapper">
+  <app-travel-search-component></app-travel-search-component>
+  <div class="catalog-workspace">
+    <app-travel-filter-component></app-travel-filter-component>
+    <div class="catalog-grid-results">
+      @for (item of travelService.filteredCatalog(); track item.id) {
+        <app-travel-card 
+          [item]="item"
+          (compare)="onItemCompareSelect($event)"
+          (book)="onItemCheckoutSelect($event)">
+        </app-travel-card>
+      } @empty {
+        <div class="empty-state">No matching travel entries match your specifications.</div>
+      }
+    </div>
+  </div>
+  <app-travel-comaparison-component></app-travel-comaparison-component>
+</div>
