@@ -1,0 +1,70 @@
+/* Add to src/app/Components/TravelModule/travel-search-component/travel-search-component.css */
+.search-panel {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e8f0;
+}
+
+.search-panel h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.search-form {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.form-input {
+  flex: 2;
+  min-width: 200px;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+}
+
+.form-select {
+  flex: 1;
+  min-width: 150px;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f8fafc;
+  cursor: pointer;
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: #0284c7;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.btn-search {
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn-search:hover {
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.btn-search:active {
+  transform: scale(0.98);
+}

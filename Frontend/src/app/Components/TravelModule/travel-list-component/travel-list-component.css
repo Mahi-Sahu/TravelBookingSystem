@@ -1,0 +1,40 @@
+/* Add to src/app/Components/TravelModule/travel-list-component/travel-list-component.css */
+.travel-catalog-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+.catalog-workspace {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  margin-top: 24px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .catalog-workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+.catalog-grid-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 48px;
+  text-align: center;
+  background: #ffffff;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  color: #64748b;
+  font-size: 16px;
+}
