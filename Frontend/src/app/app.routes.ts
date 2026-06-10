@@ -4,6 +4,7 @@ import { CustomerDashboardComponent } from './Components/CustomerModule/customer
 import {
   ItineraryDashboardComponent
 } from './Components/ItineraryModule/itinerary-dashboard-component/itinerary-dashboard-component';
+import { CustomerProfileComponent } from './Components/CustomerModule/customer-profile-component/customer-profile-component';
 export const routes: Routes = [
   { path: '', component: TravelListComponent },
   { path: 'travel-catalog', component: TravelListComponent },
@@ -11,5 +12,9 @@ export const routes: Routes = [
     path: 'customer/dashboard',
     component: CustomerDashboardComponent,
   },
-  { path: 'my-itineraries', component: ItineraryDashboardComponent } // Attached Itinerary Module Target Link
+  { path: 'my-itineraries', component: ItineraryDashboardComponent }, // Attached Itinerary Module Target Link
+  {
+    path: 'customer/profile',
+    component: CustomerProfileComponent
+  },
 ];
