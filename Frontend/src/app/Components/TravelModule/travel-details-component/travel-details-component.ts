@@ -1,7 +1,7 @@
-import { Component, Input, Output, EventEmitter, inject, computed } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { TravelItem } from '../../../Models/travel';
+import { TravelServicePackage } from '../../../Models/travel';
 
 @Component({
   selector: 'app-travel-details',
@@ -13,18 +13,25 @@ import { TravelItem } from '../../../Models/travel';
 export class TravelDetailsComponent {
   private router = inject(Router);
 
-  @Input({ required: true }) travelItem!: TravelItem;
+  @Input() viewMode: string = 'PACKAGE_DETAILS';
+  @Input({ required: true }) selectedPackage!: TravelServicePackage;
+  @Input({ required: true }) parentDestination!: any;
+  @Input() itineraryDays: any[] = []; 
   @Output() onBack = new EventEmitter<void>();
 
-  // Fixed: Changed travelItem.slotsAvailable to travelItem.availability
-  isSoldOut = computed(() => (this.travelItem?.availability ?? 0) <= 0);
-
+  /**
+   * Navigates to the Booking Module carrying the relational keys
+   */
   initiateBookingWorkflow(): void {
-    if (!this.isSoldOut()) {
-      // Direct user into the reservation entry wizard, passing package metadata state
-      this.router.navigate(['/book-trip'], { 
-        queryParams: { packageId: this.travelItem.id } 
-      });
-    }
+    // Safely extract the itineraryId from the first day node if it exists
+    const itineraryId = this.itineraryDays.length > 0 ? this.itineraryDays[0].itineraryId : '';
+
+    this.router.navigate(['/book-trip'], { 
+      queryParams: { 
+        serviceId: this.selectedPackage.id, 
+        destinationId: this.parentDestination.id,
+        itineraryId: itineraryId,
+      } 
+    });
   }
 }

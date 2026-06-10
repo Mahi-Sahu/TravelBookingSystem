@@ -1,13 +1,49 @@
-<div class="catalog-page-container">
-  @if (selectedPackage(); as activeItem) {
-    <app-travel-details 
-      [travelItem]="activeItem" 
-      (onBack)="clearDetailsPane()">
-    </app-travel-details>
-  } @else {
+@if (selectedPackage(); as activePackage) {
+  <app-travel-details 
+    [viewMode]="'PACKAGE_DETAILS'"
+    [selectedPackage]="activePackage"
+    [parentDestination]="selectedDestination()"
+    [itineraryDays]="travelService.selectedPackageDays()"
+    (onBack)="backToPackagesList()">
+  </app-travel-details>
+} @else if (selectedDestination(); as currentDestination)  {
+  <div class="packages-directory-view">
+    <header class="details-nav-bar">
+      <button class="back-link-btn" (click)="backToDestinationsCatalog()">← Back to Destinations</button>
+    </header>
+
+    <article class="destination-hero-header">
+      <h2>Available Packages for {{ currentDestination.name }}</h2>
+      <p class="tagline">Service Framework Window: <strong>{{ currentDestination.duration }}</strong> | Base Rating Score: ★ {{ currentDestination.rating }}</p>
+    </article>
+
+    <h3 class="packages-heading">Select a Package for More Details</h3>
+
+    <section class="packages-list-grid">
+      @for (pkg of travelService.selectedDestinationServices(); track pkg.id) {
+        <div class="service-package-card clickable-package" (click)="onPackageSelect(pkg)">
+          <div class="package-badge" [class.flight]="pkg.serviceType === 'FLIGHT'" [class.hotel]="pkg.serviceType === 'HOTEL'">
+            {{ pkg.serviceType }}
+          </div>
+          <h4>{{ pkg.serviceName }}</h4>
+          <p class="provider-info">Provided by: <strong>{{ pkg.provider }}</strong> (Duration: {{ pkg.duration }})</p>
+          <div class="price-action-dock">
+            <span class="package-price">{{ pkg.price | currency:'INR':'symbol':'1.0-0' }}</span>
+            <span class="details-hint-text">View Details & Book →</span>
+          </div>
+        </div>
+      } @empty {
+        <div class="no-packages-alert">
+          <p>No standalone travel deals found for this destination profile entry map.</p>
+        </div>
+      }
+    </section>
+  </div>
+} @else {
+  <div class="catalog-page-container">
     <header class="catalog-branding">
-      <h3>Explore Destinations & Packages</h3>
-      <p class="branding-caption">Filter active flight routings, resort lodging coordinates, and seasonal discount packages.</p>
+      <h3>Explore Global Destinations</h3>
+      <p class="branding-caption">Filter current destination spots by landscape profiles or search queries.</p>
     </header>
 
     <div class="search-utilities-panel">
@@ -15,24 +51,24 @@
       <app-travel-filter></app-travel-filter>
     </div>
 
-    <app-travel-comaparison></app-travel-comaparison>
-
     @if (travelService.loading()) {
-      <div class="loading-state-spinner">Fetching active catalog inventory databases...</div>
+      <div class="loading-state-spinner">Querying file database indexes...</div>
     } @else {
       <main class="responsive-catalog-grid">
         @for (item of travelService.filteredPackages(); track item.id) {
           <app-travel-card 
             [travelItem]="item" 
-            (click)="viewPackageDetails(item)"
-            (onSelect)="viewPackageDetails($event)">
+            (click)="onDestinationSelect(item)">
           </app-travel-card>
         } @empty {
           <div class="empty-results-box">
-            <p>No trip profiles found matching the current search parameters. Try adjusting your destination filters.</p>
+            <p>No destinations found matching your current parameters.</p>
           </div>
         }
       </main>
     }
-  }
-</div>
+
+
+    
+  </div>
+}

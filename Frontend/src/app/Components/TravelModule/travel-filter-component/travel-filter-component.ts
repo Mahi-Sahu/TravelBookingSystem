@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CurrencyPipe } from '@angular/common'; // Added to support currency pipe execution syntax
+import { CurrencyPipe } from '@angular/common'; 
 import { TravelDataService } from '../../../Services/travel-data';
 
 @Component({
   selector: 'app-travel-filter',
   standalone: true,
-  imports: [FormsModule, CurrencyPipe], // Added CurrencyPipe to this array block
+  imports: [FormsModule, CurrencyPipe], 
   templateUrl: './travel-filter-component.html',
   styleUrl: './travel-filter-component.css'
 })

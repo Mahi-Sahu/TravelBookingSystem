@@ -4,9 +4,8 @@ import { TravelDataService } from '../../../Services/travel-data';
 import { TravelCardComponent } from '../travel-card-component/travel-card-component';
 import { TravelDetailsComponent } from '../travel-details-component/travel-details-component';
 import { TravelSearchComponent } from '../travel-search-component/travel-search-component'; 
-import { TravelFilterComponent } from '../travel-filter-component/travel-filter-component'; 
-import { TravelComaparisonComponent } from '../travel-comaparison-component/travel-comaparison-component';
-import { TravelItem } from '../../../Models/travel'; // Fully verified explicit import declaration
+import { TravelFilterComponent } from '../travel-filter-component/travel-filter-component';
+import { TravelItem, TravelServicePackage } from '../../../Models/travel';
 
 @Component({
   selector: 'app-travel-list',
@@ -16,8 +15,7 @@ import { TravelItem } from '../../../Models/travel'; // Fully verified explicit 
     TravelCardComponent, 
     TravelDetailsComponent,
     TravelSearchComponent,     
-    TravelFilterComponent,     
-    TravelComaparisonComponent 
+    TravelFilterComponent
   ],
   templateUrl: './travel-list-component.html',
   styleUrl: './travel-list-component.css'
@@ -25,18 +23,34 @@ import { TravelItem } from '../../../Models/travel'; // Fully verified explicit 
 export class TravelListComponent implements OnInit {
   protected travelService = inject(TravelDataService);
   
-  // Tracks active detail overlay panels using your TravelItem interface model configuration references
-  selectedPackage = signal<TravelItem | null>(null);
+  selectedDestination = signal<TravelItem | null>(null);             
+  selectedPackage = signal<TravelServicePackage | null>(null); 
 
   ngOnInit(): void {
     this.travelService.loadPackages().subscribe();
   }
 
-  viewPackageDetails(pkg: TravelItem): void {
+  onDestinationSelect(destination: TravelItem): void {
+    this.selectedDestination.set(destination);
+    
+    // Phase 1: Load active flights/hotels packages
+    this.travelService.loadServicesForDestination(destination.id).subscribe();
+    
+    // Phase 2: Pull corresponding day plans from db.json itineraryDays entries
+    this.travelService.loadItineraryDaysByDestination(destination.id).subscribe();
+  }
+
+  onPackageSelect(pkg: TravelServicePackage): void {
     this.selectedPackage.set(pkg);
   }
 
-  clearDetailsPane(): void {
+  backToPackagesList(): void {
     this.selectedPackage.set(null);
+  }
+
+  backToDestinationsCatalog(): void {
+    this.selectedDestination.set(null);
+    this.travelService.selectedDestinationServices.set([]);
+    this.travelService.selectedPackageDays.set([]); // Clears daily timeline state cache cleanly
   }
 }
