@@ -1,10 +1,9 @@
-export interface NotificationModel
-{
-  id:number;
-  userId:number;
-  title:string;
-  message:string;
-  type:string;
-  isRead:boolean;
-  createdAt:string;
+export interface NotificationModel {
+  id?: number;
+  userId: number | 'ALL'; // 'ALL' means it's a global broadcast from Admin
+  title: string;
+  message: string;
+  type: 'ALERT' | 'REMINDER' | 'PROMO';
+  isRead: boolean;
+  timestamp: string;
 }
