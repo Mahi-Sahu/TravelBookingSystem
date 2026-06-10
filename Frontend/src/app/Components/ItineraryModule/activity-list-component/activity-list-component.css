@@ -1,0 +1,43 @@
+.activities-widget-card {
+  border-left: 4px solid #ea580c;
+  background-color: #fff7ed;
+  padding: 15px;
+  border-radius: 0 8px 8px 0;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+.activities-widget-card .widget-header h4 {
+  margin: 0;
+  color: #c2410c;
+  font-size: 14px;
+}
+.agenda-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.agenda-node-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ffedd5;
+}
+.time-stamp-pill {
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #ffedd5;
+  color: #9a3412;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.activity-body-text {
+  font-size: 14px;
+  color: #334155;
+}

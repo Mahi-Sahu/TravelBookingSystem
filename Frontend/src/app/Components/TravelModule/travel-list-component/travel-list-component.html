@@ -1,18 +1,35 @@
-<div class="travel-catalog-wrapper">
-  <app-travel-search-component></app-travel-search-component>
-  <div class="catalog-workspace">
-    <app-travel-filter-component></app-travel-filter-component>
-    <div class="catalog-grid-results">
-      @for (item of travelService.filteredCatalog(); track item.id) {
-        <app-travel-card 
-          [item]="item"
-          (compare)="onItemCompareSelect($event)"
-          (book)="onItemCheckoutSelect($event)">
-        </app-travel-card>
-      } @empty {
-        <div class="empty-state">No matching travel entries match your specifications.</div>
-      }
+<div class="catalog-page-container">
+  @if (selectedPackage(); as activeItem) {
+    <app-travel-details 
+      [travelItem]="activeItem" 
+      (onBack)="clearDetailsPane()">
+    </app-travel-details>
+  } @else {
+    <header class="catalog-branding">
+      <h3>Explore Destinations & Packages</h3>
+      <p class="branding-caption">Filter active flight routings, resort lodging coordinates, and seasonal discount packages.</p>
+    </header>
+
+    <div class="search-utilities-panel">
+      <app-travel-search></app-travel-search>
+      <app-travel-filter></app-travel-filter>
     </div>
-  </div>
-  <app-travel-comaparison-component></app-travel-comaparison-component>
+
+    @if (travelService.loading()) {
+      <div class="loading-state-spinner">Fetching active catalog inventory databases...</div>
+    } @else {
+      <main class="responsive-catalog-grid">
+        @for (item of travelService.filteredPackages(); track item.id) {
+          <app-travel-card 
+            [travelItem]="item" 
+            (onSelect)="viewPackageDetails($event)">
+          </app-travel-card>
+        } @empty {
+          <div class="empty-results-box">
+            <p>No trip profiles found matching the current search parameters. Try adjusting your destination filters.</p>
+          </div>
+        }
+      </main>
+    }
+  }
 </div>

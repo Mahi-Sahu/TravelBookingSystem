@@ -1,1 +1,19 @@
-<p>activity-list-component works!</p>
+<div class="activities-widget-card">
+  <div class="widget-header">
+    <span class="widget-icon">🗺️</span>
+    <h4>Daily Recreational Agenda</h4>
+  </div>
+  
+  <ul class="agenda-items-list">
+    @for (act of activities; track act.activityName) {
+      <li class="agenda-node-item">
+        <div class="time-stamp-pill">⏱️ {{ act.activityTime }}</div>
+        <div class="activity-body-text">{{ act.activityName }}</div>
+      </li>
+    } @empty {
+      <li class="no-activities-prompt">
+        <p class="empty-text">No target local excursions or guided tours logged for this day block.</p>
+      </li>
+    }
+  </ul>
+</div>

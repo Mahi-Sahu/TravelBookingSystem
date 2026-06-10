@@ -1,1 +1,48 @@
-<p>travel-details-component works!</p>
+<div class="travel-details-container">
+  <header class="details-nav-bar">
+    <button class="back-link-btn" (click)="onBack.emit()">← Back to Catalog Directory</button>
+  </header>
+
+  <article class="details-grid">
+    <section class="hero-media-showcase">
+      <img [src]="'assets/placeholder-travel.jpg'" [alt]="travelItem.destination" class="main-display-image">
+      <div class="availability-overlay-badge" [class.sold-out]="isSoldOut()">
+        {{ isSoldOut() ? 'SOLD OUT' : (travelItem.availability + ' Spaces Remaining') }}
+      </div>
+    </section>
+
+    <section class="summary-specs-pane">
+      <div class="meta-tags-row">
+        <span class="category-pill">{{ travelItem.serviceType }}</span>
+        <span class="rating-indicator">★ {{ travelItem.rating || '4.5' }}</span>
+      </div>
+
+      <h2 class="destination-headline">Trip to {{ travelItem.destination }}</h2>
+      <p class="location-sub-label">📍 {{ travelItem.destination }}</p>
+
+      <div class="pricing-card-block">
+        <span class="currency-label">Starting From</span>
+        <h3 class="price-value">{{ travelItem.price | currency:'INR':'symbol':'1.0-0' }}</h3>
+        <p class="pricing-footnote">Includes regional transit alignments, baseline hotel mappings, and guided excursions.</p>
+      </div>
+
+      <div class="itinerary-quick-glance">
+        <h4>Core Specifications</h4>
+        <ul class="specs-bullet-list">
+          <li><strong>Travel Window Duration:</strong> {{ travelItem.duration }}</li>
+          <li><strong>Primary Timing:</strong> {{ travelItem.timing }}</li>
+          <li><strong>Key Highlights:</strong> {{ travelItem.features?.join(', ') || 'All inclusive coverage' }}</li>
+        </ul>
+      </div>
+
+      <div class="action-dock-row">
+        <button 
+          class="btn-primary-action" 
+          [disabled]="isSoldOut()"
+          (click)="initiateBookingWorkflow()">
+          {{ isSoldOut() ? 'Booking Window Closed' : 'Proceed to Passenger Intake Form' }}
+        </button>
+      </div>
+    </section>
+  </article>
+</div>

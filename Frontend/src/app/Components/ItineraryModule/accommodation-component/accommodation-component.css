@@ -1,0 +1,39 @@
+.accommodation-widget-card {
+  border-left: 4px solid #10b981;
+  background-color: #f0fdf4;
+  padding: 15px;
+  border-radius: 0 8px 8px 0;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+.accommodation-widget-card.no-lodging {
+  border-left: 4px solid #94a3b8;
+  background-color: #f8fafc;
+}
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.widget-header h4 {
+  margin: 0;
+  color: #065f46;
+  font-size: 14px;
+}
+.hotel-title {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #1e293b;
+}
+.hotel-meta {
+  margin: 0;
+  font-size: 13px;
+  color: #475569;
+}
+.empty-text {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+  font-style: italic;
+}
