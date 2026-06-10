@@ -1,1 +1,17 @@
-<p>accommodation-component works!</p>
+<div class="accommodation-widget-card" [class.no-lodging]="!hasValidHotel()">
+  @if (hasValidHotel()) {
+    <div class="widget-header">
+      <span class="widget-icon">🏨</span>
+      <h4>Lodging Arranged</h4>
+    </div>
+    <div class="widget-body">
+      <p class="hotel-title"><strong>Property:</strong> {{ hotelName }}</p>
+      <p class="hotel-meta"><strong>Check-In Timeline:</strong> {{ checkInTime }}</p>
+    </div>
+  } @else {
+    <div class="widget-empty-state">
+      <span class="widget-icon">🛏️</span>
+      <p class="empty-text">No new lodging check-ins scheduled for today.</p>
+    </div>
+  }
+</div>

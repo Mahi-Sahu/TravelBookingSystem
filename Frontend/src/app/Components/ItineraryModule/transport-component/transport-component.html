@@ -1,1 +1,23 @@
-<p>transport-component works!</p>
+<div class="transit-widget-card" [class.no-transit]="!hasValidTransit()">
+  @if (hasValidTransit()) {
+    <div class="widget-header">
+      <span class="widget-icon">{{ getTransitIcon() }}</span>
+      <h4>Transit Connection Mapped</h4>
+    </div>
+    <div class="widget-body">
+      <div class="route-line">
+        <span class="station origin">{{ from }}</span>
+        <span class="arrow">➔</span>
+        <span class="station destination">{{ to }}</span>
+      </div>
+      <p class="transit-meta">
+        <strong>Logistics Mode:</strong> {{ type }} | <strong>Departure Window:</strong> {{ time }}
+      </p>
+    </div>
+  } @else {
+    <div class="widget-empty-state">
+      <span class="widget-icon">📍</span>
+      <p class="empty-text">No regional or intercity transit connections scheduled today.</p>
+    </div>
+  }
+</div>

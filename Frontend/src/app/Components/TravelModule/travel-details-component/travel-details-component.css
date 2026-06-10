@@ -1,0 +1,94 @@
+.travel-details-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.details-nav-bar {
+  margin-bottom: 20px;
+}
+.back-link-btn {
+  background: none;
+  border: none;
+  color: #0284c7;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+}
+.back-link-btn:hover {
+  text-decoration: underline;
+}
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+.hero-media-showcase {
+  position: relative;
+}
+.main-display-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.availability-overlay-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #10b981;
+  color: white;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+}
+.availability-overlay-badge.sold-out {
+  background: #ef4444;
+}
+.category-pill {
+  background: #f0f9ff;
+  color: #0369a1;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.destination-headline {
+  font-size: 28px;
+  color: #0f172a;
+  margin: 10px 0 5px 0;
+}
+.pricing-card-block {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border: 1px solid #e2e8f0;
+}
+.price-value {
+  font-size: 32px;
+  color: #0f172a;
+  margin: 5px 0;
+}
+.btn-primary-action {
+  width: 100%;
+  background: #0284c7;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-primary-action:hover:not(:disabled) {
+  background: #0369a1;
+}
+.btn-primary-action:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
