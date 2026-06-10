@@ -1,0 +1,27 @@
+.profile-container{
+  width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input{
+  width: 100%;
+  padding: 10px;
+}
+
+button{
+  padding: 10px;
+  cursor: pointer;
+}
+
+small{
+  color: red;
+}

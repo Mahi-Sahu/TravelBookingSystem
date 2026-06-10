@@ -1,1 +1,70 @@
-<p>customer-profile-component works!</p>
+<div class="profile-container">
+  <h2>Customer Profile</h2>
+
+  @if (!isEditMode) {
+    <div class="profile-view">
+      <div class="profile-header">
+        <h3>Profile Information</h3>
+
+        <button type="button" class="edit-btn" (click)="enableEdit()">✏ Edit Profile</button>
+      </div>
+
+      <p>
+        <strong>First Name:</strong>
+        {{ originalData?.firstName }}
+      </p>
+
+      <p>
+        <strong>Last Name:</strong>
+        {{ originalData?.lastName }}
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        {{ originalData?.email }}
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        {{ originalData?.phone }}
+      </p>
+
+      <p>
+        <strong>City:</strong>
+        {{ originalData?.city }}
+      </p>
+    </div>
+  }
+
+  @if (isEditMode) {
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <label>First Name</label>
+      <input type="text" formControlName="firstName" />
+
+      <label>Last Name</label>
+      <input type="text" formControlName="lastName" />
+
+      <label>Email</label>
+      <input type="email" formControlName="email" />
+
+      <label>Phone</label>
+      <input type="text" formControlName="phone" />
+
+      <label>City</label>
+      <input type="text" formControlName="city" />
+
+      <div class="actions">
+        <button type="submit" [disabled]="profileForm.invalid || !hasChanges || isSaving">
+          {{ isSaving ? 'Saving...' : 'Save Changes' }}
+        </button>
+
+        <button type="button" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  }
+  @if (successMessage) {
+    <p>
+      {{ successMessage }}
+    </p>
+  }
+</div>
