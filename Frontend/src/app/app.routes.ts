@@ -11,6 +11,8 @@ import { ItineraryDashboardComponent } from './Components/ItineraryModule/itiner
 import { ForgotPasswordComponent } from './Components/AuthModule/forgot-password-component/forgot-password-component';
 import { BookingComponent } from './Components/BookingModule/booking-component/booking-component';
 import { BookingReviewComponent } from './Components/BookingModule/booking-review-component/booking-review-component';
+import { BookingHistoryComponent } from './Components/BookingModule/booking-history-component/booking-history-component';
+import { BookingConfirmationComponent } from './Components/BookingModule/booking-confirmation-component/booking-confirmation-component';
 
 export const routes: Routes = [
   //auth module:
@@ -25,6 +27,7 @@ export const routes: Routes = [
   { path: 'customer/profile', component: CustomerProfileComponent },
   { path: 'customer/booking', component: BookingComponent },
   { path: 'customer/booking/review', component: BookingReviewComponent },
+  { path: 'customer/booking/confirmation', component: BookingConfirmationComponent},
 
   //admin module
   { path: 'admin-dashboard', component: AdminDashboardComponent },

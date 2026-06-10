@@ -1,0 +1,27 @@
+.confirmation-container {
+  max-width: 600px;
+
+  margin: auto;
+
+  padding: 20px;
+
+  text-align: center;
+}
+
+.confirmation-card {
+  margin-top: 20px;
+
+  padding: 20px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 20px;
+
+  padding: 10px 20px;
+
+  cursor: pointer;
+}

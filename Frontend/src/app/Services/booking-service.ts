@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { TravelService } from '../Models/travel-service';
 import { Traveler } from '../Models/traveler';
 import { Availaibility } from '../Models/availaibility';
+import { Booking } from '../Models/booking';
 
 @Injectable({
   providedIn: 'root',
@@ -40,5 +41,9 @@ export class BookingService {
 
   getAvailabilityByService(serviceId: string): Observable<Availaibility[]> {
     return this.http.get<Availaibility[]>(`${this.baseUrl}/availability?serviceId=${serviceId}`);
+  }
+
+  createBooking(booking: Booking): Observable<Booking> {
+    return this.http.post<Booking>(`${this.baseUrl}/bookings`, booking);
   }
 }

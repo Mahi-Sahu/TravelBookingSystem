@@ -438,7 +438,7 @@
       "bookingDate": "2026-06-01",
       "travelDate": "2026-07-15",
       "travelers": 2,
-      "travelerIds": ["1","2"],
+      "travelerIds": ["1", "2"],
       "status": "CONFIRMED",
       "totalPrice": 30000
     },
@@ -460,7 +460,7 @@
       "bookingDate": "2026-05-15",
       "travelDate": "2026-07-01",
       "travelers": 2,
-      "travelerIds": ["4","5"],
+      "travelerIds": ["4", "5"],
       "status": "CONFIRMED",
       "totalPrice": 36000
     },
@@ -471,7 +471,7 @@
       "bookingDate": "2026-05-18",
       "travelDate": "2026-07-20",
       "travelers": 2,
-      "travelerIds": ["6","14"],
+      "travelerIds": ["6", "14"],
       "status": "CONFIRMED",
       "totalPrice": 66000
     },
@@ -482,7 +482,7 @@
       "bookingDate": "2026-05-22",
       "travelDate": "2026-06-28",
       "travelers": 2,
-      "travelerIds": ["7","8"],
+      "travelerIds": ["7", "8"],
       "status": "PENDING",
       "totalPrice": 24000
     },
@@ -493,7 +493,7 @@
       "bookingDate": "2026-05-25",
       "travelDate": "2026-08-05",
       "travelers": 2,
-      "travelerIds": ["9","15"],
+      "travelerIds": ["9", "15"],
       "status": "CONFIRMED",
       "totalPrice": 140000
     },
@@ -515,7 +515,7 @@
       "bookingDate": "2026-06-01",
       "travelDate": "2026-07-18",
       "travelers": 2,
-      "travelerIds": ["11","12"],
+      "travelerIds": ["11", "12"],
       "status": "CONFIRMED",
       "totalPrice": 32000
     },
@@ -526,7 +526,7 @@
       "bookingDate": "2026-06-02",
       "travelDate": "2026-09-01",
       "travelers": 2,
-      "travelerIds": ["1","2"],
+      "travelerIds": ["1", "2"],
       "status": "PENDING",
       "totalPrice": 170000
     },
@@ -537,7 +537,7 @@
       "bookingDate": "2026-06-03",
       "travelDate": "2026-06-25",
       "travelers": 1,
-      "travelerIds": ["3","13"],
+      "travelerIds": ["3", "13"],
       "status": "RESCHEDULED",
       "totalPrice": 14000
     },
@@ -548,7 +548,7 @@
       "bookingDate": "2026-05-30",
       "travelDate": "2026-09-15",
       "travelers": 2,
-      "travelerIds": ["4","5"],
+      "travelerIds": ["4", "5"],
       "status": "CONFIRMED",
       "totalPrice": 240000
     },
@@ -570,7 +570,7 @@
       "bookingDate": "2026-06-04",
       "travelDate": "2026-08-01",
       "travelers": 2,
-      "travelerIds": ["7","10"],
+      "travelerIds": ["7", "10"],
       "status": "CANCELLED",
       "totalPrice": 34000
     },
@@ -581,7 +581,7 @@
       "bookingDate": "2026-06-05",
       "travelDate": "2026-08-12",
       "travelers": 2,
-      "travelerIds": ["9","15"],
+      "travelerIds": ["9", "15"],
       "status": "CONFIRMED",
       "totalPrice": 135000
     },
@@ -592,9 +592,21 @@
       "bookingDate": "2026-06-06",
       "travelDate": "2026-10-10",
       "travelers": 2,
-      "travelerIds": ["11","12"],
+      "travelerIds": ["11", "12"],
       "status": "PENDING",
       "totalPrice": 220000
+    },
+    {
+      "userId": 1,
+      "destinationId": 8,
+      "serviceId": "8",
+      "travelDate": "2026-07-09",
+      "travelerIds": ["1"],
+      "travelers": 1,
+      "totalPrice": 22000,
+      "status": "PENDING",
+      "bookingDate": "2026-06-10",
+      "id": "fiRDsocJkBk"
     }
   ],
   "notifications": [
@@ -902,6 +914,286 @@
       "price": 28000,
       "duration": "5 Days",
       "rating": 4.8
+    },
+    {
+      "id": "16",
+      "destinationId": 3,
+      "serviceName": "Shimla Hill Retreat Package",
+      "serviceType": "PACKAGE",
+      "provider": "MakeMyTrip",
+      "price": 11000,
+      "duration": "3 Days",
+      "rating": 4.5
+    },
+    {
+      "id": "17",
+      "destinationId": 3,
+      "serviceName": "Shimla Luxury Hotel Stay",
+      "serviceType": "HOTEL",
+      "provider": "Oberoi Hotels",
+      "price": 6500,
+      "duration": "2 Nights",
+      "rating": 4.7
+    },
+    {
+      "id": "18",
+      "destinationId": 3,
+      "serviceName": "Kufri Adventure Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "Himachal Tourism",
+      "price": 2500,
+      "duration": "1 Day",
+      "rating": 4.6
+    },
+    {
+      "id": "19",
+      "destinationId": 3,
+      "serviceName": "Delhi to Shimla Volvo Transfer",
+      "serviceType": "TRANSPORT",
+      "provider": "HRTC",
+      "price": 1800,
+      "duration": "8 Hours",
+      "rating": 4.4
+    },
+    {
+      "id": "20",
+      "destinationId": 9,
+      "serviceName": "Jaipur Royal Heritage Package",
+      "serviceType": "PACKAGE",
+      "provider": "Thomas Cook",
+      "price": 14000,
+      "duration": "3 Days",
+      "rating": 4.5
+    },
+    {
+      "id": "21",
+      "destinationId": 9,
+      "serviceName": "Amber Fort & City Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "Rajasthan Tourism",
+      "price": 2500,
+      "duration": "1 Day",
+      "rating": 4.7
+    },
+    {
+      "id": "22",
+      "destinationId": 9,
+      "serviceName": "Jaipur Palace Hotel Stay",
+      "serviceType": "HOTEL",
+      "provider": "ITC Rajputana",
+      "price": 7000,
+      "duration": "2 Nights",
+      "rating": 4.8
+    },
+    {
+      "id": "23",
+      "destinationId": 9,
+      "serviceName": "Pink City Sightseeing Cab",
+      "serviceType": "TRANSPORT",
+      "provider": "Savaari",
+      "price": 1800,
+      "duration": "8 Hours",
+      "rating": 4.4
+    },
+    {
+      "id": "24",
+      "destinationId": 10,
+      "serviceName": "Agra Heritage Package",
+      "serviceType": "PACKAGE",
+      "provider": "MakeMyTrip",
+      "price": 10000,
+      "duration": "2 Days",
+      "rating": 4.3
+    },
+    {
+      "id": "25",
+      "destinationId": 10,
+      "serviceName": "Taj Mahal Guided Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "UP Tourism",
+      "price": 1800,
+      "duration": "4 Hours",
+      "rating": 4.8
+    },
+    {
+      "id": "26",
+      "destinationId": 10,
+      "serviceName": "Agra Luxury Hotel Stay",
+      "serviceType": "HOTEL",
+      "provider": "Taj Hotels",
+      "price": 5500,
+      "duration": "1 Night",
+      "rating": 4.7
+    },
+    {
+      "id": "27",
+      "destinationId": 10,
+      "serviceName": "Delhi-Agra Express Transfer",
+      "serviceType": "TRANSPORT",
+      "provider": "Savaari",
+      "price": 2200,
+      "duration": "4 Hours",
+      "rating": 4.5
+    },
+    {
+      "id": "28",
+      "destinationId": 13,
+      "serviceName": "Rishikesh Adventure Package",
+      "serviceType": "PACKAGE",
+      "provider": "Thrillophilia",
+      "price": 13000,
+      "duration": "3 Days",
+      "rating": 4.7
+    },
+    {
+      "id": "29",
+      "destinationId": 13,
+      "serviceName": "White Water Rafting Experience",
+      "serviceType": "ACTIVITY",
+      "provider": "Rishikesh Adventures",
+      "price": 2000,
+      "duration": "4 Hours",
+      "rating": 4.8
+    },
+    {
+      "id": "30",
+      "destinationId": 13,
+      "serviceName": "Ganga View Resort Stay",
+      "serviceType": "HOTEL",
+      "provider": "Sterling Holidays",
+      "price": 4500,
+      "duration": "2 Nights",
+      "rating": 4.6
+    },
+    {
+      "id": "31",
+      "destinationId": 13,
+      "serviceName": "Rishikesh Camping & Bonfire",
+      "serviceType": "ACTIVITY",
+      "provider": "Camp Ganga Waves",
+      "price": 3000,
+      "duration": "1 Night",
+      "rating": 4.7
+    },
+    {
+      "id": "32",
+      "destinationId": 14,
+      "serviceName": "Udaipur Royal Heritage Package",
+      "serviceType": "PACKAGE",
+      "provider": "Thomas Cook",
+      "price": 16000,
+      "duration": "4 Days",
+      "rating": 4.7
+    },
+    {
+      "id": "33",
+      "destinationId": 14,
+      "serviceName": "Lake Pichola Boat Ride",
+      "serviceType": "ACTIVITY",
+      "provider": "Rajasthan Tourism",
+      "price": 1200,
+      "duration": "2 Hours",
+      "rating": 4.8
+    },
+    {
+      "id": "34",
+      "destinationId": 14,
+      "serviceName": "Udaipur Palace Hotel Stay",
+      "serviceType": "HOTEL",
+      "provider": "Taj Lake Palace",
+      "price": 8500,
+      "duration": "2 Nights",
+      "rating": 4.9
+    },
+    {
+      "id": "35",
+      "destinationId": 14,
+      "serviceName": "City Palace & Heritage Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "Udaipur Tourism",
+      "price": 1800,
+      "duration": "5 Hours",
+      "rating": 4.7
+    },
+    {
+      "id": "36",
+      "destinationId": 17,
+      "serviceName": "Ooty Hill Station Package",
+      "serviceType": "PACKAGE",
+      "provider": "MakeMyTrip",
+      "price": 14000,
+      "duration": "4 Days",
+      "rating": 4.5
+    },
+    {
+      "id": "37",
+      "destinationId": 17,
+      "serviceName": "Nilgiri Mountain Railway Ride",
+      "serviceType": "ACTIVITY",
+      "provider": "Tamil Nadu Tourism",
+      "price": 1200,
+      "duration": "3 Hours",
+      "rating": 4.8
+    },
+    {
+      "id": "38",
+      "destinationId": 17,
+      "serviceName": "Ooty Lake Resort Stay",
+      "serviceType": "HOTEL",
+      "provider": "Sterling Holidays",
+      "price": 6000,
+      "duration": "2 Nights",
+      "rating": 4.6
+    },
+    {
+      "id": "39",
+      "destinationId": 17,
+      "serviceName": "Botanical Garden & Doddabetta Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "Ooty Travels",
+      "price": 1800,
+      "duration": "1 Day",
+      "rating": 4.5
+    },
+    {
+      "id": "40",
+      "destinationId": 18,
+      "serviceName": "Darjeeling Tea Valley Package",
+      "serviceType": "PACKAGE",
+      "provider": "Yatra",
+      "price": 17000,
+      "duration": "5 Days",
+      "rating": 4.7
+    },
+    {
+      "id": "41",
+      "destinationId": 18,
+      "serviceName": "Darjeeling Himalayan Railway Ride",
+      "serviceType": "ACTIVITY",
+      "provider": "West Bengal Tourism",
+      "price": 1500,
+      "duration": "2 Hours",
+      "rating": 4.8
+    },
+    {
+      "id": "42",
+      "destinationId": 18,
+      "serviceName": "Tea Garden Resort Stay",
+      "serviceType": "HOTEL",
+      "provider": "Mayfair Hotels",
+      "price": 7000,
+      "duration": "2 Nights",
+      "rating": 4.7
+    },
+    {
+      "id": "43",
+      "destinationId": 18,
+      "serviceName": "Tiger Hill Sunrise Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "Darjeeling Tours",
+      "price": 2000,
+      "duration": "5 Hours",
+      "rating": 4.9
     }
   ],
   "itineraries": [
@@ -1848,6 +2140,174 @@
       "serviceId": 15,
       "availableSlots": 3,
       "status": "LIMITED"
+    },
+    {
+      "id": "16",
+      "serviceId": 16,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "17",
+      "serviceId": 17,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "18",
+      "serviceId": 18,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "19",
+      "serviceId": 19,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "20",
+      "serviceId": 20,
+      "availableSlots": 3,
+      "status": "LIMITED"
+    },
+    {
+      "id": "21",
+      "serviceId": 21,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "22",
+      "serviceId": 22,
+      "availableSlots": 23,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "23",
+      "serviceId": 23,
+      "availableSlots": 6,
+      "status": "LIMITED"
+    },
+    {
+      "id": "24",
+      "serviceId": 24,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "25",
+      "serviceId": 25,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "26",
+      "serviceId": 26,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "27",
+      "serviceId": 27,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "28",
+      "serviceId": 28,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "29",
+      "serviceId": 29,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "30",
+      "serviceId": 30,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "31",
+      "serviceId": 31,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "32",
+      "serviceId": 32,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "33",
+      "serviceId": 33,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "34",
+      "serviceId": 34,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "35",
+      "serviceId": 35,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "36",
+      "serviceId": 36,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "37",
+      "serviceId": 37,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "38",
+      "serviceId": 38,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "39",
+      "serviceId": 39,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "40",
+      "serviceId": 40,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "41",
+      "serviceId": 41,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "42",
+      "serviceId": 42,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "43",
+      "serviceId": 43,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
