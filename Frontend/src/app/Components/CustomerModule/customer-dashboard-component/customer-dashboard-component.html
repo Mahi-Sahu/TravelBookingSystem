@@ -1,83 +1,89 @@
-<div class="dashboard">
-  <h1>
-    Welcome
-    {{ user?.firstName }}
-    {{ user?.lastName }}
-  </h1>
+@if (user) {
+  <div class="dashboard">
+    <h1>
+      Welcome
+      {{ user.firstName }}
+      {{ user.lastName }}
+    </h1>
 
-  <h3>
-    {{ user?.city }}
-  </h3>
+    <h3>
+      {{ user.city }}
+    </h3>
 
-  <div class="cards">
-    <div class="card">
-      <h2>
-        {{ totalBookings }}
-      </h2>
-      <p>Total Bookings</p>
+    <div class="cards">
+      <div class="card">
+        <h2>
+          {{ totalBookings }}
+        </h2>
+        <p>Total Bookings</p>
+      </div>
+
+      <div class="card">
+        <h2>
+          {{ upcomingTrips }}
+        </h2>
+        <p>Upcoming Trips</p>
+      </div>
+
+      <div class="card">
+        <h2>
+          {{ notifications.length }}
+        </h2>
+        <p>Notifications</p>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>
-        {{ upcomingTrips }}
-      </h2>
-      <p>Upcoming Trips</p>
-    </div>
+    <h2>Recent Bookings</h2>
 
-    <div class="card">
-      <h2>
-        {{ notifications.length }}
-      </h2>
-      <p>Notifications</p>
-    </div>
-  </div>
-
-  <h2>Recent Bookings</h2>
-
-  @if (bookings.length > 0) {
-    <table>
-      <thead>
-        <tr>
-          <th>Booking Id</th>
-          <th>Travel Date</th>
-          <th>Status</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        @for (booking of bookings; track booking.id) {
+    @if (bookings.length > 0) {
+      <table>
+        <thead>
           <tr>
-            <td>
-              {{ booking.id }}
-            </td>
-
-            <td>
-              {{ booking.travelDate }}
-            </td>
-
-            <td [appStatusHighlight]="booking.status">
-              {{ booking.status | bookingStatus }}
-            </td>
-
-            <td>₹{{ booking.totalPrice }}</td>
+            <th>Booking Id</th>
+            <th>Travel Date</th>
+            <th>Status</th>
+            <th>Price</th>
           </tr>
-        }
-      </tbody>
-    </table>
-  }
+        </thead>
 
-  <h2>Notifications</h2>
+        <tbody>
+          @for (booking of bookings; track booking.id) {
+            <tr>
+              <td>
+                {{ booking.id }}
+              </td>
 
-  @for (notification of notifications; track notification.id) {
-    <div class="notification">
-      <h4>
-        {{ notification.title }}
-      </h4>
+              <td>
+                {{ booking.travelDate }}
+              </td>
 
-      <p>
-        {{ notification.message }}
-      </p>
-    </div>
-  }
-</div>
+              <td [appStatusHighlight]="booking.status">
+                {{ booking.status | bookingStatus }}
+              </td>
+
+              <td>₹{{ booking.totalPrice }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+
+    <h2>Notifications</h2>
+
+    @for (notification of notifications; track notification.id) {
+      <div class="notification">
+        <h4>
+          {{ notification.title }}
+        </h4>
+
+        <p>
+          {{ notification.message }}
+        </p>
+      </div>
+    }
+  </div>
+} @else {
+  <div class="loading-state">
+    <p>Loading your personal dashboard records...</p>
+  </div>
+}

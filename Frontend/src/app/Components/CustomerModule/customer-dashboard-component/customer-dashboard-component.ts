@@ -15,7 +15,8 @@ import { NotificationModel } from '../../../Models/notification';
   styleUrl: './customer-dashboard-component.css',
 })
 export class CustomerDashboardComponent implements OnInit {
-  user!: User;
+  // Fixed: Changed from user!: User to allow null initially until the async HTTP service returns data
+  user: User | null = null;
 
   bookings: Booking[] = [];
 
