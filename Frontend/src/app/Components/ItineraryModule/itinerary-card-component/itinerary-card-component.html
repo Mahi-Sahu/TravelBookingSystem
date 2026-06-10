@@ -1,1 +1,16 @@
-<p>itinerary-card-component works!</p>
+<div class="itinerary-summary-card" [class.active-card]="isActive">
+  <div class="card-status-strip" [class.upcoming]="itinerary.status === 'UPCOMING'"></div>
+  <div class="card-body">
+    <div class="header-meta">
+      <span class="status-badge">{{ itinerary.status }}</span>
+    </div>
+    <h4>{{ itinerary.title }}</h4>
+    <div class="date-range-block">
+      <span class="calendar-icon">📅</span>
+      <span class="dates-text">{{ itinerary.startDate | date:'mediumDate' }} — {{ itinerary.endDate | date:'mediumDate' }}</span>
+    </div>
+    <div class="action-bar-hint">
+      <span class="hint-link">Review Timeline Roadmap →</span>
+    </div>
+  </div>
+</div>

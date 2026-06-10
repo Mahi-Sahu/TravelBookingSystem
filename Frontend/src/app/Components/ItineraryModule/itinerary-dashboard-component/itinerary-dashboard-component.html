@@ -1,1 +1,44 @@
-<p>itinerary-dashboard-component works!</p>
+<div class="itinerary-dashboard-container">
+  <header class="dashboard-header">
+    <h2>Your Personal Travel Plans</h2>
+    <p>Track itinerary schedules, active travel bookings, and customized timelines.</p>
+  </header>
+
+  @if (itineraryService.loading()) {
+    <div class="spinner-loader">Compiling travel data files...</div>
+  } @else {
+    <div class="dashboard-grid-layout">
+      <section class="itinerary-list-pane">
+        <h3>Booked Trips Dashboard</h3>
+        <div class="cards-stack">
+          @for (trip of itineraryService.itineraries(); track trip.id) {
+            <app-itinerary-card 
+              [itinerary]="trip"
+              [isActive]="selectedItinerary()?.id === trip.id"
+              (click)="onSelectItinerary(trip)">
+            </app-itinerary-card>
+          } @empty {
+            <div class="empty-state">
+              <p>No active itineraries identified. Head over to the Travel Catalog to schedule your next destination journey.</p>
+            </div>
+          }
+        </div>
+      </section>
+
+      <section class="itinerary-detail-pane">
+        @if (selectedItinerary(); as activeItinerary) {
+          <app-itinerary-details 
+            [itinerary]="activeItinerary" 
+            (onBack)="closeDetails()">
+          </app-itinerary-details>
+        } @else {
+          <div class="placeholder-prompt">
+            <div class="prompt-icon">🗺️</div>
+            <h4>No Selection Registered</h4>
+            <p>Select a trip summary item from the directory pane on the left to review scheduled transit pathways, hotels, and custom events daily mapping logs.</p>
+          </div>
+        }
+      </section>
+    </div>
+  }
+</div>

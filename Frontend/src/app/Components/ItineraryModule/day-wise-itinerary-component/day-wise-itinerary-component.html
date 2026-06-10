@@ -1,1 +1,44 @@
-<p>day-wise-itinerary-component works!</p>
+<div class="day-timeline-card-node">
+  <div class="node-marker-badge">
+    <span class="day-label">DAY</span>
+    <span class="day-num">{{ dayPlan.dayNumber }}</span>
+  </div>
+
+  <div class="node-main-content">
+    <div class="node-timestamp">{{ dayPlan.date | date:'fullDate' }}</div>
+    
+    @if (dayPlan.transportType && dayPlan.transportType !== '-') {
+      <div class="sub-milestone transit-segment">
+        <span class="icon">✈️</span>
+        <div class="details-text">
+          <h5>{{ dayPlan.transportType }} Logistics Scheduled</h5>
+          <p>{{ dayPlan.transportFrom }} ➔ {{ dayPlan.transportTo }} at {{ dayPlan.transportTime }}</p>
+        </div>
+      </div>
+    }
+
+    @if (dayPlan.hotel && dayPlan.hotel !== '-') {
+      <div class="sub-milestone lodging-segment">
+        <span class="icon">🏨</span>
+        <div class="details-text">
+          <h5>Accommodation Check-In</h5>
+          <p><strong>Property Name:</strong> {{ dayPlan.hotel }} (Check-In: {{ dayPlan.checkInTime }})</p>
+        </div>
+      </div>
+    }
+
+    <div class="activities-sub-timeline">
+      <h6>Target Daily Excursions Checklist:</h6>
+      <ul class="activities-list">
+        @for (act of dayPlan.activities; track act.activityName) {
+          <li>
+            <span class="clock-time">⏱️ {{ act.activityTime }}</span>
+            <span class="task-desc">{{ act.activityName }}</span>
+          </li>
+        } @empty {
+          <li class="empty-act-flag">No specified recreational events listed for this calendar period.</li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

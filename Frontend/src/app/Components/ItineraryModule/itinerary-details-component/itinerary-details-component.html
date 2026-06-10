@@ -1,1 +1,21 @@
-<p>itinerary-details-component works!</p>
+<div class="details-content-wrapper">
+  <div class="action-top-row">
+    <button class="back-link-btn" (click)="onBack.emit()">← Return to Stack</button>
+    <app-download-summary [itinerary]="itinerary" [days]="itineraryService.selectedItineraryDays()"></app-download-summary>
+  </div>
+
+  <div class="details-hero-banner">
+    <h2>{{ itinerary.title }} Detailed Plan</h2>
+    <p class="timeline-span">
+      <strong>Core Window:</strong> {{ itinerary.startDate | date:'longDate' }} to {{ itinerary.endDate | date:'longDate' }}
+    </p>
+  </div>
+
+  <div class="itinerary-timeline-axis">
+    @for (daySchedule of itineraryService.selectedItineraryDays(); track daySchedule.id) {
+      <app-day-wise-itinerary [dayPlan]="daySchedule"></app-day-wise-itinerary>
+    } @empty {
+      <p class="no-days-alert">No daily sub-routing details mapped items exist on the server for this entry reference.</p>
+    }
+  </div>
+</div>
