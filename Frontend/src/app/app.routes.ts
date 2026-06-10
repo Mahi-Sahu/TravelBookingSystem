@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './Components/AdminModule/admin-dashboar
 import { TravelListComponent } from './Components/TravelModule/travel-list-component/travel-list-component';
 import { ItineraryDashboardComponent } from './Components/ItineraryModule/itinerary-dashboard-component/itinerary-dashboard-component';
 import { ForgotPasswordComponent } from './Components/AuthModule/forgot-password-component/forgot-password-component';
+import { BookingComponent } from './Components/BookingModule/booking-component/booking-component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,14 +22,9 @@ export const routes: Routes = [
   { path: 'customer-dashboard', component: CustomerDashboardComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'travel-catalog', component: TravelListComponent },
-  {
-    path: 'customer/dashboard',
-    component: CustomerDashboardComponent,
-  },
+  { path: 'customer/dashboard', component: CustomerDashboardComponent, },
   { path: 'my-itineraries', component: ItineraryDashboardComponent }, // Attached Itinerary Module Target Link
-  {
-    path: 'customer/profile',
-    component: CustomerProfileComponent
-  },
+  { path: 'customer/profile', component: CustomerProfileComponent, },
+  {path: 'customer/booking', component:BookingComponent},
   { path: '**', redirectTo: 'login' },
 ];
