@@ -1,1 +1,39 @@
-<p>booking-review-component works!</p>
+<div class="review-container">
+  <h2>Booking Review</h2>
+
+  <div class="review-card">
+    <p>
+      <strong>Destination:</strong> {{ destination?.name }}
+    </p>
+
+    <p>
+      <strong>Travel Service:</strong> {{ travelService?.serviceName }}
+    </p>
+
+    <p>
+      <strong>Travel Date:</strong> {{ bookingData.travelDate }}
+    </p>
+
+    <p>
+      <strong>Total Travelers:</strong> {{ bookingData.travelers }}
+    </p>
+
+    <h3>Travelers</h3>
+    <ul>
+      @for (traveler of travelers; track traveler.id) {
+        <li>
+          {{ traveler.fullName }}
+          ({{ traveler.relationship }})
+        </li>
+      }
+    </ul>
+
+    <h3>Total Price: ₹{{ bookingData.totalPrice }}</h3>
+  </div>
+
+  <div class="actions">
+    <button (click)="goBack()">Back</button>
+
+    <button (click)="confirmBooking()">Confirm Booking</button>
+  </div>
+</div>

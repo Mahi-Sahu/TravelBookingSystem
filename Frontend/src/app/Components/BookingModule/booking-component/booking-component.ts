@@ -54,6 +54,7 @@ export class BookingComponent implements OnInit {
   loadDestinations(): void {
     this.bookingService.getDestinations().subscribe((response) => {
       this.destinations = response;
+      this.cdr.detectChanges();
     });
     
   }

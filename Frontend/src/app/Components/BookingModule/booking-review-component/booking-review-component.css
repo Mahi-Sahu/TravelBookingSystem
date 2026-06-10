@@ -1,0 +1,29 @@
+.review-container {
+  max-width: 700px;
+
+  margin: auto;
+
+  padding: 20px;
+}
+
+.review-card {
+  border: 1px solid #ddd;
+
+  padding: 20px;
+
+  border-radius: 8px;
+}
+
+.actions {
+  margin-top: 20px;
+
+  display: flex;
+
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+
+  cursor: pointer;
+}

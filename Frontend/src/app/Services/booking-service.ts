@@ -23,19 +23,19 @@ export class BookingService {
   }
 
   getTravelServiceById(id: string): Observable<TravelService> {
-  return this.http.get<TravelService>(
-    `${this.baseUrl}/travelServices/${id}`
-  );
-}
+    return this.http.get<TravelService>(`${this.baseUrl}/travelServices/${id}`);
+  }
 
-getDestinationById(id: string): Observable<Destination> {
-  return this.http.get<Destination>(
-    `${this.baseUrl}/destinations/${id}`
-  );
-}
+  getDestinationById(id: string): Observable<Destination> {
+    return this.http.get<Destination>(`${this.baseUrl}/destinations/${id}`);
+  }
 
   getTravelersByUser(userId: number): Observable<Traveler[]> {
     return this.http.get<Traveler[]>(`${this.baseUrl}/travelers?userId=${userId}`);
+  }
+
+  getTravelerById(id: string): Observable<Traveler> {
+    return this.http.get<Traveler>(`${this.baseUrl}/travelers/${id}`);
   }
 
   getAvailabilityByService(serviceId: string): Observable<Availaibility[]> {
