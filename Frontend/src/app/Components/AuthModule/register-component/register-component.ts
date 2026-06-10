@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../../Services/auth-service';
+import { User } from '../../../Models/user';
 
 @Component({
   selector: 'app-register-component',
@@ -13,9 +15,9 @@ import { Router, RouterModule } from '@angular/router';
 export class RegisterComponent {
   private fb = inject(FormBuilder);
   private router = inject(Router);
+  private authService = inject(AuthService); // Added AuthService
 
   registerForm = this.fb.nonNullable.group({
-    // Matches the "users" table in db.json
     userDetails: this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -24,7 +26,6 @@ export class RegisterComponent {
       phone: ['', [Validators.required, Validators.pattern('^[6-9][0-9]{9}$')]],
       city: ['', Validators.required],
     }),
-    // Matches the "travelers" table in db.json (Primary Traveler)
     travelerInfo: this.fb.group({
       age: ['', [Validators.required, Validators.min(18)]],
       gender: ['', Validators.required],
@@ -36,18 +37,28 @@ export class RegisterComponent {
     if (this.registerForm.valid) {
       const formData = this.registerForm.getRawValue();
 
-      // Construct the User object for db.json
+      // Use Type Assertion (as Partial<User>) to resolve the nullability conflict
       const newUser = {
-        role: 'CUSTOMER', // Default role
+        role: 'CUSTOMER' as const,
         ...formData.userDetails,
-      };
+      } as Partial<User>;
 
       console.log('User Payload for DB:', newUser);
       console.log('Traveler Payload for DB:', formData.travelerInfo);
 
-      // After successful API post, redirect to login
-      alert('Registration Successful! Please login.');
-      this.router.navigate(['/login']);
+      // Call API to save to db.json
+      this.authService.register(newUser).subscribe({
+        next: (createdUser) => {
+          console.log('User created in DB:', createdUser);
+
+          alert('Registration Successful! Let’s set up your preferences.');
+          this.router.navigate(['/profile-preferences']);
+        },
+        error: (err) => {
+          console.error('Registration failed', err);
+          alert('An error occurred during registration.');
+        },
+      });
     }
   }
 }

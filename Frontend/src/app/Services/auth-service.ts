@@ -14,18 +14,23 @@ export class AuthService {
   currentUser = signal<User | null>(this.loadUserFromStorage());
 
   login(email: string, password: string): Observable<boolean> {
-    // Query json-server for matching credentials
     return this.http.get<User[]>(`${this.apiUrl}?email=${email}&password=${password}`).pipe(
       map((users) => {
         if (users.length > 0) {
-          const user = users[0];
-          delete user.password; // Remove password from memory
-
-          this.currentUser.set(user);
-          localStorage.setItem('sessionUser', JSON.stringify(user));
+          this.setSession(users[0]);
           return true;
         }
         return false;
+      }),
+    );
+  }
+
+  // NEW: Register method that POSTs to db.json and logs the user in
+  register(userData: Partial<User>): Observable<User> {
+    return this.http.post<User>(this.apiUrl, userData).pipe(
+      tap((newUser) => {
+        // Automatically log the user in after successful registration
+        this.setSession(newUser);
       }),
     );
   }
@@ -37,6 +42,14 @@ export class AuthService {
 
   hasRole(role: 'CUSTOMER' | 'ADMIN'): boolean {
     return this.currentUser()?.role === role;
+  }
+
+  // Helper method to keep logic DRY
+  private setSession(user: User) {
+    const safeUser = { ...user };
+    delete safeUser.password; // Remove password from memory
+    this.currentUser.set(safeUser);
+    localStorage.setItem('sessionUser', JSON.stringify(safeUser));
   }
 
   private loadUserFromStorage(): User | null {
