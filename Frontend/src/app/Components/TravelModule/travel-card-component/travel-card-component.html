@@ -1,19 +1,17 @@
-<div class="travel-summary-card">
-  <div class="card-details-header">
-    <span class="type-tag">{{ travelItem.type }}</span>
+<div class="travel-card">
+  <div class="card-header">
+    <span class="type-badge">{{ travelItem.type }}</span>
     <span class="rating-badge">⭐ {{ travelItem.rating }}</span>
   </div>
   
-  <div class="card-details">
-    <div class="card-header-row">
-      <h4>Trip to {{ travelItem.name }}</h4>
-    </div>
-    
-    <p class="duration-text">📍 Country: {{ travelItem.country }} | Duration: {{ travelItem.duration }}</p>
+  <div class="card-content">
+    <h4>Trip to {{ travelItem.name }}</h4>
+    <p class="meta-text">📍 Country: {{ travelItem.country }} | Duration: {{ travelItem.duration }}</p>
+    <div class="price-tag">{{ travelItem.price | currency:'INR':'symbol':'1.0-0' }}</div>
+  </div>
 
-    <div class="footer-metrics">
-      <span class="price-pill">{{ travelItem.price | currency:'INR':'symbol':'1.0-0' }}</span>
-      <span class="action-arrow-hint">View Packages →</span>
-    </div>
+  <div class="card-footer">
+    <button>View Details</button>
+    <button>Book Now</button>
   </div>
 </div>
