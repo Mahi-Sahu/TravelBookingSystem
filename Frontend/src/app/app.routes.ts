@@ -8,11 +8,13 @@ import { CustomerProfileComponent } from './Components/CustomerModule/customer-p
 import { AdminDashboardComponent } from './Components/AdminModule/admin-dashboard-component/admin-dashboard-component';
 import { TravelListComponent } from './Components/TravelModule/travel-list-component/travel-list-component';
 import { ItineraryDashboardComponent } from './Components/ItineraryModule/itinerary-dashboard-component/itinerary-dashboard-component';
+import { ForgotPasswordComponent } from './Components/AuthModule/forgot-password-component/forgot-password-component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'profile-preferences', component: ProfilePreferencesComponent },
 
   // The Main Hubs you identified

@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject, signal, computed } from '@angular/core';
 import { StatusHighlight } from '../../../Directives/status-highlight';
 import { BookingStatusPipe } from '../../../Pipes/booking-status-pipe';
 import { User } from '../../../Models/user';
 import { Booking } from '../../../Models/booking';
 import { CustomerDashboardService } from '../../../Services/customer-dashboard.service';
 import { NotificationModel } from '../../../Models/notification';
+import { AuthService } from '../../../Services/auth-service'; // Added for dynamic ID
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-dashboard-component',
@@ -15,47 +17,48 @@ import { NotificationModel } from '../../../Models/notification';
   styleUrl: './customer-dashboard-component.css',
 })
 export class CustomerDashboardComponent implements OnInit {
-  user!: User;
+  // 1. Convert to Signals for Zoneless Change Detection
+  user = signal<User | null>(null);
+  bookings = signal<Booking[]>([]);
+  notifications = signal<NotificationModel[]>([]);
 
-  bookings: Booking[] = [];
+  // 2. Computed signals automatically calculate based on bookings
+  totalBookings = computed(() => this.bookings().length);
+  upcomingTrips = computed(() => this.bookings().filter((b) => b.status === 'CONFIRMED').length);
 
-  notifications: NotificationModel[] = [];
-
-  totalBookings = 0;
-
-  upcomingTrips = 0;
-
-  constructor(private dashboardService: CustomerDashboardService) {}
+  private dashboardService = inject(CustomerDashboardService);
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
   ngOnInit(): void {
-    const userId = 1;
+    // 3. Dynamically get the logged-in user instead of hardcoding '1'
+    const currentUser = this.authService.currentUser();
 
-    this.loadUser(userId);
-
-    this.loadBookings(userId);
-
-    this.loadNotifications(userId);
+    if (currentUser && currentUser.id) {
+      this.loadUser(currentUser.id);
+      this.loadBookings(currentUser.id);
+      this.loadNotifications(currentUser.id);
+    } else {
+      this.router.navigate(['/login']); // Redirect if not logged in
+    }
   }
 
   loadUser(id: number): void {
-    this.dashboardService.getUser(id).subscribe((response) => {
-      this.user = response;
+    this.dashboardService.getUser(id).subscribe({
+      next: (response) => this.user.set(response), // Use .set() for signals
+      error: (err) => console.error('Failed to load user', err),
     });
   }
 
   loadBookings(userId: number): void {
-    this.dashboardService.getBookingsByUser(userId).subscribe((response) => {
-      this.bookings = response;
-
-      this.totalBookings = response.length;
-
-      this.upcomingTrips = response.filter((booking) => booking.status === 'CONFIRMED').length;
+    this.dashboardService.getBookingsByUser(userId).subscribe({
+      next: (response) => this.bookings.set(response),
     });
   }
 
   loadNotifications(userId: number): void {
-    this.dashboardService.getNotificationsByUser(userId).subscribe((response) => {
-      this.notifications = response;
+    this.dashboardService.getNotificationsByUser(userId).subscribe({
+      next: (response) => this.notifications.set(response),
     });
   }
 }

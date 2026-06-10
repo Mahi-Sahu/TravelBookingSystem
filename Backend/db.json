@@ -1,12 +1,14 @@
 {
   "users": [
     {
+      "id": "1",
+      "role": "CUSTOMER",
       "firstName": "Rahul",
       "lastName": "Sharma",
       "email": "rahul@gmail.com",
+      "password": "rahul123",
       "phone": "9456789914",
-      "city": "Delhi",
-      "id": "1"
+      "city": "Delhi"
     },
     {
       "id": "2",
@@ -97,6 +99,16 @@
       "password": "admin456",
       "phone": "9999999998",
       "city": "Mumbai"
+    },
+    {
+      "role": "CUSTOMER",
+      "firstName": "Amit",
+      "lastName": "Raj",
+      "email": "amitraj@gmail.com",
+      "password": "amitraj123",
+      "phone": "8176317831",
+      "city": "Noida",
+      "id": "TosUqGKabnk"
     }
   ],
   "travelers": [
