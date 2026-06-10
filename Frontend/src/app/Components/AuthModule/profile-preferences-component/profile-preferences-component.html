@@ -1,1 +1,30 @@
-<p>profile-preferences-component works!</p>
+<div class="profile-container">
+  <h2>Notification Preferences</h2>
+
+  <form (ngSubmit)="savePreferences(prefForm.value)" #prefForm="ngForm">
+    <div>
+      <label>
+        <input type="checkbox" name="travelAlerts" ngModel />
+        Receive Travel Alerts
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <input type="checkbox" name="dealPreferences" ngModel />
+        Receive Promotional Deals
+      </label>
+    </div>
+
+    <div>
+      <label>Preferred Contact Method:</label>
+      <select name="contactMethod" ngModel="email" required>
+        <option value="email">Email</option>
+        <option value="sms">SMS</option>
+        <option value="push">Push Notification</option>
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="prefForm.invalid">Save Preferences</button>
+  </form>
+</div>

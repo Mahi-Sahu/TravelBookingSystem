@@ -1,1 +1,33 @@
-<p>login-component works!</p>
+<div class="login-container">
+  <h2>Travel Booking System Login</h2>
+
+  <div *ngIf="loginError" class="error-message" style="color: red; margin-bottom: 10px">
+    {{ loginError }}
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div>
+      <input type="email" formControlName="email" placeholder="Email Address" />
+      <span
+        *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+        style="color: red; font-size: 12px"
+      >
+        Valid email is required.
+      </span>
+    </div>
+
+    <div>
+      <input type="password" formControlName="password" placeholder="Password" />
+      <span
+        *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+        style="color: red; font-size: 12px"
+      >
+        Password is required.
+      </span>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+
+  <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+</div>

@@ -1,1 +1,36 @@
-<p>register-component works!</p>
+<div class="register-container">
+  <h2>Customer Registration</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="userDetails">
+      <h3>Account Details</h3>
+      <div style="display: flex; gap: 10px">
+        <input formControlName="firstName" placeholder="First Name" />
+        <input formControlName="lastName" placeholder="Last Name" />
+      </div>
+      <input formControlName="email" type="email" placeholder="Email Address" />
+      <input formControlName="password" type="password" placeholder="Password" />
+      <div style="display: flex; gap: 10px">
+        <input formControlName="phone" placeholder="Phone Number (10 digits)" />
+        <input formControlName="city" placeholder="City" />
+      </div>
+    </div>
+
+    <div formGroupName="travelerInfo">
+      <h3>Primary Traveler Info</h3>
+      <div style="display: flex; gap: 10px">
+        <input formControlName="age" type="number" placeholder="Age" />
+        <select formControlName="gender">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <input formControlName="passportNumber" placeholder="Passport Number (e.g., IND12345)" />
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Register Account</button>
+  </form>
+
+  <p>Already have an account? <a routerLink="/login">Login here</a></p>
+</div>
