@@ -1,0 +1,37 @@
+.day-timeline-card-node {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  position: relative;
+}
+.node-marker-badge {
+  background: #0284c7;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  height: max-content;
+  min-width: 50px;
+}
+.node-main-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.sub-milestone {
+  display: flex;
+  gap: 12px;
+  margin: 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+/* Print utility engine rule overlay */
+@media print {
+  body * { visibility: hidden; }
+  .itinerary-detail-pane, .itinerary-detail-pane * { visibility: visible; }
+  .itinerary-detail-pane { position: absolute; left: 0; top: 0; width: 100%; }
+  .back-link-btn, .btn-print-utility { display: none !important; }
+}

@@ -1,0 +1,25 @@
+.itinerary-summary-card {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.itinerary-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+.active-card {
+  border: 2px solid #0284c7;
+}
+.card-status-strip.upcoming {
+  width: 6px;
+  background-color: #10b981;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.card-body { 
+  padding: 15px; 
+  width: 100%; 
+}

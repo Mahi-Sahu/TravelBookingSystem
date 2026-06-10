@@ -1,0 +1,16 @@
+.itinerary-dashboard-container {
+  padding: 30px;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+}
+.dashboard-grid-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 30px;
+  margin-top: 25px;
+}
+.cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
