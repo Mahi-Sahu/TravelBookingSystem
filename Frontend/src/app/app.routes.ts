@@ -1,3 +1,20 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { LoginComponent } from './Components/AuthModule/login-component/login-component';
+import { RegisterComponent } from './Components/AuthModule/register-component/register-component';
+import { ProfilePreferencesComponent } from './Components/AuthModule/profile-preferences-component/profile-preferences-component';
+import { CustomerDashboardComponent } from './Components/CustomerModule/customer-dashboard-component/customer-dashboard-component';
+import { AdminDashboardComponent } from './Components/AdminModule/admin-dashboard-component/admin-dashboard-component';
+
+export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile-preferences', component: ProfilePreferencesComponent },
+
+  // The Main Hubs you identified
+  { path: 'customer-dashboard', component: CustomerDashboardComponent },
+  { path: 'admin-dashboard', component: AdminDashboardComponent },
+
+  { path: '**', redirectTo: 'login' },
+];
