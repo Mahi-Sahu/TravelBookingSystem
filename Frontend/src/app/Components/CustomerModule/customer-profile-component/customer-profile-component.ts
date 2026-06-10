@@ -23,7 +23,7 @@ export class CustomerProfileComponent implements OnInit {
   isSaving = false;
 
   //to be taken as input
-  userId = 1;
+  userId = 18;
 
   constructor(
     private fb: FormBuilder,

@@ -12,7 +12,6 @@ import { Itinerary, ItineraryDay } from '../../../Models/itinerary';
 export class DownloadSummaryComponent {
   @Input({ required: true }) itinerary!: Itinerary;
   @Input({ required: true }) days!: ItineraryDay[];
-
   /**
    * Invokes native window print engines[cite: 129]. 
    * CSS media rules automatically switch standard desktop viewports over onto printable PDF format templates.

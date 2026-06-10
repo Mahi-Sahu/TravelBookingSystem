@@ -24,6 +24,7 @@
         @for (item of travelService.filteredPackages(); track item.id) {
           <app-travel-card 
             [travelItem]="item" 
+            (click)="viewPackageDetails(item)"
             (onSelect)="viewPackageDetails($event)">
           </app-travel-card>
         } @empty {
