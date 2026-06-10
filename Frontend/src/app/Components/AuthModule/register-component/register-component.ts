@@ -21,7 +21,7 @@ export class RegisterComponent {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      phone: ['', [Validators.required, Validators.pattern('^[6-9][0-9]{9}$')]],
       city: ['', Validators.required],
     }),
     // Matches the "travelers" table in db.json (Primary Traveler)
