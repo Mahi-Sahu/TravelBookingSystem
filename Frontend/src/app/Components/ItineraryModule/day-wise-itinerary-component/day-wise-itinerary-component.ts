@@ -19,4 +19,4 @@ import { ActivityListComponent } from '../activity-list-component/activity-list-
 })
 export class DayWiseItineraryComponent {
   @Input({ required: true }) dayPlan!: ItineraryDay;
-}
+} 

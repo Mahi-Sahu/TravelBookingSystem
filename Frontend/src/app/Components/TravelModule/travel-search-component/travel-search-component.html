@@ -1,13 +1,23 @@
 <div class="search-panel">
   <h3>Discover Travel Options</h3>
   <div class="search-form">
-    <input type="text" [(ngModel)]="destination" placeholder="Where to? (e.g., Paris, Goa)" class="form-input" />
-    <select [(ngModel)]="travelType" class="form-select">
+    <input 
+      type="text" 
+      [(ngModel)]="destination" 
+      (input)="onSearch()" 
+      placeholder="Where to? (e.g., Paris, Goa)" 
+      class="form-input" />
+      
+    <select 
+      [(ngModel)]="travelType" 
+      (change)="onSearch()" 
+      class="form-select">
       <option value="all">All Services</option>
       <option value="flight">Flights</option>
       <option value="hotel">Hotels</option>
       <option value="package">Trip Packages</option>
     </select>
+    
     <button (click)="onSearch()" class="btn-search">Search</button>
   </div>
 </div>

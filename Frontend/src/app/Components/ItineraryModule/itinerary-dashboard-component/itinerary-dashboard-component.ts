@@ -5,6 +5,7 @@ import { ItineraryCardComponent } from '../itinerary-card-component/itinerary-ca
 import { ItineraryDetailsComponent } from '../itinerary-details-component/itinerary-details-component';
 import { Itinerary } from '../../../Models/itinerary';
 
+
 @Component({
   selector: 'app-itinerary-dashboard-component',
   standalone: true,
@@ -16,7 +17,7 @@ export class ItineraryDashboardComponent implements OnInit {
   protected itineraryService = inject(ItineraryService);
   
   // Mock tracking current authenticated customer (Rahul Sharma id: 1)
-  private currentUserId = 1; 
+  private currentUserId = 8; 
   selectedItinerary = signal<Itinerary | null>(null);
 
   ngOnInit(): void {

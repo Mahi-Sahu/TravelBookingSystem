@@ -3,7 +3,7 @@ import { CurrencyPipe } from '@angular/common';
 import { TravelDataService } from '../../../Services/travel-data';
 
 @Component({
-  selector: 'app-travel-comaparison-component',
+  selector: 'app-travel-comaparison',
   standalone: true,
   imports: [CurrencyPipe],
   templateUrl: './travel-comaparison-component.html',

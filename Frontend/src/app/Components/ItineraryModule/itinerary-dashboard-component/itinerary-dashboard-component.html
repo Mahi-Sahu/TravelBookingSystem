@@ -16,7 +16,7 @@
               [itinerary]="trip"
               [isActive]="selectedItinerary()?.id === trip.id"
               (click)="onSelectItinerary(trip)">
-            </app-itinerary-card>
+            </app-itinerary-card> 
           } @empty {
             <div class="empty-state">
               <p>No active itineraries identified. Head over to the Travel Catalog to schedule your next destination journey.</p>
@@ -40,5 +40,5 @@
         }
       </section>
     </div>
-  }
+  } 
 </div>
