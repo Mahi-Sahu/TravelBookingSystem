@@ -1,0 +1,148 @@
+/* =========================================
+   1. ON-SCREEN BUTTON STYLES
+   ========================================= */
+.btn-print-utility {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: linear-gradient(rgb(15, 185, 15)); /* Modern gradient */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(5, 135, 31, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-print-utility:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(82, 183, 14, 0.6);
+}
+
+.btn-print-utility:active {
+  transform: translateY(1px);
+}
+
+/* =========================================
+   2. OFF-SCREEN PDF CONTAINER
+   ========================================= */
+.pdf-container {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 800px; /* Perfect A4 width ratio */
+  padding: 50px;
+  background-color: #ffffff;
+  color: #333333;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* --- HEADER --- */
+.print-header {
+  text-align: center;
+  padding-bottom: 25px;
+  border-bottom: 3px solid #2c3e50; /* Elegant dark line */
+  margin-bottom: 35px;
+}
+
+.print-header h2 {
+  color: #2c3e50;
+  font-size: 32px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.print-header p {
+  color: #7f8c8d;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.print-header strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Hide the plain HR since we used a border-bottom on the header */
+hr {
+  display: none;
+}
+
+/* --- ITINERARY DAY CARDS --- */
+.day-card {
+  background: #ffffff;
+  border: 1px solid #e1e8ed;
+  border-left: 6px solid #3498db; /* Blue accent edge */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); /* Soft shadow */
+  margin-bottom: 30px;
+  padding: 25px;
+}
+
+.day-card h3 {
+  color: #2980b9;
+  font-size: 22px;
+  margin-top: 0;
+  border-bottom: 1px dashed #e1e8ed;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+
+/* --- DETAILS SECTION --- */
+.day-details p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 10px 0;
+  color: #444;
+}
+
+/* --- ACTIVITIES LIST --- */
+.activities {
+  margin-top: 20px;
+  background-color: #f8f9fc; /* Very light grey/blue tint */
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #edf2f7;
+}
+
+.activities h4 {
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.activities ul {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.activities li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Custom modern bullet point */
+.activities li::before {
+  content: '✦'; /* Cool star bullet */
+  position: absolute;
+  left: 0;
+  color: #e74c3c; /* Red accent for bullets */
+  font-size: 16px;
+  top: 0px;
+}
+
+.activities strong {
+  color: #222;
+  font-weight: 600;
+}
