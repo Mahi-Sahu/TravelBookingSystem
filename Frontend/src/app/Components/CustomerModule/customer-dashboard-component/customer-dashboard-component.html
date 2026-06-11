@@ -1,74 +1,60 @@
 <app-navbar-component></app-navbar-component>
 
-<div class="dashboard">
-  <h1>
-    Welcome
-    {{ user()?.firstName }}
-    {{ user()?.lastName }}
-  </h1>
+<div class="dashboard-header">
+  <div>
+    <h1>
+      Welcome
+      {{ user()?.firstName }}
+      {{ user()?.lastName }}
+    </h1>
 
-  <h3>
-    {{ user()?.city }}
-  </h3>
-
-  <div class="cards">
-    <div class="card">
-      <h2>{{ totalBookings() }}</h2>
-      <p>Total Bookings</p>
-    </div>
-
-    <div class="card">
-      <h2>{{ upcomingTrips() }}</h2>
-      <p>Upcoming Trips</p>
-    </div>
-
-    <div class="card">
-      <h2>{{ notifications().length }}</h2>
-      <p>Notifications</p>
-    </div>
+    <h3>
+      {{ user()?.city }}
+    </h3>
   </div>
 
-  <h2>Recent Bookings</h2>
-
-  @if (bookings().length > 0) {
-    <table>
-      <thead>
-        <tr>
-          <th>Booking Id</th>
-          <th>Travel Date</th>
-          <th>Status</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        @for (booking of bookings(); track booking.id) {
-          <tr>
-            <td>{{ booking.id }}</td>
-            <td>{{ booking.travelDate }}</td>
-            <td [appStatusHighlight]="booking.status">
-              {{ booking.status | bookingStatus }}
-            </td>
-            <td>₹{{ booking.totalPrice }}</td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  } @else {
-    <p>No recent bookings found.</p>
-  }
-
-  <h2>Notifications</h2>
-  <app-notification-list></app-notification-list>
-
-  @if (notifications().length === 0) {
-    <p>You have no new notifications.</p>
-  }
-
-  @for (notification of notifications(); track notification.id) {
-    <div class="notification">
-      <h4>{{ notification.title }}</h4>
-      <p>{{ notification.message }}</p>
-    </div>
-  }
+  <div class="dashboard-actions">
+    <button type="button" (click)="goToProfile()">My Profile</button>
+  </div>
 </div>
+<div class="cards">
+  <div class="card">
+    <h2>{{ totalBookings() }}</h2>
+    <p>Total Bookings</p>
+  </div>
+
+  <div class="card">
+    <h2>{{ upcomingTrips() }}</h2>
+    <p>Upcoming Trips</p>
+  </div>
+</div>
+
+<h2>Recent Bookings</h2>
+
+@if (bookings().length > 0) {
+  <table>
+    <thead>
+      <tr>
+        <th>Booking Id</th>
+        <th>Travel Date</th>
+        <th>Status</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (booking of bookings(); track booking.id) {
+        <tr>
+          <td>{{ booking.id }}</td>
+          <td>{{ booking.travelDate }}</td>
+          <td [appStatusHighlight]="booking.status">
+            {{ booking.status | bookingStatus }}
+          </td>
+          <td>₹{{ booking.totalPrice }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+} @else {
+  <p>No recent bookings found.</p>
+}

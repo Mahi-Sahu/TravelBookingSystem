@@ -5,16 +5,14 @@ import { BookingStatusPipe } from '../../../Pipes/booking-status-pipe';
 import { User } from '../../../Models/user';
 import { Booking } from '../../../Models/booking';
 import { CustomerDashboardService } from '../../../Services/customer-dashboard.service';
-import { NotificationModel } from '../../../Models/notification';
-import { AuthService } from '../../../Services/auth-service'; // Added for dynamic ID
+import { AuthService } from '../../../Services/auth-service';
 import { Router } from '@angular/router';
-import { NotificationListComponent } from '../../NotificationModule/notification-list-component/notification-list-component';
 import { NavbarComponent } from '../../Shared/navbar-component/navbar-component';
 
 @Component({
   selector: 'app-customer-dashboard-component',
   standalone: true,
-  imports: [NavbarComponent, CommonModule, StatusHighlight, BookingStatusPipe, NotificationListComponent],
+  imports: [NavbarComponent, CommonModule, StatusHighlight, BookingStatusPipe],
   templateUrl: './customer-dashboard-component.html',
   styleUrl: './customer-dashboard-component.css',
 })
@@ -22,7 +20,6 @@ export class CustomerDashboardComponent implements OnInit {
   // 1. Convert to Signals for Zoneless Change Detection
   user = signal<User | null>(null);
   bookings = signal<Booking[]>([]);
-  notifications = signal<NotificationModel[]>([]);
 
   // 2. Computed signals automatically calculate based on bookings
   totalBookings = computed(() => this.bookings().length);
@@ -39,7 +36,6 @@ export class CustomerDashboardComponent implements OnInit {
     if (currentUser && currentUser.id) {
       this.loadUser(currentUser.id);
       this.loadBookings(currentUser.id);
-      this.loadNotifications(currentUser.id);
     } else {
       this.router.navigate(['/login']); // Redirect if not logged in
     }
@@ -58,9 +54,9 @@ export class CustomerDashboardComponent implements OnInit {
     });
   }
 
-  loadNotifications(userId: number): void {
-    this.dashboardService.getNotificationsByUser(userId).subscribe({
-      next: (response) => this.notifications.set(response),
-    });
+
+  goToProfile(): void{
+    this.router.navigate(['customer/profile']);
   }
+
 }
