@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, OnInit, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Destination } from '../../../Models/destination';
 import { TravelService } from '../../../Models/travel-service';
@@ -13,7 +14,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './booking-component.html',
-  styleUrl: './booking-component.css',
+  styleUrl: './booking-component.css'
 })
 export class BookingComponent implements OnInit {
   bookingForm!: FormGroup;

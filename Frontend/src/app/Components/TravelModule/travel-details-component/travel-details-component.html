@@ -1,46 +1,72 @@
 <div class="travel-details-container">
   <header class="details-nav-bar">
-    <button class="back-link-btn" (click)="onBack.emit()">← Back to Catalog Directory</button>
+    <button class="back-link-btn" (click)="onBack.emit()">← Back to Packages List</button>
   </header>
 
-  <article class="details-grid">
-    <section class="hero-media-showcase">
-      <img [src]="'assets/placeholder-travel.jpg'" [alt]="travelItem.destination" class="main-display-image">
-      <div class="availability-overlay-badge" [class.sold-out]="isSoldOut()">
-        {{ isSoldOut() ? 'SOLD OUT' : (travelItem.availability + ' Spaces Remaining') }}
-      </div>
-    </section>
-
+  <article class="details-sheet">
     <section class="summary-specs-pane">
       <div class="meta-tags-row">
-        <span class="category-pill">{{ travelItem.serviceType }}</span>
-        <span class="rating-indicator">★ {{ travelItem.rating || '4.5' }}</span>
+        <span class="category-pill">{{ selectedPackage.serviceType }} DEAL</span>
+        <span class="provider-label">Provider: {{ selectedPackage.provider }}</span>
+        <span class="rating-indicator">★ {{ selectedPackage.rating }} Operational Rating</span>
       </div>
 
-      <h2 class="destination-headline">Trip to {{ travelItem.destination }}</h2>
-      <p class="location-sub-label">📍 {{ travelItem.destination }}</p>
+      <h2 class="destination-headline">{{ selectedPackage.serviceName }}</h2>
+      <p class="location-sub-label">📍 Destination Core Coordinates: {{ parentDestination.name }}, {{ parentDestination.country }}</p>
 
       <div class="pricing-card-block">
-        <span class="currency-label">Starting From</span>
-        <h3 class="price-value">{{ travelItem.price | currency:'INR':'symbol':'1.0-0' }}</h3>
-        <p class="pricing-footnote">Includes regional transit alignments, baseline hotel mappings, and guided excursions.</p>
+        <span class="currency-label">Total Calculated Cost</span>
+        <h3 class="price-value">{{ selectedPackage.price | currency:'INR':'symbol':'1.0-0' }}</h3>
+        <p class="pricing-footnote">Fares are verified inclusive of immediate service logistics management fees, reservation taxes, and support services.</p>
       </div>
 
-      <div class="itinerary-quick-glance">
-        <h4>Core Specifications</h4>
+      <div class="itinerary-timeline-section" style="margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+        <h4 style="margin-bottom: 15px; color: #0f172a;">📅 Chronological Daily Event Schedule</h4>
+        
+        <div class="timeline-stack" style="display: flex; flex-direction: column; gap: 20px;">
+          @for (day of itineraryDays; track day.id) {
+            <div class="timeline-day-node" style="background: #f8fafc; padding: 15px; border-left: 4px solid #0284c7; border-radius: 0 8px 8px 0;">
+              <h5 style="margin: 0 0 5px 0; color: #0284c7;">Day {{ day.dayNumber }} — {{ day.date | date:'mediumDate' }}</h5>
+              
+              <p style="margin: 0 0 8px 0; font-size: 14px; color: #334155;">
+                ✈️ <strong>Transit:</strong> {{ day.transportType }} from {{ day.transportFrom }} to {{ day.transportTo }} ({{ day.transportTime }})
+              </p>
+              
+              @if (day.hotel && day.hotel !== '-') {
+                <p style="margin: 0 0 8px 0; font-size: 14px; color: #334155;">
+                  🏨 <strong>Lodging Accommodation:</strong> {{ day.hotel }} (Check-In: {{ day.checkInTime }})
+                </p>
+              }
+
+              <div class="day-activities" style="margin-top: 10px; padding-left: 15px; border-left: 1px dashed #cbd5e1;">
+                <span style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">Scheduled Excursions:</span>
+                <ul style="margin: 5px 0 0 0; padding-left: 20px; font-size: 13px; color: #475569;">
+                  @for (act of day.activities; track act.activityName) {
+                    <li><strong>{{ act.activityTime }}</strong> - {{ act.activityName }}</li>
+                  }
+                </ul>
+              </div>
+            </div>
+          } @empty {
+            <p style="font-size: 13px; color: #64748b; font-style: italic;">No specific day breakdown coordinates maps have been attached to this destination reference index.</p>
+          }
+        </div>
+      </div>
+
+      <div class="itinerary-quick-glance" style="margin-top: 25px;">
+        <h4>Package Information Parameters</h4>
         <ul class="specs-bullet-list">
-          <li><strong>Travel Window Duration:</strong> {{ travelItem.duration }}</li>
-          <li><strong>Primary Timing:</strong> {{ travelItem.timing }}</li>
-          <li><strong>Key Highlights:</strong> {{ travelItem.features.join(', ') || 'All inclusive coverage' }}</li>
+          <li><strong>Duration Period Scope:</strong> {{ selectedPackage.duration }}</li>
+          <li><strong>Regional Hub Category:</strong> {{ parentDestination.type }} Landscape Zone</li>
+          <li><strong>Service Track Identity Reference:</strong> #SRV-{{ selectedPackage.id }}</li>
         </ul>
       </div>
 
       <div class="action-dock-row">
         <button 
           class="btn-primary-action" 
-          [disabled]="isSoldOut()"
           (click)="initiateBookingWorkflow()">
-          {{ isSoldOut() ? 'Booking Window Closed' : 'Proceed to Passenger Intake Form' }}
+          Proceed to Secure Passenger Intake Form
         </button>
       </div>
     </section>

@@ -1,16 +1,17 @@
-<div class="travel-summary-card" (click)="handleCardClick()">
-  <div class="card-image-wrapper">
-    <img src="assets/placeholder-travel.jpg" [alt]="travelItem.destination">
-    <span class="type-tag">{{ travelItem.serviceType }}</span>
+<div class="travel-card">
+  <div class="card-header">
+    <span class="type-badge">{{ travelItem.type }}</span>
+    <span class="rating-badge">⭐ {{ travelItem.rating }}</span>
   </div>
-  <div class="card-details">
-    <h4>Trip to {{ travelItem.destination }}</h4>
-    <p class="location-text">📍 {{ travelItem.destination }} ({{ travelItem.duration }})</p>
-    <div class="footer-metrics">
-      <span class="price-pill">{{ travelItem.price | currency:'INR':'symbol':'1.0-0' }}</span>
-      <span class="slots-indicator" [class.low-stock]="travelItem.availability < 3">
-        {{ travelItem.availability }} slots left
-      </span>
-    </div>
+  
+  <div class="card-content">
+    <h4>Trip to {{ travelItem.name }}</h4>
+    <p class="meta-text">📍 Country: {{ travelItem.country }} | Duration: {{ travelItem.duration }}</p>
+    <div class="price-tag">{{ travelItem.price | currency:'INR':'symbol':'1.0-0' }}</div>
+  </div>
+
+  <div class="card-footer">
+    <button>View Details</button>
+    <button>Book Now</button>
   </div>
 </div>

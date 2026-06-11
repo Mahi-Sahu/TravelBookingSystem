@@ -1,38 +1,78 @@
-<div class="catalog-page-container">
-  @if (selectedPackage(); as activeItem) {
-    <app-travel-details 
-      [travelItem]="activeItem" 
-      (onBack)="clearDetailsPane()">
-    </app-travel-details>
-  } @else {
-    <header class="catalog-branding">
-      <h3>Explore Destinations & Packages</h3>
-      <p class="branding-caption">Filter active flight routings, resort lodging coordinates, and seasonal discount packages.</p>
+@if (selectedPackage(); as activePackage) {
+  <app-travel-details 
+    [viewMode]="'PACKAGE_DETAILS'"
+    [selectedPackage]="activePackage"
+    [parentDestination]="selectedDestination()"
+    [itineraryDays]="travelService.selectedPackageDays()"
+    (onBack)="backToPackagesList()">
+  </app-travel-details>
+} @else if (selectedDestination(); as currentDestination)  {
+  <div class="travel-catalog-wrapper">
+    <header style="margin-bottom: 20px;">
+      <button class="btn-clear" style="width: auto;" (click)="backToDestinationsCatalog()">← Back to Destinations</button>
     </header>
 
-    <div class="search-utilities-panel">
-      <app-travel-search></app-travel-search>
-      <app-travel-filter></app-travel-filter>
-    </div>
+    <article>
+      <h2>Available Packages for {{ currentDestination.name }}</h2>
+      <p style="color: #64748b;">Service Framework Window: <strong>{{ currentDestination.duration }}</strong> | Base Rating Score: ★ {{ currentDestination.rating }}</p>
+    </article>
 
-    <app-travel-comaparison></app-travel-comaparison>
+    <h3 style="margin-top: 30px;">Select a Package for More Details</h3>
 
-    @if (travelService.loading()) {
-      <div class="loading-state-spinner">Fetching active catalog inventory databases...</div>
-    } @else {
-      <main class="responsive-catalog-grid">
-        @for (item of travelService.filteredPackages(); track item.id) {
-          <app-travel-card 
-            [travelItem]="item" 
-            (click)="viewPackageDetails(item)"
-            (onSelect)="viewPackageDetails($event)">
-          </app-travel-card>
-        } @empty {
-          <div class="empty-results-box">
-            <p>No trip profiles found matching the current search parameters. Try adjusting your destination filters.</p>
+    <section class="catalog-grid-results">
+      @for (pkg of travelService.selectedDestinationServices(); track pkg.id) {
+        <div class="travel-card" style="cursor: pointer;" (click)="onPackageSelect(pkg)">
+          <div class="card-header">
+            <span class="type-badge" [ngStyle]="{'background': pkg.serviceType === 'FLIGHT' ? '#e0e7ff' : '#fce7f3', 'color': pkg.serviceType === 'FLIGHT' ? '#4338ca' : '#be185d'}">
+              {{ pkg.serviceType }}
+            </span>
           </div>
-        }
-      </main>
-    }
-  }
-</div>
+          <div class="card-content">
+            <h4>{{ pkg.serviceName }}</h4>
+            <p class="meta-text">Provided by: <strong>{{ pkg.provider }}</strong> (Duration: {{ pkg.duration }})</p>
+            <div class="price-tag">{{ pkg.price | currency:'INR':'symbol':'1.0-0' }}</div>
+          </div>
+        </div>
+      } @empty {
+        <div class="empty-state">
+          <p>No standalone travel deals found for this destination profile entry map.</p>
+        </div>
+      }
+    </section>
+  </div>
+} @else {
+  <div class="travel-catalog-wrapper">
+    <header>
+      <h2>Explore Global Destinations</h2>
+      <p style="color: #64748b;">Filter current destination spots by landscape profiles or search queries.</p>
+    </header>
+
+    <div class="catalog-workspace">
+      <aside>
+        <app-travel-search></app-travel-search>
+        <div style="margin-top: 24px;">
+          <app-travel-filter></app-travel-filter>
+        </div>
+      </aside>
+
+      @if (travelService.loading()) {
+        <div style="padding: 40px; text-align: center; color: #64748b;">Querying file database indexes...</div>
+      } @else {
+        <main class="catalog-grid-results">
+          @for (item of travelService.filteredPackages(); track item.id) {
+            <div style="cursor: pointer;">
+              <app-travel-card 
+                [travelItem]="item" 
+                (click)="onDestinationSelect(item)">
+              </app-travel-card>
+            </div>
+          } @empty {
+            <div class="empty-state">
+              <p>No destinations found matching your current parameters.</p>
+            </div>
+          }
+        </main>
+      }
+    </div>
+  </div>
+}
