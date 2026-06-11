@@ -55,6 +55,10 @@ export class AdminService {
     return this.http.get<any[]>(`${this.apiUrl}/destinations`);
   }
 
+  updateDestination(id: string, data: any) {
+    return this.http.put(`${this.apiUrl}/destinations/${id}`, data);
+  }
+
   getAllTravelServices() {
     return forkJoin({
       travelServices: this.http.get<any[]>(`${this.apiUrl}/travelServices`),
