@@ -19,10 +19,11 @@ export class NotificationService {
   loadUserNotifications(userId: number): Observable<NotificationModel[]> {
     return this.http.get<NotificationModel[]>(this.apiUrl).pipe(
       tap((allNotes) => {
-        // Filter for this user OR global broadcasts
-        let relevant = allNotes.filter((n) => n.userId === userId || n.userId === 'ALL');
+        // BUG FIX: Wrap IDs in Number() to prevent strict equality failures with JSON strings
+        let relevant = allNotes.filter(
+          (n) => Number(n.userId) === Number(userId) || String(n.userId).toUpperCase() === 'ALL',
+        );
 
-        // Sort descending so newest alerts are at the top
         relevant.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
 
         this.allNotifications.set(relevant);
