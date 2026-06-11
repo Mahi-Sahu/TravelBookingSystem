@@ -1,1 +1,23 @@
-<p>notification-list-component works!</p>
+<div class="notification-panel">
+  <h3>
+    Inbox
+    <span class="badge" *ngIf="unreadCount() > 0">{{ unreadCount() }} New</span>
+  </h3>
+
+  @if (unreadNotes().length === 0) {
+    <p class="empty-state">You're all caught up!</p>
+  } @else {
+    <div class="note-list">
+      @for (note of unreadNotes(); track note.id) {
+        <div class="note-item" [ngClass]="note.type.toLowerCase()">
+          <div class="note-content">
+            <strong>{{ note.title }}</strong>
+            <p>{{ note.message }}</p>
+            <small>{{ note.timestamp | date: 'short' }}</small>
+          </div>
+          <button (click)="markRead(note.id)" class="dismiss-btn">Dismiss</button>
+        </div>
+      }
+    </div>
+  }
+</div>
