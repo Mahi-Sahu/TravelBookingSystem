@@ -6,10 +6,11 @@ import { StatusHighlight } from '../../../Directives/status-highlight';
 import { Booking } from '../../../Models/booking';
 import { BookingService } from '../../../Services/booking-service';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../../Shared/navbar-component/navbar-component';
 
 @Component({
   selector: 'app-booking-history-component',
-  imports: [CommonModule, FormsModule, BookingStatusPipe, StatusHighlight],
+  imports: [CommonModule, FormsModule, BookingStatusPipe, StatusHighlight, NavbarComponent],
   templateUrl: './booking-history-component.html',
   styleUrl: './booking-history-component.css',
 })

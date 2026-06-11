@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -7,11 +7,14 @@ import {
   Validators,
 } from '@angular/forms';
 import { CustomerProfileService } from '../../../Services/customer-profile-service';
+import { AuthService } from '../../../Services/auth-service';
+import { Router } from '@angular/router';
+import { NavbarComponent } from '../../Shared/navbar-component/navbar-component';
 
 @Component({
   selector: 'app-customer-profile-component',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, NavbarComponent],
   templateUrl: './customer-profile-component.html',
   styleUrl: './customer-profile-component.css',
 })
@@ -23,18 +26,27 @@ export class CustomerProfileComponent implements OnInit {
   isSaving = false;
 
   //to be taken as input
-  userId = 18;
+  userId = 1;
 
   constructor(
     private fb: FormBuilder,
     private profileService: CustomerProfileService,
     private changeDetection: ChangeDetectorRef,
+    private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.initializeForm();
+  private authService= inject(AuthService);
 
-    this.loadUser();
+  ngOnInit(): void {
+    const currentUser=this.authService.currentUser();
+    if(currentUser && currentUser.id){
+      this.userId=currentUser.id;
+      this.initializeForm();
+      this.loadUser();
+    }else{
+      this.router.navigate(['/login']);
+    }
+    
   }
 
   initializeForm(): void {
@@ -46,6 +58,7 @@ export class CustomerProfileComponent implements OnInit {
       city: ['', [Validators.required]],
     });
     this.profileForm.disable();
+    this.changeDetection.detectChanges();
   }
 
   loadUser(): void {
