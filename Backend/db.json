@@ -37,7 +37,7 @@
       "lastName": "Patel",
       "email": "sneha@gmail.com",
       "password": "sneha123",
-      "phone": "9876543212",
+      "phone": "9876543213",
       "city": "Ahmedabad"
     },
     {
@@ -632,7 +632,7 @@
       "title": "Travel Reminder",
       "message": "Your Kashmir trip starts in 5 days.",
       "type": "REMINDER",
-      "isRead": true,
+      "isRead": false,
       "createdAt": "2026-07-15T08:00:00"
     },
     {

@@ -40,6 +40,7 @@ export const routes: Routes = [
   { path: 'customer/booking/review', component: BookingReviewComponent },
   { path: 'customer/booking/confirmation', component: BookingConfirmationComponent },
   { path: 'customer/booking/history', component: BookingHistoryComponent },
+  // { path: '/customer/traveler/add', component: AddTravelerComponent},
 
   //travel module
   { path: 'travel-catalog', component: TravelListComponent },
