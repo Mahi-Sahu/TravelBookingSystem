@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { TravelDataService } from '../../../Services/travel-data';
 
 @Component({
-  selector: 'app-travel-comaparison',
+  selector: 'app-travel-comaparison-component',
   standalone: true,
-  imports: [CurrencyPipe],
+  imports: [CommonModule],
   templateUrl: './travel-comaparison-component.html',
   styleUrl: './travel-comaparison-component.css'
 })

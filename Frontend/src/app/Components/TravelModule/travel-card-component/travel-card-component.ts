@@ -1,6 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TravelItem } from '../../../Models/travel'; // Updated import here
+import { TravelItem } from '../../../Models/travel';
 
 @Component({
   selector: 'app-travel-card',
@@ -10,10 +10,6 @@ import { TravelItem } from '../../../Models/travel'; // Updated import here
   styleUrl: './travel-card-component.css'
 })
 export class TravelCardComponent {
-  @Input({ required: true }) travelItem!: TravelItem; // Updated type here
-  @Output() onSelect = new EventEmitter<TravelItem>(); // Updated type here
-
-  handleCardClick(): void {
-    this.onSelect.emit(this.travelItem);
-  }
+  // Fixed: Expects travelItem matching your parent template [travelItem]="item" declaration
+  @Input({ required: true }) travelItem!: TravelItem;
 }
