@@ -7,23 +7,19 @@
     <h2>Booking Confirmed</h2>
 
     <div class="confirmation-card">
-      <p>
-        <strong> Booking ID: </strong>{{ savedBooking?.id }}
-      </p>
+      <p><strong> Booking ID: </strong>{{ savedBooking?.id }}</p>
 
-      <p>
-        <strong> Travel Date: </strong>{{ savedBooking?.travelDate }}
-      </p>
+      <p><strong> Travel Date: </strong>{{ savedBooking?.travelDate }}</p>
 
-      <p>
-        <strong> Status: </strong>{{ savedBooking?.status }}
-      </p>
+      <p><strong> Status: </strong>{{ savedBooking?.status }}</p>
 
-      <p>
-        <strong> Total Price: </strong>₹{{ savedBooking?.totalPrice }}
-      </p>
+      <p><strong> Total Price: </strong>₹{{ savedBooking?.totalPrice }}</p>
     </div>
 
-    <button (click)="viewHistory()">View Booking History</button>
+    <div class="actions">
+      <button (click)="viewHistory()">View Booking History</button>
+
+      <button (click)="goToDashboard()">Go To Dashboard</button>
+    </div>
   }
 </div>

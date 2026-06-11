@@ -18,6 +18,12 @@
   border-radius: 8px;
 }
 
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
 button {
   margin-top: 20px;
 

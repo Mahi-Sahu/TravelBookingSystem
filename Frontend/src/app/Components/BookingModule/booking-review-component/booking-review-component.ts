@@ -18,6 +18,7 @@ export class BookingReviewComponent implements OnInit {
   destination?: Destination;
   travelService?: TravelService;
   travelers: Traveler[] = [];
+  itineraryDays: any[]=[];
 
   constructor(
     private bookingService: BookingService,
@@ -27,6 +28,7 @@ export class BookingReviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookingData = history.state.bookingData;
+    this.itineraryDays=this.bookingData.itineraryDays || [];
     if (!this.bookingData) {
       this.router.navigate(['/customer/booking']);
       return;

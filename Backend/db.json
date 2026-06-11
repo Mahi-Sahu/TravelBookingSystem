@@ -766,6 +766,172 @@
       "status": "PENDING",
       "bookingDate": "2026-06-11",
       "id": "L8ShgDgM-S8"
+    },
+    {
+      "userId": 1,
+      "destinationId": 1,
+      "serviceId": "1",
+      "itineraryId": "1",
+      "itineraryDays": [
+        {
+          "id": "1",
+          "itineraryId": 1,
+          "dayNumber": 1,
+          "date": "2026-07-15",
+          "transportType": "Flight",
+          "transportFrom": "Delhi",
+          "transportTo": "Goa",
+          "transportTime": "09:00 AM",
+          "hotel": "Taj Resort Goa",
+          "checkInTime": "02:00 PM",
+          "activities": [
+            {
+              "activityName": "Beach Visit",
+              "activityTime": "04:00 PM"
+            },
+            {
+              "activityName": "Water Sports",
+              "activityTime": "06:00 PM"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "itineraryId": 1,
+          "dayNumber": 2,
+          "date": "2026-07-16",
+          "transportType": "Local Cab",
+          "transportFrom": "North Goa",
+          "transportTo": "South Goa",
+          "transportTime": "10:00 AM",
+          "hotel": "Taj Resort Goa",
+          "checkInTime": "-",
+          "activities": [
+            {
+              "activityName": "Dudhsagar Falls",
+              "activityTime": "11:00 AM"
+            },
+            {
+              "activityName": "Local Market",
+              "activityTime": "05:00 PM"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "itineraryId": 1,
+          "dayNumber": 3,
+          "date": "2026-07-17",
+          "transportType": "Cruise",
+          "transportFrom": "Goa Port",
+          "transportTo": "Mandovi River",
+          "transportTime": "06:00 PM",
+          "hotel": "Taj Resort Goa",
+          "checkInTime": "-",
+          "activities": [
+            {
+              "activityName": "Cruise Dinner",
+              "activityTime": "07:00 PM"
+            },
+            {
+              "activityName": "Live Music Show",
+              "activityTime": "08:30 PM"
+            }
+          ]
+        }
+      ],
+      "travelDate": "2026-06-30",
+      "travelerIds": [
+        "2"
+      ],
+      "travelers": 1,
+      "totalPrice": 15000,
+      "status": "PENDING",
+      "bookingDate": "2026-06-11",
+      "id": "R00wxBzUn7g"
+    },
+    {
+      "userId": 1,
+      "destinationId": 1,
+      "serviceId": "1",
+      "itineraryId": "1",
+      "itineraryDays": [
+        {
+          "id": "1",
+          "itineraryId": 1,
+          "dayNumber": 1,
+          "date": "2026-07-15",
+          "transportType": "Flight",
+          "transportFrom": "Delhi",
+          "transportTo": "Goa",
+          "transportTime": "09:00 AM",
+          "hotel": "Taj Resort Goa",
+          "checkInTime": "02:00 PM",
+          "activities": [
+            {
+              "activityName": "Beach Visit",
+              "activityTime": "04:00 PM"
+            },
+            {
+              "activityName": "Water Sports",
+              "activityTime": "06:00 PM"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "itineraryId": 1,
+          "dayNumber": 2,
+          "date": "2026-07-16",
+          "transportType": "Local Cab",
+          "transportFrom": "North Goa",
+          "transportTo": "South Goa",
+          "transportTime": "10:00 AM",
+          "hotel": "Taj Resort Goa",
+          "checkInTime": "-",
+          "activities": [
+            {
+              "activityName": "Dudhsagar Falls",
+              "activityTime": "11:00 AM"
+            },
+            {
+              "activityName": "Local Market",
+              "activityTime": "05:00 PM"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "itineraryId": 1,
+          "dayNumber": 3,
+          "date": "2026-07-17",
+          "transportType": "Cruise",
+          "transportFrom": "Goa Port",
+          "transportTo": "Mandovi River",
+          "transportTime": "06:00 PM",
+          "hotel": "Taj Resort Goa",
+          "checkInTime": "-",
+          "activities": [
+            {
+              "activityName": "Cruise Dinner",
+              "activityTime": "07:00 PM"
+            },
+            {
+              "activityName": "Live Music Show",
+              "activityTime": "08:30 PM"
+            }
+          ]
+        }
+      ],
+      "travelDate": "2026-06-30",
+      "travelerIds": [
+        "2"
+      ],
+      "travelers": 1,
+      "totalPrice": 15000,
+      "status": "PENDING",
+      "bookingDate": "2026-06-11",
+      "id": "7GjFbpHltTk"
     }
   ],
   "notifications": [
