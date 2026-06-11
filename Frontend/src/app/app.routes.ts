@@ -38,5 +38,6 @@ export const routes: Routes = [
 
   //itinerary module
   { path: 'my-itineraries', component: ItineraryDashboardComponent }, // Attached Itinerary Module Target Link
+
   { path: '**', redirectTo: 'login' },
 ];

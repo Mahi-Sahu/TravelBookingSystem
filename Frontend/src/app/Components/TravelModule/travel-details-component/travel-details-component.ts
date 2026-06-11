@@ -31,6 +31,8 @@ export class TravelDetailsComponent {
         serviceId: this.selectedPackage.id, 
         destinationId: this.parentDestination.id,
         itineraryId: itineraryId,
+      },state: {
+        itineraryDays: this.itineraryDays
       } 
     });
   }
