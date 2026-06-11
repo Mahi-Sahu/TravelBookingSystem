@@ -1,1 +1,57 @@
-<p>manage-bookings-component works!</p>
+<div class="admin-panel-container">
+    <div class="panel-header">
+        <h2>Customer Bookings</h2>
+    </div>
+
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Destination</th>
+                <th>Travel Date</th>
+                <th>Travelers</th>
+                <th>Total Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (bookings.length == 0) {
+            <tr>
+                <td colspan="8" style="text-align: center; padding: 20px;">
+                    Loading bookings or no data found...
+                </td>
+            </tr>
+            } @else {
+
+            @for (booking of bookings; track booking.id) {
+            <tr>
+                <td>#{{ booking.id }}</td>
+                <td>{{ booking.user?.firstName }} {{ booking.user?.lastName }}</td>
+                <td>{{ booking.destination?.name }}, {{ booking.destination?.country }}</td>
+                <td>{{ booking.travelDate | date:'mediumDate' }}</td>
+                <td>{{ booking.travelers }}</td>
+                <td style="font-weight: 600;">₹{{ booking.totalPrice | number }}</td>
+                <td>
+                    <span class="status-badge" [ngClass]="booking.status ? booking.status.toLowerCase() : ''">
+                        {{ booking.status }}
+                    </span>
+                </td>
+                <td>
+                    <select #statusSelect (change)="updateStatus(booking.id, statusSelect.value)"
+                        class="status-dropdown">
+                        <option [selected]="booking.status === 'CONFIRMED'" value="CONFIRMED">Confirm</option>
+                        <option [selected]="booking.status === 'PENDING'" value="PENDING">Pending</option>
+                        <option [selected]="booking.status === 'CANCELLED'" value="CANCELLED">Cancel</option>
+                        <option [selected]="booking.status === 'RESCHEDULED'" value="RESCHEDULED">Reschedule</option>
+                    </select>
+                </td>
+            </tr>
+            }
+
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,131 @@
+<div class="admin-panel-container">
+    <div class="panel-header">
+        <h2>Manage Destinations</h2>
+        <button class="add-btn" (click)="openAddForm()">
+            + Add Destination
+        </button>
+    </div>
+
+    <div class="modal-backdrop" *ngIf="showAddForm">
+        <div class="modal">
+
+            <h3>Add Destination</h3>
+
+            <form #destinationForm="ngForm" (ngSubmit)="addDestination()">
+
+                <div class="form-group">
+                    <label>Name</label>
+
+                    <input type="text" name="name" [(ngModel)]="newDestination.name" required #name="ngModel">
+
+                    <small class="error" *ngIf="name.invalid && name.touched">
+                        Destination name is required
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label>Country</label>
+
+                    <input type="text" name="country" [(ngModel)]="newDestination.country" required #country="ngModel">
+
+                    <small class="error" *ngIf="country.invalid && country.touched">
+                        Country is required
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label>Type</label>
+
+                    <input type="text" name="type" [(ngModel)]="newDestination.type" required #type="ngModel">
+
+                    <small class="error" *ngIf="type.invalid && type.touched">
+                        Type is required
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label>Duration</label>
+
+                    <input type="text" name="duration" [(ngModel)]="newDestination.duration" placeholder="e.g. 5 Days"
+                        required #duration="ngModel">
+
+                    <small class="error" *ngIf="duration.invalid && duration.touched">
+                        Duration is required
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label>Price</label>
+
+                    <input type="number" name="price" [(ngModel)]="newDestination.price" required min="1"
+                        #price="ngModel">
+
+                    <small class="error" *ngIf="price.invalid && price.touched">
+                        Valid price is required
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label>Rating</label>
+
+                    <input type="number" name="rating" [(ngModel)]="newDestination.rating" required min="1" max="5"
+                        step="0.1" #rating="ngModel">
+
+                    <small class="error" *ngIf="rating.invalid && rating.touched">
+                        Rating must be between 1 and 5
+                    </small>
+                </div>
+
+                <div class="modal-actions">
+
+                    <button type="submit" class="save-btn" [disabled]="destinationForm.invalid"
+                        (click)="closeAddForm()">
+                        Save
+                    </button>
+
+                    <button type="button" class="cancel-btn" (click)="closeAddForm()">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Destination</th>
+                <th>Country</th>
+                <th>Type</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th>Rating</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let dest of destinations">
+                <td>{{ dest.id }}</td>
+                <td>{{ dest.name }}</td>
+                <td>{{ dest.country }}</td>
+                <td>{{ dest.type }}</td>
+                <td>{{ dest.duration }}</td>
+                <td>₹{{ dest.price | number }}</td>
+                <td>{{ dest.rating }}</td>
+
+                <td class="action-buttons">
+                    <button class="edit-btn">Edit</button>
+
+                    <button class="delete-btn" (click)="deleteDestination(dest.id)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

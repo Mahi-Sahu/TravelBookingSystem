@@ -43,4 +43,8 @@ export class BookingConfirmationComponent implements OnInit {
   viewHistory(): void {
     this.router.navigate(['/customer/booking/history']);
   }
+
+  goToDashboard(): void{
+    this.router.navigate(['/customer-dashboard']);
+  }
 }

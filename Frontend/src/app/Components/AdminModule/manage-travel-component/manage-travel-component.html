@@ -1,1 +1,218 @@
-<p>manage-travel-component works!</p>
+<div class="admin-panel-container">
+
+    <div class="panel-header">
+        <h2>Manage Travel Services</h2>
+
+        <button class="add-btn" (click)="openAddForm()">
+            + Add Service
+        </button>
+    </div>
+
+    <!-- Modal -->
+
+    <div class="modal-backdrop" *ngIf="showModal">
+
+        <div class="modal">
+
+            <h3>
+                {{ isEditMode ? 'Edit Travel Service' : 'Add Travel Service' }}
+            </h3>
+
+            <form #travelFormRef="ngForm" (ngSubmit)="saveTravelService()">
+
+                <!-- Destination -->
+
+                <div class="form-group">
+
+                    <label>Destination</label>
+
+                    <select name="destinationId" required [(ngModel)]="travelForm.destinationId">
+
+                        <option value="">
+                            Select Destination
+                        </option>
+
+                        <option *ngFor="let destination of destinations" [value]="destination.id">
+
+                            {{ destination.name }}
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Service Name -->
+
+                <div class="form-group">
+
+                    <label>Service Name</label>
+
+                    <input type="text" name="serviceName" required [(ngModel)]="travelForm.serviceName">
+
+                </div>
+
+                <!-- Service Type -->
+
+                <div class="form-group">
+
+                    <label>Service Type</label>
+
+                    <select name="serviceType" required [(ngModel)]="travelForm.serviceType">
+
+                        <option value="">
+                            Select Type
+                        </option>
+
+                        <option value="FLIGHT">
+                            FLIGHT
+                        </option>
+
+                        <option value="HOTEL">
+                            HOTEL
+                        </option>
+
+                        <option value="PACKAGE">
+                            PACKAGE
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Provider -->
+
+                <div class="form-group">
+
+                    <label>Provider</label>
+
+                    <input type="text" name="provider" required [(ngModel)]="travelForm.provider">
+
+                </div>
+
+                <!-- Price -->
+
+                <div class="form-group">
+
+                    <label>Price</label>
+
+                    <input type="number" name="price" required min="1" [(ngModel)]="travelForm.price">
+
+                </div>
+
+                <!-- Duration -->
+
+                <div class="form-group">
+
+                    <label>Duration</label>
+
+                    <input type="text" name="duration" required [(ngModel)]="travelForm.duration">
+
+                </div>
+
+                <!-- Rating -->
+
+                <div class="form-group">
+
+                    <label>Rating</label>
+
+                    <input type="number" name="rating" step="0.1" min="1" max="5" required
+                        [(ngModel)]="travelForm.rating">
+
+                </div>
+
+                <div class="modal-actions">
+
+                    <button type="submit" class="save-btn" [disabled]="travelFormRef.invalid">
+
+                        {{ isEditMode ? 'Update' : 'Save' }}
+
+                    </button>
+
+                    <button type="button" class="cancel-btn" (click)="closeModal()">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+
+    <table class="admin-table">
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Destination</th>
+                <th>Service Name</th>
+                <th>Type</th>
+                <th>Provider</th>
+                <th>Price</th>
+                <th>Duration</th>
+                <th>Rating</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let travel of travelList">
+
+                <td>{{ travel.id }}</td>
+
+                <td>
+                    {{ travel.destination?.name }}
+                </td>
+
+                <td>
+                    {{ travel.serviceName }}
+                </td>
+
+                <td>
+                    {{ travel.serviceType }}
+                </td>
+
+                <td>
+                    {{ travel.provider }}
+                </td>
+
+                <td>
+                    ₹{{ travel.price }}
+                </td>
+
+                <td>
+                    {{ travel.duration }}
+                </td>
+
+                <td>
+                    {{ travel.rating }}
+                </td>
+
+                <td class="action-buttons">
+
+                    <button class="edit-btn" (click)="editTravel(travel)">
+                        Edit
+                    </button>
+
+                    <button class="delete-btn" (click)="deleteTravel(travel.id)">
+                        Delete
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

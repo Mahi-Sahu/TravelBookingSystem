@@ -1,1 +1,162 @@
-<p>manage-itineraries-component works!</p>
+<div class="admin-panel-container">
+
+    <div class="panel-header">
+
+        <h2>Manage Itineraries</h2>
+
+        <button class="add-btn" (click)="openAddForm()">
+
+            + Add Itinerary
+
+        </button>
+
+    </div>
+
+    <!-- MODAL -->
+
+    <div class="modal-backdrop" *ngIf="showModal">
+
+        <div class="modal">
+
+            <h3>
+                {{ isEditMode ? 'Edit Itinerary' : 'Add Itinerary' }}
+            </h3>
+
+            <form #itineraryRef="ngForm" (ngSubmit)="saveItinerary()">
+
+                <div class="form-group">
+
+                    <label>Title</label>
+
+                    <input type="text" required name="title" [(ngModel)]="itineraryForm.title">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Destination</label>
+
+                    <select required name="destinationId" [(ngModel)]="itineraryForm.destinationId">
+
+                        <option value="">
+                            Select Destination
+                        </option>
+
+                        <option *ngFor="let destination of destinations" [value]="destination.id">
+
+                            {{ destination.name }}
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Start Date</label>
+
+                    <input type="date" required name="startDate" [(ngModel)]="itineraryForm.startDate">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>End Date</label>
+
+                    <input type="date" required name="endDate" [(ngModel)]="itineraryForm.endDate">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Status</label>
+
+                    <select name="status" [(ngModel)]="itineraryForm.status">
+
+                        <option value="UPCOMING">UPCOMING</option>
+                        <option value="COMPLETED">COMPLETED</option>
+                        <option value="CANCELLED">CANCELLED</option>
+
+                    </select>
+
+                </div>
+
+                <div class="modal-actions">
+
+                    <button class="save-btn" [disabled]="itineraryRef.invalid">
+
+                        {{ isEditMode ? 'Update' : 'Save' }}
+
+                    </button>
+
+                    <button type="button" class="cancel-btn" (click)="closeModal()">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- TABLE -->
+
+    <table class="admin-table">
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Destination</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Total Days</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let item of itineraries">
+
+                <td>{{ item.id }}</td>
+
+                <td>{{ item.title }}</td>
+
+                <td>{{ item.destination?.name }}</td>
+
+                <td>{{ item.startDate }}</td>
+
+                <td>{{ item.endDate }}</td>
+
+                <td>{{ item.totalDays }}</td>
+
+                <td>{{ item.status }}</td>
+
+                <td class="action-buttons">
+
+                    <button class="edit-btn" (click)="editItinerary(item)">
+                        Edit
+                    </button>
+
+                    <button class="delete-btn" (click)="deleteItinerary(item.id)">
+                        Delete
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

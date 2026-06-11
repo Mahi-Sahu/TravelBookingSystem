@@ -2,25 +2,144 @@
   <h2>Booking Review</h2>
 
   <div class="review-card">
-    <p><strong>Destination:</strong> {{ destination?.name }}</p>
+    <h3>Destination Details</h3>
 
-    <p><strong>Travel Service:</strong> {{ travelService?.serviceName }}</p>
+    <p>
+      <strong>Destination:</strong>
+      {{ destination?.name }}
+    </p>
 
-    <p><strong>Travel Date:</strong> {{ bookingData.travelDate }}</p>
+    <p>
+      <strong>Country:</strong>
+      {{ destination?.country }}
+    </p>
 
-    <p><strong>Total Travelers:</strong> {{ bookingData.travelers }}</p>
+    <p>
+      <strong>Duration:</strong>
+      {{ destination?.duration }}
+    </p>
 
-    <h3>Travelers</h3>
+    <p>
+      <strong>Rating:</strong>
+      {{ destination?.rating }}
+    </p>
+
+    <hr />
+
+    <h3>Travel Service Details</h3>
+
+    <p>
+      <strong>Service:</strong>
+      {{ travelService?.serviceName }}
+    </p>
+
+    <p>
+      <strong>Provider:</strong>
+      {{ travelService?.provider }}
+    </p>
+
+    <p>
+      <strong>Type:</strong>
+      {{ travelService?.serviceType }}
+    </p>
+
+    <p>
+      <strong>Price Per Traveler:</strong>
+      ₹{{ travelService?.price }}
+    </p>
+
+    <hr />
+
+    <h3>Travel Information</h3>
+
+    <p>
+      <strong>Travel Date:</strong>
+      {{ bookingData.travelDate }}
+    </p>
+
+    <p>
+      <strong>Total Travelers:</strong>
+      {{ bookingData.travelers }}
+    </p>
+
+    <hr />
+
+    <h3>Traveler Details</h3>
+
     <ul>
       @for (traveler of travelers; track traveler.id) {
         <li>
           {{ traveler.fullName }}
-          ({{ traveler.relationship }})
+          -
+          {{ traveler.relationship }}
+          -
+          {{ traveler.gender }}
+          -
+          {{ traveler.age }} Years
         </li>
       }
     </ul>
 
-    <h3>Total Price: ₹{{ bookingData.totalPrice }}</h3>
+    <hr />
+
+    <h3>Itinerary Details</h3>
+
+    @for (day of itineraryDays; track day.id) {
+      <div class="itinerary-card">
+        <h4>Day {{ day.dayNumber }}</h4>
+
+        <p>
+          <strong>Date:</strong>
+          {{ day.date }}
+        </p>
+
+        <p>
+          <strong>Transport:</strong>
+          {{ day.transportType }}
+        </p>
+
+        <p>
+          <strong>From:</strong>
+          {{ day.transportFrom }}
+        </p>
+
+        <p>
+          <strong>To:</strong>
+          {{ day.transportTo }}
+        </p>
+
+        <p>
+          <strong>Departure Time:</strong>
+          {{ day.transportTime }}
+        </p>
+
+        <p>
+          <strong>Hotel:</strong>
+          {{ day.hotel }}
+        </p>
+
+        <p>
+          <strong>Check In:</strong>
+          {{ day.checkInTime }}
+        </p>
+
+        <h5>Activities</h5>
+
+        <ul>
+          @for (activity of day.activities; track activity.activityName) {
+            <li>
+              {{ activity.activityTime }}- {{ activity.activityName }}
+            </li>
+          }
+        </ul>
+
+        <hr />
+      </div>
+    }
+
+    <hr />
+
+    <h2>Total Price: ₹{{ bookingData.totalPrice }}</h2>
   </div>
 
   <div class="actions">

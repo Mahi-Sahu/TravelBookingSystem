@@ -1,0 +1,25 @@
+/* Reuses the structural CSS from manage-travel-component.css */
+@import '../manage-travel-component/manage-travel-component.css';
+
+.status-badge.pending {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.status-badge.confirmed {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.cancelled {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.status-dropdown {
+  width: 130px;
+  padding: 6px;
+  margin: 0;
+  font-size: 12px;
+  border-radius: 4px;
+}

@@ -1,1 +1,163 @@
-<p>manage-pricing-component works!</p>
+<div class="admin-panel-container">
+
+    <div class="panel-header">
+
+        <h2>Pricing Rules</h2>
+
+        <button class="add-btn" (click)="openAddForm()">
+
+            + Add Rule
+
+        </button>
+
+    </div>
+
+    <!-- MODAL -->
+
+    <div class="modal-backdrop" *ngIf="showModal">
+
+        <div class="modal">
+
+            <h3>
+                {{ isEditMode ? 'Edit Rule' : 'Add Rule' }}
+            </h3>
+
+            <form #ruleRef="ngForm" (ngSubmit)="saveRule()">
+
+                <div class="form-group">
+
+                    <label>Service Type</label>
+
+                    <select name="serviceType" required [(ngModel)]="ruleForm.serviceType">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="FLIGHT">
+                            FLIGHT
+                        </option>
+
+                        <option value="HOTEL">
+                            HOTEL
+                        </option>
+
+                        <option value="PACKAGE">
+                            PACKAGE
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Season</label>
+
+                    <select name="season" required [(ngModel)]="ruleForm.season">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="PEAK">
+                            PEAK
+                        </option>
+
+                        <option value="OFF_SEASON">
+                            OFF_SEASON
+                        </option>
+
+                        <option value="WEEKEND">
+                            WEEKEND
+                        </option>
+
+                        <option value="FESTIVAL">
+                            FESTIVAL
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Multiplier</label>
+
+                    <input type="number" step="0.01" required name="multiplier" [(ngModel)]="ruleForm.multiplier">
+
+                </div>
+
+                <div class="modal-actions">
+
+                    <button class="save-btn" [disabled]="ruleRef.invalid">
+
+                        {{ isEditMode ? 'Update' : 'Save' }}
+
+                    </button>
+
+                    <button type="button" class="cancel-btn" (click)="closeModal()">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- TABLE -->
+
+    <table class="admin-table">
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Service Type</th>
+                <th>Season</th>
+                <th>Multiplier</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let rule of pricingRules">
+
+                <td>{{ rule.id }}</td>
+
+                <td>{{ rule.serviceType }}</td>
+
+                <td>{{ rule.season }}</td>
+
+                <td>{{ rule.multiplier }}</td>
+
+                <td class="action-buttons">
+
+                    <button class="edit-btn" (click)="editRule(rule)">
+
+                        Edit
+
+                    </button>
+
+                    <button class="delete-btn" (click)="deleteRule(rule.id)">
+
+                        Delete
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
