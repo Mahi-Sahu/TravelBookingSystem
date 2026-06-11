@@ -1,1 +1,186 @@
-<p>manage-notifications-component works!</p>
+<div class="admin-panel-container">
+
+    <div class="panel-header">
+
+        <h2>Manage Notifications</h2>
+
+        <button class="add-btn" (click)="openAddNotification()">
+
+            + Add Notification
+
+        </button>
+
+    </div>
+
+    <!-- FORM -->
+
+    <div class="modal-backdrop" *ngIf="showModal">
+
+        <div class="modal">
+
+            <h3>
+
+                {{
+                isEditMode
+                ? 'Edit Notification'
+                : 'Add Notification'
+                }}
+
+            </h3>
+
+            <form [formGroup]="notificationForm" (ngSubmit)="submitForm()">
+
+                <!-- User Dropdown -->
+
+                <div class="form-group">
+
+                    <label>User</label>
+
+                    <select formControlName="userId">
+
+                        <option value="">
+                            Select User
+                        </option>
+
+                        <option *ngFor="let user of users" [value]="user.id">
+
+                            {{ user.firstName }}
+                            {{ user.lastName }}
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Type -->
+
+                <div class="form-group">
+
+                    <label>Type</label>
+
+                    <select formControlName="type">
+
+                        <option value="BOOKING">BOOKING</option>
+                        <option value="PAYMENT">PAYMENT</option>
+                        <option value="REMINDER">REMINDER</option>
+                        <option value="PROMOTION">PROMOTION</option>
+                        <option value="UPDATE">UPDATE</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Title -->
+
+                <div class="form-group">
+
+                    <label>Title</label>
+
+                    <input type="text" formControlName="title">
+
+                </div>
+
+                <!-- Message -->
+
+                <div class="form-group">
+
+                    <label>Message</label>
+
+                    <textarea rows="4" formControlName="message">
+        </textarea>
+
+                </div>
+
+                <div class="modal-actions">
+
+                    <button type="submit" class="save-btn">
+
+                        {{
+                        isEditMode
+                        ? 'Update'
+                        : 'Send Notification'
+                        }}
+
+                    </button>
+
+                    <button type="button" class="cancel-btn" (click)="closeModal()">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+    <!-- TABLE -->
+
+    <table class="admin-table">
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Type</th>
+                <th>Title</th>
+                <th>Message</th>
+                <th>Read</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let notification of notifications">
+
+                <td>{{ notification.id }}</td>
+
+                <td>
+                    {{ notification.user?.firstName }}
+                    {{ notification.user?.lastName }}
+                </td>
+
+                <td>{{ notification.type }}</td>
+
+                <td>{{ notification.title }}</td>
+
+                <td>{{ notification.message }}</td>
+
+                <td>
+                    {{ notification.isRead ? 'Yes' : 'No' }}
+                </td>
+
+                <td>
+                    {{ notification.createdAt | date:'short' }}
+                </td>
+
+                <td class="action-buttons">
+
+                    <button class="edit-btn" (click)="editNotification(notification)">
+
+                        Edit
+
+                    </button>
+
+                    <button class="delete-btn" (click)="deleteNotification(notification.id)">
+
+                        Delete
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
