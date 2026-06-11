@@ -49,7 +49,7 @@ export class CustomerDashboardComponent implements OnInit {
     this.dashboardService.getUser(id).subscribe({
       next: (response) => this.user.set(response), // Use .set() for signals
       error: (err) => console.error('Failed to load user', err),
-    });
+    }); 
   }
 
   loadBookings(userId: number): void {

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, computed } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotificationService } from '../../../Services/notification-service';
 import { AuthService } from '../../../Services/auth-service';
@@ -14,11 +14,9 @@ export class NotificationListComponent implements OnInit {
   private notificationService = inject(NotificationService);
   private authService = inject(AuthService);
 
-  // Directly link to the service's signal for automatic UI updates
-  unreadNotes = this.notificationService.unreadNotifications;
-
-  // Computed signal for the badge count
-  unreadCount = computed(() => this.unreadNotes().length);
+  // Bind to the updated service signals
+  notifications = this.notificationService.allNotifications;
+  unreadCount = this.notificationService.unreadCount;
 
   ngOnInit() {
     const user = this.authService.currentUser();
