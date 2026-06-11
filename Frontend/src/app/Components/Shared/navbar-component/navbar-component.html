@@ -1,11 +1,44 @@
-<nav class="navbar">
-  <div class="left-section">
-    <a routerLink="/travel-catalog" routerLinkActive="active-link"> Explore </a>
+<nav class="top-navbar">
+  <div class="nav-brand">
+    <h2 routerLink="/customer-dashboard" style="cursor: pointer">TravelPro</h2>
   </div>
 
-  <div class="right-section">
-    <a routerLink="/customer/notifications" routerLinkActive="active-icon"> 🔔 </a>
+  <div class="nav-links">
+    <a routerLink="/travel-catalog" routerLinkActive="active-link">Travel Catalog</a>
+    <a routerLink="/customer-dashboard/bookings" routerLinkActive="active-link">My Bookings</a>
+    <a routerLink="/my-itineraries" routerLinkActive="active-link">Itineraries</a>
+  </div>
 
-    <a routerLink="/customer-dashboard" routerLinkActive="active-icon"> 👤 </a>
+  <div class="nav-actions">
+    <div class="notification-bell-wrapper">
+      <div class="bell-icon" (click)="toggleNotifications($event)">
+        <svg
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+
+        @if (notificationService.unreadCount() > 0) {
+          <span class="icon-badge">{{ notificationService.unreadCount() }}</span>
+        }
+      </div>
+
+      @if (isNotificationOpen) {
+        <div class="dropdown-menu" (click)="$event.stopPropagation()">
+          <app-notification-list viewMode="dropdown" (closeRequested)="isNotificationOpen = false">
+          </app-notification-list>
+        </div>
+      }
+    </div>
+
+    <div class="user-greeting">Welcome, {{ authService.currentUser()?.firstName }}</div>
   </div>
 </nav>

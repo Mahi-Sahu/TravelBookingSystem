@@ -1,35 +1,104 @@
-.navbar {
+.top-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
   background: white;
-  border-bottom: 1px solid #ddd;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1000;
+}
+.nav-brand h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 22px;
 }
 
-.left-section a {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.right-section {
+/* Restored Navigation Link Styles */
+.nav-links {
   display: flex;
   gap: 25px;
+  flex-grow: 1;
+  margin-left: 40px;
 }
-
-.right-section a {
+.nav-links a {
+  color: #666;
   text-decoration: none;
-  font-size: 24px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+.nav-links a:hover,
+.nav-links .active-link {
+  color: #3498db;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 2px;
 }
 
-.active-link {
-  color: #1976d2;
-  border-bottom: 3px solid #1976d2;
-  padding-bottom: 4px;
+/* Actions & Greeting */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.user-greeting {
+  font-weight: 500;
+  color: #555;
+  border-left: 1px solid #ddd;
+  padding-left: 20px;
 }
 
-.active-icon {
+/* Bell and Badge Styling */
+.notification-bell-wrapper {
+  position: relative;
+}
+.bell-icon {
+  cursor: pointer;
+  color: #34495e;
+  position: relative;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+}
+.bell-icon:hover {
   transform: scale(1.1);
+  color: #3498db;
+}
+.icon-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+/* The Dropdown Container */
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  right: -10px;
+  width: 380px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #eee;
+  overflow: hidden;
+  z-index: 1001;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

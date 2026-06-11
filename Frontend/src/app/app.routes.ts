@@ -13,6 +13,7 @@ import { BookingComponent } from './Components/BookingModule/booking-component/b
 import { BookingReviewComponent } from './Components/BookingModule/booking-review-component/booking-review-component';
 import { BookingHistoryComponent } from './Components/BookingModule/booking-history-component/booking-history-component';
 import { BookingConfirmationComponent } from './Components/BookingModule/booking-confirmation-component/booking-confirmation-component';
+import { NotificationListComponent } from './Components/NotificationModule/notification-list-component/notification-list-component';
 
 export const routes: Routes = [
   //auth module:
@@ -38,6 +39,10 @@ export const routes: Routes = [
 
   //itinerary module
   { path: 'my-itineraries', component: ItineraryDashboardComponent }, // Attached Itinerary Module Target Link
-
+  
+  //notification module
+  { path: 'notifications', component: NotificationListComponent },
+  
   { path: '**', redirectTo: 'login' },
+  
 ];
