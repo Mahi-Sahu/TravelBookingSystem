@@ -1,1 +1,101 @@
-<p>reports-component works!</p>
+<div class="panel-header">
+
+    <h2>Reports Dashboard</h2>
+    <button class="download-btn" (click)="downloadCsvReport()">
+
+        Download CSV Report
+
+    </button>
+</div>
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+
+        <h3>Total Revenue</h3>
+
+        <p>
+            ₹{{ stats.totalRevenue }}
+        </p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>Active Bookings</h3>
+
+        <p>
+            {{ stats.activeBookings }}
+        </p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>Total Customers</h3>
+
+        <p>
+            {{ stats.totalCustomers }}
+        </p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>Cancelled Bookings</h3>
+
+        <p>
+            {{ stats.cancelledBookings }}
+        </p>
+
+    </div>
+
+</div>
+
+<div class="table-section">
+
+    <h3>Recent Bookings</h3>
+
+    <table class="report-table">
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>User ID</th>
+                <th>Destination ID</th>
+                <th>Status</th>
+                <th>Total Price</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let booking of recentBookings">
+
+                <td>{{ booking.id }}</td>
+
+                <td>{{ booking.userId }}</td>
+
+                <td>{{ booking.destinationId }}</td>
+
+                <td>
+                    <span class="status" [ngClass]="booking.status.toLowerCase()">
+
+                        {{ booking.status }}
+
+                    </span>
+                </td>
+
+                <td>
+                    ₹{{ booking.totalPrice }}
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
