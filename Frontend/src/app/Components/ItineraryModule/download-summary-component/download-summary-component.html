@@ -1,3 +1,35 @@
-<button class="btn-print-utility" (click)="triggerPrintExport()">
-  🖨️ Export Printable Document Summary
+<button class="btn-print-utility" (click)="downloadPdf()">
+  ⬇️ Download Itinerary (PDF)
 </button>
+
+<div id="pdfContent"  *ngIf="itinerary as trip" class="pdf-container">
+  <div class="print-header">
+    <h2>{{ itinerary.title }} - Itinerary Summary</h2>
+    <p><strong>Dates:</strong> {{ itinerary.startDate | date }} to {{ itinerary.endDate | date }}</p>
+    <p><strong>Status:</strong> {{ itinerary.status }}</p>
+  </div>
+
+  <hr />
+
+  @for (day of days; track day.id) {
+    <div class="day-card">
+      <h3>Day {{ day.dayNumber }} - {{ day.date | date:'mediumDate' }}</h3>
+      
+      <div class="day-details">
+        <p><strong>🚆 Transport:</strong> {{ day.transportType }} from {{ day.transportFrom }} to {{ day.transportTo }} at {{ day.transportTime }}</p>
+        <p><strong>🏨 Accommodation:</strong> {{ day.hotel }} (Check-in: {{ day.checkInTime }})</p>
+      </div>
+
+      @if (day.activities && day.activities.length > 0) {
+        <div class="activities">
+          <h4>Activities:</h4>
+          <ul>
+            @for (act of day.activities; track act.activityName) {
+              <li><strong>{{ act.activityTime }}:</strong> {{ act.activityName }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  }
+</div>
