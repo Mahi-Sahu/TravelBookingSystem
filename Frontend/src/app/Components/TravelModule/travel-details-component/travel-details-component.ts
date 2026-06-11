@@ -26,7 +26,7 @@ export class TravelDetailsComponent {
     // Safely extract the itineraryId from the first day node if it exists
     const itineraryId = this.itineraryDays.length > 0 ? this.itineraryDays[0].itineraryId : '';
 
-    this.router.navigate(['/book-trip'], { 
+    this.router.navigate(['/customer/booking'], { 
       queryParams: { 
         serviceId: this.selectedPackage.id, 
         destinationId: this.parentDestination.id,
