@@ -438,7 +438,10 @@
       "bookingDate": "2026-06-01",
       "travelDate": "2026-07-15",
       "travelers": 2,
-      "travelerIds": ["1", "2"],
+      "travelerIds": [
+        "1",
+        "2"
+      ],
       "status": "CONFIRMED",
       "totalPrice": 30000
     },
@@ -449,7 +452,9 @@
       "bookingDate": "2026-05-25",
       "travelDate": "2026-08-10",
       "travelers": 1,
-      "travelerIds": ["3"],
+      "travelerIds": [
+        "3"
+      ],
       "status": "PENDING",
       "totalPrice": 55000
     },
@@ -460,7 +465,10 @@
       "bookingDate": "2026-05-15",
       "travelDate": "2026-07-01",
       "travelers": 2,
-      "travelerIds": ["4", "5"],
+      "travelerIds": [
+        "4",
+        "5"
+      ],
       "status": "CONFIRMED",
       "totalPrice": 36000
     },
@@ -471,7 +479,10 @@
       "bookingDate": "2026-05-18",
       "travelDate": "2026-07-20",
       "travelers": 2,
-      "travelerIds": ["6", "14"],
+      "travelerIds": [
+        "6",
+        "14"
+      ],
       "status": "CONFIRMED",
       "totalPrice": 66000
     },
@@ -482,7 +493,10 @@
       "bookingDate": "2026-05-22",
       "travelDate": "2026-06-28",
       "travelers": 2,
-      "travelerIds": ["7", "8"],
+      "travelerIds": [
+        "7",
+        "8"
+      ],
       "status": "PENDING",
       "totalPrice": 24000
     },
@@ -493,7 +507,10 @@
       "bookingDate": "2026-05-25",
       "travelDate": "2026-08-05",
       "travelers": 2,
-      "travelerIds": ["9", "15"],
+      "travelerIds": [
+        "9",
+        "15"
+      ],
       "status": "CONFIRMED",
       "totalPrice": 140000
     },
@@ -504,7 +521,9 @@
       "bookingDate": "2026-05-28",
       "travelDate": "2026-07-10",
       "travelers": 1,
-      "travelerIds": ["10"],
+      "travelerIds": [
+        "10"
+      ],
       "status": "CANCELLED",
       "totalPrice": 112000
     },
@@ -515,7 +534,10 @@
       "bookingDate": "2026-06-01",
       "travelDate": "2026-07-18",
       "travelers": 2,
-      "travelerIds": ["11", "12"],
+      "travelerIds": [
+        "11",
+        "12"
+      ],
       "status": "CONFIRMED",
       "totalPrice": 32000
     },
@@ -526,7 +548,10 @@
       "bookingDate": "2026-06-02",
       "travelDate": "2026-09-01",
       "travelers": 2,
-      "travelerIds": ["1", "2"],
+      "travelerIds": [
+        "1",
+        "2"
+      ],
       "status": "PENDING",
       "totalPrice": 170000
     },
@@ -537,7 +562,10 @@
       "bookingDate": "2026-06-03",
       "travelDate": "2026-06-25",
       "travelers": 1,
-      "travelerIds": ["3", "13"],
+      "travelerIds": [
+        "3",
+        "13"
+      ],
       "status": "RESCHEDULED",
       "totalPrice": 14000
     },
@@ -548,7 +576,10 @@
       "bookingDate": "2026-05-30",
       "travelDate": "2026-09-15",
       "travelers": 2,
-      "travelerIds": ["4", "5"],
+      "travelerIds": [
+        "4",
+        "5"
+      ],
       "status": "CONFIRMED",
       "totalPrice": 240000
     },
@@ -559,7 +590,9 @@
       "bookingDate": "2026-06-01",
       "travelDate": "2026-07-05",
       "travelers": 1,
-      "travelerIds": ["6"],
+      "travelerIds": [
+        "6"
+      ],
       "status": "CONFIRMED",
       "totalPrice": 55000
     },
@@ -570,7 +603,10 @@
       "bookingDate": "2026-06-04",
       "travelDate": "2026-08-01",
       "travelers": 2,
-      "travelerIds": ["7", "10"],
+      "travelerIds": [
+        "7",
+        "10"
+      ],
       "status": "CANCELLED",
       "totalPrice": 34000
     },
@@ -581,7 +617,10 @@
       "bookingDate": "2026-06-05",
       "travelDate": "2026-08-12",
       "travelers": 2,
-      "travelerIds": ["9", "15"],
+      "travelerIds": [
+        "9",
+        "15"
+      ],
       "status": "CONFIRMED",
       "totalPrice": 135000
     },
@@ -592,7 +631,10 @@
       "bookingDate": "2026-06-06",
       "travelDate": "2026-10-10",
       "travelers": 2,
-      "travelerIds": ["11", "12"],
+      "travelerIds": [
+        "11",
+        "12"
+      ],
       "status": "PENDING",
       "totalPrice": 220000
     }
@@ -750,6 +792,15 @@
       "type": "ACCOUNT",
       "isRead": false,
       "createdAt": "2026-06-06T12:10:00"
+    },
+    {
+      "id": 18,
+      "userId": 1,
+      "type": "PROMOTION",
+      "title": "hi hi",
+      "message": "you got ac class",
+      "isRead": false,
+      "createdAt": "2026-06-11T12:35:43.609Z"
     }
   ],
   "travelServices": [

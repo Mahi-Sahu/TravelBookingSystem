@@ -28,7 +28,7 @@ export class ManageNotificationsComponent implements OnInit {
   selectedId = '';
 
   notificationForm = this.fb.group({
-    userId: ['0'],
+    userId: ['', Validators.required],
     type: ['BOOKING', Validators.required],
     title: ['', Validators.required],
     message: ['', Validators.required],
@@ -90,8 +90,32 @@ export class ManageNotificationsComponent implements OnInit {
     if (this.isEditMode) {
       this.updateNotification();
     } else {
-      this.openAddNotification();
+      this.addNotification();
     }
+  }
+
+  addNotification() {
+    const nextId =
+      this.notifications.length > 0
+        ? Math.max(...this.notifications.map((n) => Number(n.id))) + 1
+        : 1;
+
+    const payload = {
+      id: nextId,
+      userId: Number(this.notificationForm.value.userId),
+      type: this.notificationForm.value.type,
+      title: this.notificationForm.value.title,
+      message: this.notificationForm.value.message,
+      isRead: false,
+      createdAt: new Date().toISOString(),
+    };
+
+    this.adminService.addNotification(payload).subscribe({
+      next: () => {
+        this.loadNotifications();
+        this.closeModal();
+      },
+    });
   }
 
   editNotification(notification: any) {
@@ -123,6 +147,7 @@ export class ManageNotificationsComponent implements OnInit {
     this.adminService.updateNotification(this.selectedId, payload).subscribe({
       next: () => {
         this.loadNotifications();
+        this.closeModal();
         this.resetForm();
       },
       error: (err) => console.error(err),
@@ -143,6 +168,8 @@ export class ManageNotificationsComponent implements OnInit {
   }
 
   resetForm() {
+    this.showModal = false;
+
     this.isEditMode = false;
     this.selectedId = '';
 
