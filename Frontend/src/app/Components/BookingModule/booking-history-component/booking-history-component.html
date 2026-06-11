@@ -1,1 +1,45 @@
-<p>booking-history-component works!</p>
+<div class="history-container">
+  <h2>Booking History</h2>
+
+  <input type="text" placeholder="Search Destination"
+    [(ngModel)]="searchText"
+    (input)="searchBooking()"/>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Booking Id</th>
+        <th>Destination</th>
+        <th>Travel Date</th>
+        <th>Travelers</th>
+        <th>Status</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (booking of filteredBookings; track booking.id) {
+        <tr>
+          <td>
+            {{ booking.id }}
+          </td>
+          <td>
+            {{ destinationsMap[booking.destinationId] }}
+          </td>
+          <td>
+            {{ booking.travelDate }}
+          </td>
+          <td>
+            {{ booking.travelers }}
+          </td>
+
+          <td [appStatusHighlight]="booking.status">
+            {{ booking.status | bookingStatus }}
+          </td>
+
+          <td>₹{{ booking.totalPrice }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

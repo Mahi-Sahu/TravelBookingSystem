@@ -28,6 +28,7 @@ export const routes: Routes = [
   { path: 'customer/booking', component: BookingComponent },
   { path: 'customer/booking/review', component: BookingReviewComponent },
   { path: 'customer/booking/confirmation', component: BookingConfirmationComponent},
+  { path: 'customer/booking/history', component: BookingHistoryComponent},
 
   //admin module
   { path: 'admin-dashboard', component: AdminDashboardComponent },
