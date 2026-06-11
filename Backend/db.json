@@ -37,7 +37,7 @@
       "lastName": "Patel",
       "email": "sneha@gmail.com",
       "password": "sneha123",
-      "phone": "9876543212",
+      "phone": "9876543213",
       "city": "Ahmedabad"
     },
     {
@@ -413,12 +413,21 @@
     },
     {
       "id": "19",
-      "name": "Delhi",
-      "country": "India",
-      "type": "Heritage",
-      "duration": "2",
-      "price": 1,
-      "rating": 3
+      "name": "Paris",
+      "country": "France",
+      "price": 120000,
+      "duration": "7 Days",
+      "rating": 4.9,
+      "type": "International"
+    },
+    {
+      "id": "20",
+      "name": "London",
+      "country": "United Kingdom",
+      "price": 110000,
+      "duration": "6 Days",
+      "rating": 4.8,
+      "type": "International"
     }
   ],
   "bookings": [
@@ -429,6 +438,7 @@
       "bookingDate": "2026-06-01",
       "travelDate": "2026-07-15",
       "travelers": 2,
+      "travelerIds": ["1", "2"],
       "status": "CONFIRMED",
       "totalPrice": 30000
     },
@@ -532,6 +542,17 @@
       "totalPrice": 14000
     },
     {
+      "id": "11",
+      "userId": 3,
+      "destinationId": 19,
+      "bookingDate": "2026-05-30",
+      "travelDate": "2026-09-15",
+      "travelers": 2,
+      "travelerIds": ["4", "5"],
+      "status": "CONFIRMED",
+      "totalPrice": 240000
+    },
+    {
       "id": "12",
       "userId": 4,
       "destinationId": 3,
@@ -563,6 +584,17 @@
       "travelerIds": ["9", "15"],
       "status": "CONFIRMED",
       "totalPrice": 135000
+    },
+    {
+      "id": "15",
+      "userId": 8,
+      "destinationId": 20,
+      "bookingDate": "2026-06-06",
+      "travelDate": "2026-10-10",
+      "travelers": 2,
+      "travelerIds": ["11", "12"],
+      "status": "PENDING",
+      "totalPrice": 220000
     }
   ],
   "notifications": [
@@ -599,7 +631,7 @@
       "title": "Travel Reminder",
       "message": "Your Kashmir trip starts in 5 days.",
       "type": "REMINDER",
-      "isRead": true,
+      "isRead": false,
       "createdAt": "2026-07-15T08:00:00"
     },
     {
@@ -832,6 +864,26 @@
       "rating": 5
     },
     {
+      "id": "12",
+      "destinationId": 19,
+      "serviceName": "Paris Discovery Tour",
+      "serviceType": "PACKAGE",
+      "provider": "Thomas Cook",
+      "price": 120000,
+      "duration": "7 Days",
+      "rating": 4.9
+    },
+    {
+      "id": "13",
+      "destinationId": 20,
+      "serviceName": "London Heritage Tour",
+      "serviceType": "PACKAGE",
+      "provider": "Yatra",
+      "price": 110000,
+      "duration": "6 Days",
+      "rating": 4.8
+    },
+    {
       "id": "14",
       "destinationId": 6,
       "serviceName": "Thailand Family Package",
@@ -840,6 +892,296 @@
       "price": 45000,
       "duration": "5 Days",
       "rating": 4.7
+    },
+    {
+      "id": "15",
+      "destinationId": 11,
+      "serviceName": "Andaman Island Tour",
+      "serviceType": "PACKAGE",
+      "provider": "TravelTriangle",
+      "price": 28000,
+      "duration": "5 Days",
+      "rating": 4.8
+    },
+    {
+      "id": "16",
+      "destinationId": 3,
+      "serviceName": "Shimla Hill Retreat Package",
+      "serviceType": "PACKAGE",
+      "provider": "MakeMyTrip",
+      "price": 11000,
+      "duration": "3 Days",
+      "rating": 4.5
+    },
+    {
+      "id": "17",
+      "destinationId": 3,
+      "serviceName": "Shimla Luxury Hotel Stay",
+      "serviceType": "HOTEL",
+      "provider": "Oberoi Hotels",
+      "price": 6500,
+      "duration": "2 Nights",
+      "rating": 4.7
+    },
+    {
+      "id": "18",
+      "destinationId": 3,
+      "serviceName": "Kufri Adventure Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "Himachal Tourism",
+      "price": 2500,
+      "duration": "1 Day",
+      "rating": 4.6
+    },
+    {
+      "id": "19",
+      "destinationId": 3,
+      "serviceName": "Delhi to Shimla Volvo Transfer",
+      "serviceType": "TRANSPORT",
+      "provider": "HRTC",
+      "price": 1800,
+      "duration": "8 Hours",
+      "rating": 4.4
+    },
+    {
+      "id": "20",
+      "destinationId": 9,
+      "serviceName": "Jaipur Royal Heritage Package",
+      "serviceType": "PACKAGE",
+      "provider": "Thomas Cook",
+      "price": 14000,
+      "duration": "3 Days",
+      "rating": 4.5
+    },
+    {
+      "id": "21",
+      "destinationId": 9,
+      "serviceName": "Amber Fort & City Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "Rajasthan Tourism",
+      "price": 2500,
+      "duration": "1 Day",
+      "rating": 4.7
+    },
+    {
+      "id": "22",
+      "destinationId": 9,
+      "serviceName": "Jaipur Palace Hotel Stay",
+      "serviceType": "HOTEL",
+      "provider": "ITC Rajputana",
+      "price": 7000,
+      "duration": "2 Nights",
+      "rating": 4.8
+    },
+    {
+      "id": "23",
+      "destinationId": 9,
+      "serviceName": "Pink City Sightseeing Cab",
+      "serviceType": "TRANSPORT",
+      "provider": "Savaari",
+      "price": 1800,
+      "duration": "8 Hours",
+      "rating": 4.4
+    },
+    {
+      "id": "24",
+      "destinationId": 10,
+      "serviceName": "Agra Heritage Package",
+      "serviceType": "PACKAGE",
+      "provider": "MakeMyTrip",
+      "price": 10000,
+      "duration": "2 Days",
+      "rating": 4.3
+    },
+    {
+      "id": "25",
+      "destinationId": 10,
+      "serviceName": "Taj Mahal Guided Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "UP Tourism",
+      "price": 1800,
+      "duration": "4 Hours",
+      "rating": 4.8
+    },
+    {
+      "id": "26",
+      "destinationId": 10,
+      "serviceName": "Agra Luxury Hotel Stay",
+      "serviceType": "HOTEL",
+      "provider": "Taj Hotels",
+      "price": 5500,
+      "duration": "1 Night",
+      "rating": 4.7
+    },
+    {
+      "id": "27",
+      "destinationId": 10,
+      "serviceName": "Delhi-Agra Express Transfer",
+      "serviceType": "TRANSPORT",
+      "provider": "Savaari",
+      "price": 2200,
+      "duration": "4 Hours",
+      "rating": 4.5
+    },
+    {
+      "id": "28",
+      "destinationId": 13,
+      "serviceName": "Rishikesh Adventure Package",
+      "serviceType": "PACKAGE",
+      "provider": "Thrillophilia",
+      "price": 13000,
+      "duration": "3 Days",
+      "rating": 4.7
+    },
+    {
+      "id": "29",
+      "destinationId": 13,
+      "serviceName": "White Water Rafting Experience",
+      "serviceType": "ACTIVITY",
+      "provider": "Rishikesh Adventures",
+      "price": 2000,
+      "duration": "4 Hours",
+      "rating": 4.8
+    },
+    {
+      "id": "30",
+      "destinationId": 13,
+      "serviceName": "Ganga View Resort Stay",
+      "serviceType": "HOTEL",
+      "provider": "Sterling Holidays",
+      "price": 4500,
+      "duration": "2 Nights",
+      "rating": 4.6
+    },
+    {
+      "id": "31",
+      "destinationId": 13,
+      "serviceName": "Rishikesh Camping & Bonfire",
+      "serviceType": "ACTIVITY",
+      "provider": "Camp Ganga Waves",
+      "price": 3000,
+      "duration": "1 Night",
+      "rating": 4.7
+    },
+    {
+      "id": "32",
+      "destinationId": 14,
+      "serviceName": "Udaipur Royal Heritage Package",
+      "serviceType": "PACKAGE",
+      "provider": "Thomas Cook",
+      "price": 16000,
+      "duration": "4 Days",
+      "rating": 4.7
+    },
+    {
+      "id": "33",
+      "destinationId": 14,
+      "serviceName": "Lake Pichola Boat Ride",
+      "serviceType": "ACTIVITY",
+      "provider": "Rajasthan Tourism",
+      "price": 1200,
+      "duration": "2 Hours",
+      "rating": 4.8
+    },
+    {
+      "id": "34",
+      "destinationId": 14,
+      "serviceName": "Udaipur Palace Hotel Stay",
+      "serviceType": "HOTEL",
+      "provider": "Taj Lake Palace",
+      "price": 8500,
+      "duration": "2 Nights",
+      "rating": 4.9
+    },
+    {
+      "id": "35",
+      "destinationId": 14,
+      "serviceName": "City Palace & Heritage Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "Udaipur Tourism",
+      "price": 1800,
+      "duration": "5 Hours",
+      "rating": 4.7
+    },
+    {
+      "id": "36",
+      "destinationId": 17,
+      "serviceName": "Ooty Hill Station Package",
+      "serviceType": "PACKAGE",
+      "provider": "MakeMyTrip",
+      "price": 14000,
+      "duration": "4 Days",
+      "rating": 4.5
+    },
+    {
+      "id": "37",
+      "destinationId": 17,
+      "serviceName": "Nilgiri Mountain Railway Ride",
+      "serviceType": "ACTIVITY",
+      "provider": "Tamil Nadu Tourism",
+      "price": 1200,
+      "duration": "3 Hours",
+      "rating": 4.8
+    },
+    {
+      "id": "38",
+      "destinationId": 17,
+      "serviceName": "Ooty Lake Resort Stay",
+      "serviceType": "HOTEL",
+      "provider": "Sterling Holidays",
+      "price": 6000,
+      "duration": "2 Nights",
+      "rating": 4.6
+    },
+    {
+      "id": "39",
+      "destinationId": 17,
+      "serviceName": "Botanical Garden & Doddabetta Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "Ooty Travels",
+      "price": 1800,
+      "duration": "1 Day",
+      "rating": 4.5
+    },
+    {
+      "id": "40",
+      "destinationId": 18,
+      "serviceName": "Darjeeling Tea Valley Package",
+      "serviceType": "PACKAGE",
+      "provider": "Yatra",
+      "price": 17000,
+      "duration": "5 Days",
+      "rating": 4.7
+    },
+    {
+      "id": "41",
+      "destinationId": 18,
+      "serviceName": "Darjeeling Himalayan Railway Ride",
+      "serviceType": "ACTIVITY",
+      "provider": "West Bengal Tourism",
+      "price": 1500,
+      "duration": "2 Hours",
+      "rating": 4.8
+    },
+    {
+      "id": "42",
+      "destinationId": 18,
+      "serviceName": "Tea Garden Resort Stay",
+      "serviceType": "HOTEL",
+      "provider": "Mayfair Hotels",
+      "price": 7000,
+      "duration": "2 Nights",
+      "rating": 4.7
+    },
+    {
+      "id": "43",
+      "destinationId": 18,
+      "serviceName": "Tiger Hill Sunrise Tour",
+      "serviceType": "ACTIVITY",
+      "provider": "Darjeeling Tours",
+      "price": 2000,
+      "duration": "5 Hours",
+      "rating": 4.9
     }
   ],
   "itineraries": [
@@ -894,6 +1236,16 @@
       "status": "UPCOMING"
     },
     {
+      "id": "6",
+      "bookingId": 11,
+      "userId": 3,
+      "destinationId": 19,
+      "title": "Paris Discovery",
+      "startDate": "2026-09-15",
+      "endDate": "2026-09-22",
+      "status": "UPCOMING"
+    },
+    {
       "id": "7",
       "bookingId": 14,
       "userId": 6,
@@ -901,6 +1253,16 @@
       "title": "Thailand Family Tour",
       "startDate": "2026-08-12",
       "endDate": "2026-08-17",
+      "status": "UPCOMING"
+    },
+    {
+      "id": "8",
+      "bookingId": 15,
+      "userId": 8,
+      "destinationId": 20,
+      "title": "London Vacation",
+      "startDate": "2026-10-10",
+      "endDate": "2026-10-16",
       "status": "UPCOMING"
     },
     {
@@ -1270,6 +1632,90 @@
       ]
     },
     {
+      "id": "17",
+      "itineraryId": 6,
+      "dayNumber": 1,
+      "date": "2026-09-15",
+      "transportType": "Flight",
+      "transportFrom": "Delhi",
+      "transportTo": "Paris",
+      "transportTime": "06:00 AM",
+      "hotel": "Paris Grand Hotel",
+      "checkInTime": "02:00 PM",
+      "activities": [
+        {
+          "activityName": "Eiffel Tower Visit",
+          "activityTime": "05:00 PM"
+        },
+        {
+          "activityName": "Seine River Cruise",
+          "activityTime": "08:30 PM"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "itineraryId": 6,
+      "dayNumber": 2,
+      "date": "2026-09-16",
+      "transportType": "Metro",
+      "transportFrom": "Central Paris",
+      "transportTo": "Eiffel Tower",
+      "transportTime": "09:00 AM",
+      "hotel": "Paris Grand Hotel",
+      "checkInTime": "-",
+      "activities": [
+        {
+          "activityName": "Louvre Mueseum Tour",
+          "activityTime": "01:00 PM"
+        },
+        {
+          "activityName": "Paris Cafe Visit",
+          "activityTime": "06:30 PM"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "itineraryId": 6,
+      "dayNumber": 3,
+      "date": "2026-09-17",
+      "transportType": "Metro",
+      "transportFrom": "Paris",
+      "transportTo": "Louvre Museum",
+      "transportTime": "10:00 AM",
+      "hotel": "Paris Grand Hotel",
+      "checkInTime": "03:00 PM",
+      "activities": [
+        {
+          "activityName": "Notre Dame Visit",
+          "activityTime": "07:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "itineraryId": 6,
+      "dayNumber": 4,
+      "date": "2026-09-18",
+      "transportType": "Train",
+      "transportFrom": "Paris",
+      "transportTo": "Versailles",
+      "transportTime": "08:00 AM",
+      "hotel": "Paris Grand Hotel",
+      "checkInTime": "10:00 AM",
+      "activities": [
+        {
+          "activityName": "Versailles Paris Tour",
+          "activityTime": "11:00 AM"
+        },
+        {
+          "activityName": "Garden Walk",
+          "activityTime": "05:30 PM"
+        }
+      ]
+    },
+    {
       "id": "21",
       "itineraryId": 7,
       "dayNumber": 1,
@@ -1332,6 +1778,90 @@
         {
           "activityName": "Parasailing",
           "activityTime": "05:30 PM"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "itineraryId": 8,
+      "dayNumber": 1,
+      "date": "2026-10-10",
+      "transportType": "Flight",
+      "transportFrom": "Delhi",
+      "transportTo": "London",
+      "transportTime": "05:30 AM",
+      "hotel": "Royal London Hotel",
+      "checkInTime": "03:00 PM",
+      "activities": [
+        {
+          "activityName": "London Eye",
+          "activityTime": "07:00 PM"
+        },
+        {
+          "activityName": "Thames Cruise",
+          "activityTime": "08:30 PM"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "itineraryId": 8,
+      "dayNumber": 2,
+      "date": "2026-10-11",
+      "transportType": "Metro",
+      "transportFrom": "Central London",
+      "transportTo": "London Eye",
+      "transportTime": "09:00 AM",
+      "hotel": "Royal London Hotel",
+      "checkInTime": "-",
+      "activities": [
+        {
+          "activityName": "Buckingham Palace",
+          "activityTime": "04:00 PM"
+        },
+        {
+          "activityName": "Hyde Park",
+          "activityTime": "07:30 PM"
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "itineraryId": 8,
+      "dayNumber": 3,
+      "date": "2026-10-12",
+      "transportType": "Metro",
+      "transportFrom": "London",
+      "transportTo": "Tower Bridge",
+      "transportTime": "10:00 AM",
+      "hotel": "Royal London Hotel",
+      "checkInTime": "-",
+      "activities": [
+        {
+          "activityName": "Tower Bridge Visit",
+          "activityTime": "07:00 PM"
+        },
+        {
+          "activityName": "Bourogh Market",
+          "activityTime": "08:30 PM"
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "itineraryId": 8,
+      "dayNumber": 4,
+      "date": "2026-10-13",
+      "transportType": "Train",
+      "transportFrom": "London",
+      "transportTo": "Windsor",
+      "transportTime": "08:00 AM",
+      "hotel": "Royal London Hotel",
+      "checkInTime": "-",
+      "activities": [
+        {
+          "activityName": "Windsor Castel Tour",
+          "activityTime": "07:00 PM"
         }
       ]
     },
@@ -1576,9 +2106,195 @@
       "status": "LIMITED"
     },
     {
+      "id": "12",
+      "serviceId": 12,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "13",
+      "serviceId": 13,
+      "availableSlots": 18,
+      "status": "AVAILABLE"
+    },
+    {
       "id": "14",
       "serviceId": 14,
       "availableSlots": 14,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "15",
+      "serviceId": 15,
+      "availableSlots": 3,
+      "status": "LIMITED"
+    },
+    {
+      "id": "16",
+      "serviceId": 16,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "17",
+      "serviceId": 17,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "18",
+      "serviceId": 18,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "19",
+      "serviceId": 19,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "20",
+      "serviceId": 20,
+      "availableSlots": 3,
+      "status": "LIMITED"
+    },
+    {
+      "id": "21",
+      "serviceId": 21,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "22",
+      "serviceId": 22,
+      "availableSlots": 23,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "23",
+      "serviceId": 23,
+      "availableSlots": 6,
+      "status": "LIMITED"
+    },
+    {
+      "id": "24",
+      "serviceId": 24,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "25",
+      "serviceId": 25,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "26",
+      "serviceId": 26,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "27",
+      "serviceId": 27,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "28",
+      "serviceId": 28,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "29",
+      "serviceId": 29,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "30",
+      "serviceId": 30,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "31",
+      "serviceId": 31,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "32",
+      "serviceId": 32,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "33",
+      "serviceId": 33,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "34",
+      "serviceId": 34,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "35",
+      "serviceId": 35,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "36",
+      "serviceId": 36,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "37",
+      "serviceId": 37,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "38",
+      "serviceId": 38,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "39",
+      "serviceId": 39,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "40",
+      "serviceId": 40,
+      "availableSlots": 20,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "41",
+      "serviceId": 41,
+      "availableSlots": 8,
+      "status": "LIMITED"
+    },
+    {
+      "id": "42",
+      "serviceId": 42,
+      "availableSlots": 15,
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "43",
+      "serviceId": 43,
+      "availableSlots": 15,
       "status": "AVAILABLE"
     }
   ]
