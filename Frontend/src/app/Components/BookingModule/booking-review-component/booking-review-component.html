@@ -2,21 +2,13 @@
   <h2>Booking Review</h2>
 
   <div class="review-card">
-    <p>
-      <strong>Destination:</strong> {{ destination?.name }}
-    </p>
+    <p><strong>Destination:</strong> {{ destination?.name }}</p>
 
-    <p>
-      <strong>Travel Service:</strong> {{ travelService?.serviceName }}
-    </p>
+    <p><strong>Travel Service:</strong> {{ travelService?.serviceName }}</p>
 
-    <p>
-      <strong>Travel Date:</strong> {{ bookingData.travelDate }}
-    </p>
+    <p><strong>Travel Date:</strong> {{ bookingData.travelDate }}</p>
 
-    <p>
-      <strong>Total Travelers:</strong> {{ bookingData.travelers }}
-    </p>
+    <p><strong>Total Travelers:</strong> {{ bookingData.travelers }}</p>
 
     <h3>Travelers</h3>
     <ul>
@@ -33,6 +25,8 @@
 
   <div class="actions">
     <button (click)="goBack()">Back</button>
+
+    <button (click)="cancelBooking()">Cancel Booking</button>
 
     <button (click)="confirmBooking()">Confirm Booking</button>
   </div>
