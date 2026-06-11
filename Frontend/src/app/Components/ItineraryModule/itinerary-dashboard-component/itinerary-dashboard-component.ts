@@ -24,14 +24,14 @@ export class ItineraryDashboardComponent implements OnInit {
   
 
   selectedItinerary = signal<Itinerary | null>(null);
-  currentUser: any;
+  
 
   ngOnInit(): void {
     const currentUser = this.authService.currentUser();
 
   if(currentUser && currentUser.id){
     
-    this.itineraryService.loadUserItineraries(this.currentUser.id ).subscribe();
+    this.itineraryService.loadUserItineraries(currentUser.id ).subscribe();
   }else{
     this.router.navigate(['/login']);
   }
