@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminService } from '../../../Services/admin.service';
 import { FormsModule } from '@angular/forms';
+import { AdminService } from '../../../Services/admin.service';
 
 @Component({
   selector: 'app-manage-destinations-component',
@@ -12,6 +12,20 @@ import { FormsModule } from '@angular/forms';
 })
 export class ManageDestinationsComponent implements OnInit {
   destinations: any[] = [];
+
+  showAddForm = false;
+  isEditMode = false;
+
+  selectedDestinationId = '';
+
+  newDestination = {
+    name: '',
+    country: '',
+    type: '',
+    duration: '',
+    price: 0,
+    rating: 0,
+  };
 
   constructor(
     private adminService: AdminService,
@@ -27,46 +41,53 @@ export class ManageDestinationsComponent implements OnInit {
       next: (data) => {
         this.destinations = data;
         this.cdr.detectChanges();
-        console.log('Destinations:', data);
       },
-      error: (err) => {
-        console.error('Error fetching destinations', err);
-      },
+      error: (err) => console.error(err),
     });
   }
 
-  deleteDestination(id: string) {
-    if (confirm('Delete this destination?')) {
-      this.adminService.deleteDestination(id).subscribe({
-        next: () => {
-          this.fetchDestinations(); // refresh data from db.json
-        },
-        error: (err) => {
-          console.error('Delete failed', err);
-        },
-      });
-    }
-  }
-
-  showAddForm = false;
-
-  newDestination = {
-    name: '',
-    country: '',
-    type: '',
-    duration: '',
-    price: 0,
-    rating: 0,
-  };
-
   openAddForm() {
+    this.isEditMode = false;
+
+    this.newDestination = {
+      name: '',
+      country: '',
+      type: '',
+      duration: '',
+      price: 0,
+      rating: 0,
+    };
+
     this.showAddForm = true;
-    document.body.classList.add('modal-open');
   }
 
   closeAddForm() {
     this.showAddForm = false;
-    document.body.classList.remove('modal-open');
+  }
+
+  editDestination(destination: any) {
+    this.isEditMode = true;
+
+    this.selectedDestinationId = destination.id;
+
+    this.newDestination = {
+      name: destination.name,
+      country: destination.country,
+      type: destination.type,
+      duration: destination.duration,
+      price: destination.price,
+      rating: destination.rating,
+    };
+
+    this.showAddForm = true;
+  }
+
+  saveDestination() {
+    if (this.isEditMode) {
+      this.updateDestination();
+    } else {
+      this.addDestination();
+    }
   }
 
   addDestination() {
@@ -74,31 +95,47 @@ export class ManageDestinationsComponent implements OnInit {
 
     const nextId = Math.max(...numericIds, 0) + 1;
 
-    const destination = {
+    const payload = {
       id: String(nextId),
       ...this.newDestination,
     };
 
-    console.log('Sending:', destination);
+    this.adminService.addDestination(payload).subscribe({
+      next: () => {
+        this.fetchDestinations();
+        this.closeAddForm();
+      },
+      error: (err) => console.error(err),
+    });
+  }
 
-    this.adminService.addDestination(destination).subscribe({
-      next: (res) => {
-        console.log('Saved:', res);
+  updateDestination() {
+    const payload = {
+      id: this.selectedDestinationId,
+      ...this.newDestination,
+    };
 
+    this.adminService.updateDestination(this.selectedDestinationId, payload).subscribe({
+      next: () => {
         this.fetchDestinations();
 
-        this.newDestination = {
-          name: '',
-          country: '',
-          type: '',
-          duration: '',
-          price: 0,
-          rating: 0,
-        };
+        this.isEditMode = false;
+        this.selectedDestinationId = '';
 
         this.closeAddForm();
       },
       error: (err) => console.error(err),
     });
+  }
+
+  deleteDestination(id: string) {
+    if (confirm('Delete this destination?')) {
+      this.adminService.deleteDestination(id).subscribe({
+        next: () => {
+          this.fetchDestinations();
+        },
+        error: (err) => console.error(err),
+      });
+    }
   }
 }
