@@ -9,11 +9,12 @@ import { NotificationModel } from '../../../Models/notification';
 import { AuthService } from '../../../Services/auth-service'; // Added for dynamic ID
 import { Router } from '@angular/router';
 import { NotificationListComponent } from '../../NotificationModule/notification-list-component/notification-list-component';
+import { NavbarComponent } from '../../Shared/navbar-component/navbar-component';
 
 @Component({
   selector: 'app-customer-dashboard-component',
   standalone: true,
-  imports: [CommonModule, StatusHighlight, BookingStatusPipe, NotificationListComponent],
+  imports: [NavbarComponent, CommonModule, StatusHighlight, BookingStatusPipe, NotificationListComponent],
   templateUrl: './customer-dashboard-component.html',
   styleUrl: './customer-dashboard-component.css',
 })

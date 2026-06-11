@@ -1,29 +1,23 @@
 <div class="booking-container">
   <h2>Create Booking</h2>
 
+  <div class="booking-summary">
+    <h2>Booking Details</h2>
+
+    <p><strong>Destination:</strong> {{ destination?.name }}</p>
+
+    <p><strong>Country:</strong> {{ destination?.country }}</p>
+
+    <p><strong>Service:</strong> {{ selectedService?.serviceName }}</p>
+
+    <p><strong>Provider:</strong> {{ selectedService?.provider }}</p>
+
+    <p><strong>Duration:</strong> {{ selectedService?.duration }}</p>
+
+    <p><strong>Rating:</strong> {{ selectedService?.rating }}</p>
+  </div>
+
   <form [formGroup]="bookingForm">
-    <label> Destination </label>
-    <select formControlName="destinationId" (change)="onDestinationChange()">
-      <option value="">Select Destination</option>
-
-      @for (destination of destinations; track destination.id) {
-        <option [value]="destination.id">
-          {{ destination.name }}
-        </option>
-      }
-    </select>
-
-    <label> Travel Service </label>
-    <select formControlName="serviceId" (change)="onServiceChange()">
-      <option value="">Select Service</option>
-
-      @for (service of filteredServices; track service.id) {
-        <option [value]="service.id">
-          {{ service.serviceName }}
-        </option>
-      }
-    </select>
-
     <label> Travel Date </label>
     <input type="date" formControlName="travelDate" />
   </form>
@@ -36,15 +30,17 @@
       ({{ traveler.relationship }})
     </div>
   }
+  <button type="button" (click)="addTraveler()">+ Add New Traveler</button>
 
   @if (availability) {
-    <h4>
-      Available Slots: {{ availability.availableSlots }}
-    </h4>
+    <h4>Available Slots: {{ availability.availableSlots }}</h4>
   }
 
   <h3>Total Price: ₹{{ totalPrice }}</h3>
-  <button (click)="proceedToReview()" [disabled]="bookingForm.invalid || selectedTravelerIds.length === 0">
+  <button
+    (click)="proceedToReview()"
+    [disabled]="bookingForm.invalid || selectedTravelerIds.length === 0"
+  >
     Review Booking
   </button>
 </div>

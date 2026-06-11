@@ -71,4 +71,13 @@ export class BookingReviewComponent implements OnInit {
       state: { bookingData: this.bookingData },
     });
   }
+
+  cancelBooking(): void{
+    const confirmation=confirm('Are you sure you want to cancel this booking?');
+    if(!confirmation){
+      return;
+    }
+    //notification
+    this.router.navigate(['/customer/booking']);
+  }
 }

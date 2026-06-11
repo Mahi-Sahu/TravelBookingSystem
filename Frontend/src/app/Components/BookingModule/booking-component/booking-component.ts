@@ -6,16 +6,21 @@ import { TravelService } from '../../../Models/travel-service';
 import { Traveler } from '../../../Models/traveler';
 import { Availaibility } from '../../../Models/availaibility';
 import { BookingService } from '../../../Services/booking-service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking-component',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './booking-component.html',
-  styleUrl: './booking-component.css'
+  styleUrl: './booking-component.css',
 })
 export class BookingComponent implements OnInit {
+  destination?: Destination;
+  selectedService?: TravelService;
+  itineraryId = '';
+  itineraryDays: any[]=[];
+
   bookingForm!: FormGroup;
 
   destinations: Destination[] = [];
@@ -34,78 +39,72 @@ export class BookingComponent implements OnInit {
 
   userId = 1;
 
-  constructor(private fb: FormBuilder,private bookingService: BookingService,private router: Router,private cdr: ChangeDetectorRef) {}
+  constructor(
+    private fb: FormBuilder,
+    private bookingService: BookingService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef,
+  ) {}
 
   ngOnInit(): void {
     this.initializeForm();
-    this.loadDestinations();
-    this.loadServices();
     this.loadTravelers();
+    this.route.queryParams.subscribe((params) => {
+      const destinationId = params['destinationId'];
+      const serviceId = params['serviceId'];
+      this.itineraryId = params['itineraryId'];
+
+      if (destinationId) {
+        this.loadDestinations(destinationId);
+      }
+
+      if (serviceId) {
+        this.loadSelectedService(serviceId);
+      }
+    });
+    this.itineraryDays=history.state.itineraryDays || [];
   }
 
   initializeForm(): void {
     this.bookingForm = this.fb.group({
-      destinationId: ['', Validators.required],
-      serviceId: ['', Validators.required],
       travelDate: ['', Validators.required],
     });
   }
 
-  loadDestinations(): void {
-    this.bookingService.getDestinations().subscribe((response) => {
-      this.destinations = response;
+  loadDestinations(destinationId: string): void {
+    this.bookingService.getDestinationById(destinationId).subscribe((response) => {
+      this.destination = response;
       this.cdr.detectChanges();
     });
-    
+  }
+
+  loadSelectedService(serviceId: string): void {
+    this.bookingService.getTravelServiceById(serviceId).subscribe((response) => {
+      this.selectedService = response;
+      this.calculatePrice();
+      this.cdr.detectChanges();
+    });
   }
 
   loadTravelers(): void {
     this.bookingService.getTravelersByUser(this.userId).subscribe((response) => {
       this.travelers = response;
+      this.cdr.detectChanges();
     });
-  }
-
-  onDestinationChange(): void {
-    const destinationId = Number(this.bookingForm.get('destinationId')?.value);
-
-    this.filteredServices = this.travelServices.filter(
-      (service) => service.destinationId === destinationId,
-    );
-
-    this.bookingForm.patchValue({
-      serviceId: '',
-    });
-
-    this.totalPrice = 0;
-  }
-
-  loadServices(): void {
-    this.bookingService.getTravelServices().subscribe((response) => {
-      this.travelServices = response;
-    });
-  }
-
-  onServiceChange(): void {
-    const serviceId = this.bookingForm.get('serviceId')?.value;
-
-    this.bookingService.getAvailabilityByService(serviceId).subscribe((response) => {
-      this.availability = response[0];
-    });
-
-    this.calculatePrice();
   }
 
   calculatePrice(): void {
-    const serviceId = this.bookingForm.get('serviceId')?.value;
-
-    const service = this.travelServices.find((service) => service.id === serviceId);
-
-    if (!service) {
+    if (!this.selectedService) {
       this.totalPrice = 0;
       return;
     }
 
-    this.totalPrice = service.price * this.selectedTravelerIds.length;
+    this.totalPrice = this.selectedService.price * this.selectedTravelerIds.length;
+  }
+
+  addTraveler(): void {
+    this.router.navigate(['/customer/travelers/add']);
   }
 
   toggleTraveler(travelerId: string, event: Event): void {
@@ -120,21 +119,22 @@ export class BookingComponent implements OnInit {
   }
 
   proceedToReview(): void {
-    if (this.bookingForm.invalid || this.selectedTravelerIds.length === 0) {
+    if (!this.bookingForm.get('travelDate')?.value || this.selectedTravelerIds.length === 0) {
       return;
     }
 
     const bookingData = {
       userId: this.userId,
-      destinationId: Number(this.bookingForm.value.destinationId),
-      serviceId: this.bookingForm.value.serviceId,
+      destinationId: Number(this.destination?.id),
+      serviceId: this.selectedService?.id,
+      itineraryId: this.itineraryId,
+      itineraryDays: this.itineraryDays,
       travelDate: this.bookingForm.value.travelDate,
       travelerIds: this.selectedTravelerIds,
       travelers: this.selectedTravelerIds.length,
       totalPrice: this.totalPrice,
       status: 'PENDING',
     };
-
     this.router.navigate(['/customer/booking/review'], {
       state: { bookingData },
     });
