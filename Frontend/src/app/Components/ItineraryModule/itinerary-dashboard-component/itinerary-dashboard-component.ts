@@ -4,6 +4,8 @@ import { ItineraryService } from '../../../Services/itinerary';
 import { ItineraryCardComponent } from '../itinerary-card-component/itinerary-card-component';
 import { ItineraryDetailsComponent } from '../itinerary-details-component/itinerary-details-component';
 import { Itinerary } from '../../../Models/itinerary';
+import { AuthService } from '../../../Services/auth-service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,15 +17,27 @@ import { Itinerary } from '../../../Models/itinerary';
 })
 export class ItineraryDashboardComponent implements OnInit {
   protected itineraryService = inject(ItineraryService);
+  protected authService=inject(AuthService);
+  private router =inject(Router);
   
   // Mock tracking current authenticated customer (Rahul Sharma id: 1)
-  private currentUserId = 8; 
+  
+
   selectedItinerary = signal<Itinerary | null>(null);
+  currentUser: any;
 
   ngOnInit(): void {
-    this.itineraryService.loadUserItineraries(this.currentUserId).subscribe();
+    const currentUser = this.authService.currentUser();
+
+  if(currentUser && currentUser.id){
+    
+    this.itineraryService.loadUserItineraries(this.currentUser.id ).subscribe();
+  }else{
+    this.router.navigate(['/login']);
   }
 
+  }
+  
   onSelectItinerary(itinerary: Itinerary): void {
     this.selectedItinerary.set(itinerary);
     this.itineraryService.loadItineraryDetails(itinerary.id).subscribe();
