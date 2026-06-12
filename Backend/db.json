@@ -646,7 +646,7 @@
       "title": "Booking Confirmed",
       "message": "Your Goa trip has been confirmed.",
       "type": "BOOKING",
-      "isRead": false,
+      "isRead": true,
       "createdAt": "2026-06-05T10:00:00"
     },
     {
@@ -2348,5 +2348,6 @@
       "availableSlots": 15,
       "status": "AVAILABLE"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

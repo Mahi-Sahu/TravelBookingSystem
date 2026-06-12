@@ -35,7 +35,7 @@ export class NotificationListComponent implements OnInit {
   ngOnInit() {
     const user = this.authService.currentUser();
     if (user && user.id) {
-      this.notificationService.loadUserNotifications(user.id).subscribe();
+      this.notificationService.startPolling(user.id);
     }
   }
 

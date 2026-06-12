@@ -23,7 +23,7 @@ import { ManagePricingComponent } from './Components/AdminModule/manage-pricing-
 import { ManageNotificationsComponent } from './Components/AdminModule/manage-notifications-component/manage-notifications-component';
 import { ManageAvailabilityComponent } from './Components/AdminModule/manage-availability-component/manage-availability-component';
 import { ManageItinerariesComponent } from './Components/AdminModule/manage-itineraries-component/manage-itineraries-component';
-import { adminGuard } from './Guards/auth-guard';
+import { adminGuard, authGuard } from './Guards/auth-guard';
 
 export const routes: Routes = [
   //auth module:
@@ -31,27 +31,27 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'profile-preferences', component: ProfilePreferencesComponent },
+  { path: 'profile-preferences', component: ProfilePreferencesComponent, canActivate: [authGuard] },
 
   //customer-module
-  { path: 'customer-dashboard', component: CustomerDashboardComponent },
-  { path: 'customer/profile', component: CustomerProfileComponent },
-  { path: 'customer/booking', component: BookingComponent },
-  { path: 'customer/booking/review', component: BookingReviewComponent },
-  { path: 'customer/booking/confirmation', component: BookingConfirmationComponent },
-  { path: 'customer/booking/history', component: BookingHistoryComponent },
+  { path: 'customer-dashboard', component: CustomerDashboardComponent, canActivate: [authGuard] },
+  { path: 'customer/profile', component: CustomerProfileComponent, canActivate: [authGuard] },
+  { path: 'customer/booking', component: BookingComponent, canActivate: [authGuard] },
+  { path: 'customer/booking/review', component: BookingReviewComponent, canActivate: [authGuard] },
+  { path: 'customer/booking/confirmation', component: BookingConfirmationComponent, canActivate: [authGuard] },
+  { path: 'customer/booking/history', component: BookingHistoryComponent, canActivate: [authGuard] },
 
   //travel module
-  { path: 'travel-catalog', component: TravelListComponent },
+  { path: 'travel-catalog', component: TravelListComponent, canActivate: [authGuard] },
 
   //itinerary module
-  { path: 'my-itineraries', component: ItineraryDashboardComponent }, // Attached Itinerary Module Target Link
+  { path: 'my-itineraries', component: ItineraryDashboardComponent, canActivate: [authGuard] }, // Attached Itinerary Module Target Link
 
   //notification module
-  { path: 'notifications', component: NotificationListComponent },
+  { path: 'notifications', component: NotificationListComponent, canActivate: [authGuard] },
 
   //admin module
-  { path: 'admin-dashboard', component: AdminDashboardComponent },
+  { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [adminGuard] },
   { path: 'admin/manage-travel', component: ManageTravelComponent, canActivate: [adminGuard] },
   { path: 'admin/manage-bookings', component: ManageBookingsComponent, canActivate: [adminGuard] },
   {
