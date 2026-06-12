@@ -8,12 +8,56 @@
 </app-download-summary>
   </div>
 
+   <button class="btn-secondary" (click)="toggleRescheduleForm()" style="margin-left: 10px;">
+  📅 Request Reschedule
+</button>
   <div class="details-hero-banner">
     <h2>{{ itinerary.title }} Detailed Plan</h2>
     <p class="timeline-span">
       <strong>Core Window:</strong> {{ itinerary.startDate | date:'longDate' }} to {{ itinerary.endDate | date:'longDate' }}
     </p>
   </div>
+
+ 
+
+@if (showRescheduleForm) {
+  <div class="reschedule-box" style="margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+    <h3>Request Trip Reschedule</h3>
+    
+    <form [formGroup]="rescheduleForm" (ngSubmit)="submitReschedule()">
+      
+      <div style="display: flex; gap: 20px; margin-bottom: 15px;">
+        <div>
+          <label>New Start Date:</label><br>
+          <input type="date" formControlName="startDate" [min]="minDate">
+        </div>
+        <div>
+          <label>New End Date:</label><br>
+          <input type="date" formControlName="endDate" [min]="minDate">
+        </div>
+      </div>
+
+      @if (rescheduleForm.hasError('dateSequencing') && rescheduleForm.get('endDate')?.touched) {
+        <p style="color: red; font-size: 13px; font-weight: bold;">
+          ⚠️ Invalid Date Sequence: End Date cannot be before Start Date.
+        </p>
+      }
+
+      <div style="margin-bottom: 15px;">
+        <label>Reason for reschedule:</label><br>
+        <textarea formControlName="reason" rows="3" style="width: 100%;"></textarea>
+        @if (rescheduleForm.get('reason')?.hasError('minlength')) {
+          <span style="color: red; font-size: 12px;">Please provide at least 10 characters.</span>
+        }
+      </div>
+
+      <button type="submit" [disabled]="rescheduleForm.invalid" 
+              [style.opacity]="rescheduleForm.invalid ? '0.5' : '1'">
+        Submit Request
+      </button>
+    </form>
+  </div>
+}
 
   <div class="itinerary-timeline-axis">
     @for (daySchedule of itineraryService.selectedItineraryDays(); track daySchedule.id) {
