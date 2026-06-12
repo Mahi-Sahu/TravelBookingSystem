@@ -1,7 +1,11 @@
 <div class="details-content-wrapper">
   <div class="action-top-row">
     <button class="back-link-btn" (click)="onBack.emit()">← Return to Stack</button>
-    <app-download-summary [itinerary]="itinerary" [days]="itineraryService.selectedItineraryDays()"></app-download-summary>
+    <app-download-summary 
+  [itinerary]="itinerary" 
+  [days]="itineraryService.selectedItineraryDays()"
+  [coTravelers]="coTravelers()"> 
+</app-download-summary>
   </div>
 
   <div class="details-hero-banner">

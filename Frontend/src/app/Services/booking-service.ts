@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Destination } from '../Models/destination';
-import { Observable, tap } from 'rxjs';
+import { Observable, tap, of } from 'rxjs';
 import { TravelService } from '../Models/travel-service';
 import { Traveler } from '../Models/traveler';
 import { Booking } from '../Models/booking';
@@ -13,7 +13,7 @@ import { NotificationService } from './notification-service';
 export class BookingService {
   private baseUrl = 'http://localhost:3000';
   private http = inject(HttpClient);
-  private notificationService = inject(NotificationService); // Inject it
+  private notificationService = inject(NotificationService); 
   private apiUrl = 'http://localhost:3000/bookings';
 
   constructor() {}
@@ -42,31 +42,43 @@ export class BookingService {
     return this.http.get<Booking[]>(`${this.baseUrl}/bookings?userId=${userId}`);
   }
 
+  // --- NEW METHODS ADDED HERE ---
+  getBookingById(bookingId: number | string): Observable<Booking> {
+    return this.http.get<Booking>(`${this.baseUrl}/bookings/${bookingId}`);
+  }
+
+  getTravelersByIds(travelerIds: (string | number)[]): Observable<Traveler[]> {
+    if (!travelerIds || travelerIds.length === 0) return of([]);
+    
+    // Allows fetching multiple records using json-server format: ?id=1&id=2
+    const params = travelerIds.map(id => `id=${id}`).join('&');
+    return this.http.get<Traveler[]>(`${this.baseUrl}/travelers?${params}`);
+  }
+  // ------------------------------
+
   createBooking(bookingPayload: any): Observable<Booking> {
     return this.http.post<Booking>(this.apiUrl, bookingPayload).pipe(
       tap((newBooking) => {
-        // Automatically fire a notification to db.json on success
         this.notificationService
           .sendNotification({
-            userId: newBooking.userId, // Target the user who just booked
+            userId: newBooking.userId,
             title: 'Booking Confirmed!',
             message: `Your booking (ID: ${newBooking.id}) has been successfully confirmed. Have a great trip!`,
             type: 'ALERT',
             isRead: false,
             timestamp: new Date().toISOString(),
           })
-          .subscribe(); // Fire and forget
+          .subscribe(); 
       }),
     );
   }
 
   createTraveler(traveler: Traveler): Observable<Traveler> {
     return this.http.post<Traveler>(`${this.baseUrl}/travelers`, traveler).pipe(
-      tap((newBooking) => {
-        // Automatically fire a notification to db.json on success
+      tap((newBooking: any) => {
         this.notificationService
           .sendNotification({
-            userId: Number(newBooking.userId), // Target the user who just booked
+            userId: Number(newBooking.userId),
             title: 'Traveler created!',
             message: `New traveler ${traveler.fullName} added successfully!`,
             type: 'ALERT',
