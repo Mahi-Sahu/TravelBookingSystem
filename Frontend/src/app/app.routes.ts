@@ -26,13 +26,18 @@ import { ManageItinerariesComponent } from './Components/AdminModule/manage-itin
 import { adminGuard, authGuard } from './Guards/auth-guard';
 import { AddTravelerComponent } from './Components/CustomerModule/add-traveler-component/add-traveler-component';
 import { NotFoundComponent } from './Components/Shared/not-found-component/not-found-component';
+import { HomeComponent } from './Components/Shared/home-component/home-component';
 
 export const routes: Routes = [
-  //auth module:
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // --- ROOT NAVIGATION ---
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent }, // The new landing page
+
+  //auth module
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  //protected routes
   { path: 'profile-preferences', component: ProfilePreferencesComponent, canActivate: [authGuard] },
 
   //customer-module
@@ -41,8 +46,8 @@ export const routes: Routes = [
   { path: 'customer/booking', component: BookingComponent, canActivate: [authGuard] },
   { path: 'customer/booking/review', component: BookingReviewComponent, canActivate: [authGuard] },
   { path: 'customer/booking/confirmation', component: BookingConfirmationComponent, canActivate: [authGuard] },
-  { path: 'customer/booking/history', component: BookingHistoryComponent, canActivate: [authGuard] },
-  { path: 'customer/traveler/add', component: AddTravelerComponent, canActivate: [authGuard]},
+  { path: 'customer/booking/history', component: BookingHistoryComponent, canActivate: [authGuard]},
+  { path: 'customer/traveler/add', component: AddTravelerComponent, canActivate: [authGuard] },
 
   //travel module
   { path: 'travel-catalog', component: TravelListComponent, canActivate: [authGuard] },
@@ -80,7 +85,6 @@ export const routes: Routes = [
     canActivate: [adminGuard],
   },
 
-  { path: "404", component: NotFoundComponent},
-  { path: '**', redirectTo: '404', pathMatch: 'full'},
-
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
