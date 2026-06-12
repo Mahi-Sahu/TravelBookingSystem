@@ -1,0 +1,16 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-not-found-component',
+  imports: [],
+  templateUrl: './not-found-component.html',
+  styleUrl: './not-found-component.css',
+})
+export class NotFoundComponent {
+  constructor(private router: Router){}
+
+  goToDashboard(): void{
+    this.router.navigate(['/customer-dashboard']);
+  }
+}

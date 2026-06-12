@@ -246,6 +246,15 @@
       "gender": "Male",
       "passportNumber": "IND12359",
       "relationship": "Father"
+    },
+    {
+      "userId": 2,
+      "fullName": "Sneha Verma",
+      "age": 13,
+      "gender": "Female",
+      "passportNumber": "IND45678",
+      "relationship": "Sister",
+      "id": "hSZRtayNAdI"
     }
   ],
   "destinations": [
@@ -637,6 +646,24 @@
       ],
       "status": "PENDING",
       "totalPrice": 220000
+    },
+    {
+      "userId": "2",
+      "destinationId": 9,
+      "serviceId": "22",
+      "itineraryId": "",
+      "itineraryDays": [],
+      "travelDate": "2026-08-01",
+      "travelerIds": [
+        "3",
+        "13",
+        "hSZRtayNAdI"
+      ],
+      "travelers": 3,
+      "totalPrice": 21000,
+      "status": "PENDING",
+      "bookingDate": "2026-06-12",
+      "id": "gGiTsQ7FuYo"
     }
   ],
   "notifications": [
@@ -794,13 +821,31 @@
       "createdAt": "2026-06-06T12:10:00"
     },
     {
-      "id": 18,
+      "id": "18",
       "userId": 1,
       "type": "PROMOTION",
       "title": "hi hi",
       "message": "you got ac class",
       "isRead": false,
       "createdAt": "2026-06-11T12:35:43.609Z"
+    },
+    {
+      "userId": 2,
+      "title": "Traveler created!",
+      "message": "New traveler Sneha Verma added successfully!",
+      "type": "ALERT",
+      "isRead": true,
+      "timestamp": "2026-06-12T05:15:49.205Z",
+      "id": "DYnSQGdLK9o"
+    },
+    {
+      "userId": "2",
+      "title": "Booking Confirmed!",
+      "message": "Your booking (ID: gGiTsQ7FuYo) has been successfully confirmed. Have a great trip!",
+      "type": "ALERT",
+      "isRead": true,
+      "timestamp": "2026-06-12T05:16:56.725Z",
+      "id": "bPnjzXZNhiI"
     }
   ],
   "travelServices": [

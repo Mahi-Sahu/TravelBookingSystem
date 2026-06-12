@@ -25,6 +25,7 @@ import { ManageAvailabilityComponent } from './Components/AdminModule/manage-ava
 import { ManageItinerariesComponent } from './Components/AdminModule/manage-itineraries-component/manage-itineraries-component';
 import { adminGuard, authGuard } from './Guards/auth-guard';
 import { AddTravelerComponent } from './Components/CustomerModule/add-traveler-component/add-traveler-component';
+import { NotFoundComponent } from './Components/Shared/not-found-component/not-found-component';
 
 export const routes: Routes = [
   //auth module:
@@ -79,7 +80,7 @@ export const routes: Routes = [
     canActivate: [adminGuard],
   },
 
-  // Wildcard route for a 404 page (optional)
-  { path: '**', redirectTo: 'login' },
+  { path: "404", component: NotFoundComponent},
+  { path: '**', redirectTo: '404', pathMatch: 'full'},
 
 ];
