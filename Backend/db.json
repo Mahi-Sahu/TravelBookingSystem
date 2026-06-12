@@ -255,6 +255,24 @@
       "passportNumber": "IND45678",
       "relationship": "Sister",
       "id": "hSZRtayNAdI"
+    },
+    {
+      "userId": 2,
+      "fullName": "Aditya Singh",
+      "age": 22,
+      "gender": "Male",
+      "passportNumber": "3444-4371-6891",
+      "relationship": "Friend",
+      "id": "vaD5PwwmjIg"
+    },
+    {
+      "userId": 2,
+      "fullName": "Balraj ",
+      "age": 23,
+      "gender": "Male",
+      "passportNumber": "4535-6527-9856",
+      "relationship": "Brother",
+      "id": "cbhh7lCvXg4"
     }
   ],
   "destinations": [
@@ -684,6 +702,176 @@
       "status": "PENDING",
       "bookingDate": "2026-06-12",
       "id": "gGiTsQ7FuYo"
+    },
+    {
+      "userId": "2",
+      "destinationId": 7,
+      "serviceId": "7",
+      "itineraryId": "2",
+      "itineraryDays": [
+        {
+          "id": "4",
+          "itineraryId": 2,
+          "dayNumber": 1,
+          "date": "2026-07-01",
+          "transportType": "Flight",
+          "transportFrom": "Lucknow",
+          "transportTo": "Kochi",
+          "transportTime": "08:30 AM",
+          "hotel": "Backwater Resort",
+          "checkInTime": "01:00 PM",
+          "activities": [
+            {
+              "activityName": "Fort Kochi Visit",
+              "activityTime": "07:00 PM"
+            },
+            {
+              "activityName": "Kathakali Show",
+              "activityTime": "08:30 PM"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "itineraryId": 2,
+          "dayNumber": 2,
+          "date": "2026-07-02",
+          "transportType": "Boat",
+          "transportFrom": "Alleppey",
+          "transportTo": "Backwaters",
+          "transportTime": "09:00 AM",
+          "hotel": "Backwater Resort",
+          "checkInTime": "-",
+          "activities": [
+            {
+              "activityName": "Houseboat Cruise",
+              "activityTime": "07:00 PM"
+            },
+            {
+              "activityName": "Village Walk",
+              "activityTime": "08:30 PM"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "itineraryId": 2,
+          "dayNumber": 3,
+          "date": "2026-07-03",
+          "transportType": "Cab",
+          "transportFrom": "Kochi",
+          "transportTo": "Munnar",
+          "transportTime": "08:00 AM",
+          "hotel": "Hill View Resort",
+          "checkInTime": "01:00 PM",
+          "activities": [
+            {
+              "activityName": "Tea Garden Visit",
+              "activityTime": "3:30 PM"
+            },
+            {
+              "activityName": "Sunset Point",
+              "activityTime": "06:00 PM"
+            }
+          ]
+        }
+      ],
+      "travelDate": "2026-07-02",
+      "travelerIds": [
+        "vaD5PwwmjIg",
+        "cbhh7lCvXg4",
+        "3"
+      ],
+      "travelers": 3,
+      "totalPrice": 54000,
+      "status": "PENDING",
+      "bookingDate": "2026-06-12",
+      "id": "7m2zKdYRlqQ"
+    },
+    {
+      "userId": "2",
+      "destinationId": 7,
+      "serviceId": "7",
+      "itineraryId": "2",
+      "itineraryDays": [
+        {
+          "id": "4",
+          "itineraryId": 2,
+          "dayNumber": 1,
+          "date": "2026-07-01",
+          "transportType": "Flight",
+          "transportFrom": "Lucknow",
+          "transportTo": "Kochi",
+          "transportTime": "08:30 AM",
+          "hotel": "Backwater Resort",
+          "checkInTime": "01:00 PM",
+          "activities": [
+            {
+              "activityName": "Fort Kochi Visit",
+              "activityTime": "07:00 PM"
+            },
+            {
+              "activityName": "Kathakali Show",
+              "activityTime": "08:30 PM"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "itineraryId": 2,
+          "dayNumber": 2,
+          "date": "2026-07-02",
+          "transportType": "Boat",
+          "transportFrom": "Alleppey",
+          "transportTo": "Backwaters",
+          "transportTime": "09:00 AM",
+          "hotel": "Backwater Resort",
+          "checkInTime": "-",
+          "activities": [
+            {
+              "activityName": "Houseboat Cruise",
+              "activityTime": "07:00 PM"
+            },
+            {
+              "activityName": "Village Walk",
+              "activityTime": "08:30 PM"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "itineraryId": 2,
+          "dayNumber": 3,
+          "date": "2026-07-03",
+          "transportType": "Cab",
+          "transportFrom": "Kochi",
+          "transportTo": "Munnar",
+          "transportTime": "08:00 AM",
+          "hotel": "Hill View Resort",
+          "checkInTime": "01:00 PM",
+          "activities": [
+            {
+              "activityName": "Tea Garden Visit",
+              "activityTime": "3:30 PM"
+            },
+            {
+              "activityName": "Sunset Point",
+              "activityTime": "06:00 PM"
+            }
+          ]
+        }
+      ],
+      "travelDate": "2026-07-02",
+      "travelerIds": [
+        "vaD5PwwmjIg",
+        "cbhh7lCvXg4",
+        "3"
+      ],
+      "travelers": 3,
+      "totalPrice": 54000,
+      "status": "PENDING",
+      "bookingDate": "2026-06-12",
+      "id": "Lq3MrashfMI"
     }
   ],
   "notifications": [
@@ -765,7 +953,7 @@
       "title": "Payment Received",
       "message": "Payment received for your Maldives booking.",
       "type": "PAYMENT",
-      "isRead": false,
+      "isRead": true,
       "createdAt": "2026-06-03T16:00:00"
     },
     {
@@ -866,6 +1054,42 @@
       "isRead": true,
       "timestamp": "2026-06-12T05:16:56.725Z",
       "id": "bPnjzXZNhiI"
+    },
+    {
+      "userId": 2,
+      "title": "Traveler created!",
+      "message": "New traveler Aditya Singh added successfully!",
+      "type": "ALERT",
+      "isRead": false,
+      "timestamp": "2026-06-12T06:50:42.091Z",
+      "id": "-trafEzQLTY"
+    },
+    {
+      "userId": 2,
+      "title": "Traveler created!",
+      "message": "New traveler Balraj  added successfully!",
+      "type": "ALERT",
+      "isRead": false,
+      "timestamp": "2026-06-12T06:51:33.620Z",
+      "id": "aqMpUA7DQxQ"
+    },
+    {
+      "userId": "2",
+      "title": "Booking Confirmed!",
+      "message": "Your booking (ID: 7m2zKdYRlqQ) has been successfully confirmed. Have a great trip!",
+      "type": "ALERT",
+      "isRead": false,
+      "timestamp": "2026-06-12T06:53:22.208Z",
+      "id": "LBu4gW_yOwo"
+    },
+    {
+      "userId": "2",
+      "title": "Booking Confirmed!",
+      "message": "Your booking (ID: Lq3MrashfMI) has been successfully confirmed. Have a great trip!",
+      "type": "ALERT",
+      "isRead": false,
+      "timestamp": "2026-06-12T06:53:49.487Z",
+      "id": "IQe1KqIv54Q"
     }
   ],
   "travelServices": [

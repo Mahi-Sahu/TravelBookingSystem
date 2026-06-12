@@ -57,11 +57,11 @@
         </div>
       </aside>
 
-      @if (travelService.loading()) {
+      @if (isLoading()) {
         <div style="padding: 40px; text-align: center; color: #64748b;">Querying file database indexes...</div>
       } @else {
         <main class="catalog-grid-results">
-          @for (item of travelService.filteredPackages(); track item.id) {
+          @for (item of filteredPackages(); track item.id) {
             <div style="cursor: pointer;">
               <app-travel-card 
                 [travelItem]="item" 

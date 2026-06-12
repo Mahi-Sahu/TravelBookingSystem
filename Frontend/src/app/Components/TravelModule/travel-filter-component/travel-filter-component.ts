@@ -1,24 +1,30 @@
 import { Component, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CurrencyPipe } from '@angular/common'; 
-import { TravelDataService } from '../../../Services/travel-data';
+import { CommonModule } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { updateFilters } from '../Store/travel.actions';
+import { selectTravelFilters } from '../Store/travel.selectors';
 
 @Component({
   selector: 'app-travel-filter',
   standalone: true,
-  imports: [FormsModule, CurrencyPipe], 
+  imports: [CommonModule],
   templateUrl: './travel-filter-component.html',
   styleUrl: './travel-filter-component.css'
 })
 export class TravelFilterComponent {
-  protected travelService = inject(TravelDataService);
+  private store = inject(Store); // Inject the NgRx Store
 
-  onBudgetRangeChange(event: Event): void {
-    const budget = +(event.target as HTMLInputElement).value;
-    this.travelService.updateFilters({ budgetRange: budget });
+  // Read the current filters seamlessly as an Angular Signal
+  currentFilters = this.store.selectSignal(selectTravelFilters);
+
+  onBudgetChange(event: Event): void {
+    const budget = Number((event.target as HTMLInputElement).value);
+    // Dispatch the action to the Store
+    this.store.dispatch(updateFilters({ filters: { budgetRange: budget } }));
   }
 
-  onRatingSelect(minRating: number): void {
-    this.travelService.updateFilters({ rating: minRating });
+  onRatingChange(minRating: number): void {
+    // Dispatch the action to the Store
+    this.store.dispatch(updateFilters({ filters: { rating: minRating } }));
   }
 }

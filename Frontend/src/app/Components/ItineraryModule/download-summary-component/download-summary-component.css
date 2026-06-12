@@ -146,3 +146,41 @@ hr {
   color: #222;
   font-weight: 600;
 }
+
+
+/* --- CO-TRAVELERS STYLES --- */
+.co-travelers-section {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #bdc3c7;
+}
+
+.co-travelers-section h5 {
+  margin: 0 0 10px 0;
+  color: #34495e;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.co-travelers-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.co-travelers-list li {
+  background-color: #ffffff;
+  border: 1px solid #dcdde1;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #555;
+  border-left: 3px solid #3498db;
+}
+
+.co-travelers-list li strong {
+  color: #2c3e50;
+}

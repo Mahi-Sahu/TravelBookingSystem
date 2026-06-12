@@ -2,7 +2,8 @@
   ⬇️ Download Itinerary (PDF)
 </button>
 
-<div id="pdfContent"  *ngIf="itinerary as trip" class="pdf-container">
+<div id="pdfContent" *ngIf="itinerary as trip" class="pdf-container">
+  
   <div class="print-header">
     <h2>{{ itinerary.title }} - Itinerary Summary</h2>
     <p><strong>Dates:</strong> {{ itinerary.startDate | date }} to {{ itinerary.endDate | date }}</p>
@@ -10,6 +11,32 @@
   </div>
 
   <hr />
+
+  <div class="customer-info">
+    <h4>Prepared Exclusively For:</h4>
+    
+    <div class="customer-grid">
+      <p><strong>Primary Traveler:</strong> {{ user?.firstName }} {{ user?.lastName }}</p>
+      <p><strong>Email:</strong> {{ user?.email }}</p>
+      <p><strong>Contact:</strong> {{ user?.phone || 'Not Provided' }}</p>
+    </div>
+
+@if (filteredCoTravelers.length > 0) {
+      <div class="co-travelers-section">
+        <h5>Additional Travelers (Co-Travelers):</h5>
+        <ul class="co-travelers-list">
+          
+          @for (traveler of filteredCoTravelers; track traveler.id) {
+            <li>
+              <strong>{{ traveler.fullName }}</strong> 
+              (Age: {{ traveler.age || 'N/A' }})
+            </li>
+          }
+          
+        </ul>
+      </div>
+    }
+  </div>
 
   @for (day of days; track day.id) {
     <div class="day-card">
