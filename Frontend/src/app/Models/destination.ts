@@ -6,4 +6,5 @@ export interface Destination {
   duration:string;
   rating:number;
   type:string;
+  url?: string;
 }

@@ -8,11 +8,12 @@ import { Availaibility } from '../../../Models/availaibility';
 import { BookingService } from '../../../Services/booking-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../../Services/auth-service';
+import { NavbarComponent } from '../../Shared/navbar-component/navbar-component';
 
 @Component({
   selector: 'app-booking-component',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, NavbarComponent],
   templateUrl: './booking-component.html',
   styleUrl: './booking-component.css',
 })

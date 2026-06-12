@@ -6,12 +6,13 @@ import { ItineraryDetailsComponent } from '../itinerary-details-component/itiner
 import { Itinerary } from '../../../Models/itinerary';
 import { AuthService } from '../../../Services/auth-service';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../../Shared/navbar-component/navbar-component';
 
 
 @Component({
   selector: 'app-itinerary-dashboard-component',
   standalone: true,
-  imports: [CommonModule, ItineraryCardComponent, ItineraryDetailsComponent],
+  imports: [CommonModule, ItineraryCardComponent, ItineraryDetailsComponent, NavbarComponent],
   templateUrl: './itinerary-dashboard-component.html',
   styleUrl: './itinerary-dashboard-component.css'
 })

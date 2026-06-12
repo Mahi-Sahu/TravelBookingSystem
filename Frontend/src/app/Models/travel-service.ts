@@ -7,4 +7,5 @@ export interface TravelService {
   price:number;
   duration:string;
   rating:number;
+  serviceUrl?: string;
 }

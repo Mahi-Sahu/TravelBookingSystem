@@ -6,6 +6,7 @@ import { TravelDetailsComponent } from '../travel-details-component/travel-detai
 import { TravelSearchComponent } from '../travel-search-component/travel-search-component'; 
 import { TravelFilterComponent } from '../travel-filter-component/travel-filter-component';
 import { TravelItem, TravelServicePackage } from '../../../Models/travel';
+import { NavbarComponent } from '../../Shared/navbar-component/navbar-component';
 
 @Component({
   selector: 'app-travel-list',
@@ -15,7 +16,8 @@ import { TravelItem, TravelServicePackage } from '../../../Models/travel';
     TravelCardComponent, 
     TravelDetailsComponent,
     TravelSearchComponent,     
-    TravelFilterComponent
+    TravelFilterComponent,
+    NavbarComponent
   ],
   templateUrl: './travel-list-component.html',
   styleUrl: './travel-list-component.css'
