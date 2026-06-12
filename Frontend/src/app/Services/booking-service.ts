@@ -4,7 +4,6 @@ import { Destination } from '../Models/destination';
 import { Observable, tap } from 'rxjs';
 import { TravelService } from '../Models/travel-service';
 import { Traveler } from '../Models/traveler';
-import { Availaibility } from '../Models/availaibility';
 import { Booking } from '../Models/booking';
 import { NotificationService } from './notification-service';
 
@@ -23,10 +22,6 @@ export class BookingService {
     return this.http.get<Destination[]>(`${this.baseUrl}/destinations`);
   }
 
-  getTravelServices(): Observable<TravelService[]> {
-    return this.http.get<TravelService[]>(`${this.baseUrl}/travelServices`);
-  }
-
   getTravelServiceById(id: string): Observable<TravelService> {
     return this.http.get<TravelService>(`${this.baseUrl}/travelServices/${id}`);
   }
@@ -41,10 +36,6 @@ export class BookingService {
 
   getTravelerById(id: string): Observable<Traveler> {
     return this.http.get<Traveler>(`${this.baseUrl}/travelers/${id}`);
-  }
-
-  getAvailabilityByService(serviceId: string): Observable<Availaibility[]> {
-    return this.http.get<Availaibility[]>(`${this.baseUrl}/availability?serviceId=${serviceId}`);
   }
 
   getBookingsByUser(userId: number): Observable<Booking[]> {
@@ -65,6 +56,24 @@ export class BookingService {
             timestamp: new Date().toISOString(),
           })
           .subscribe(); // Fire and forget
+      }),
+    );
+  }
+
+  createTraveler(traveler: Traveler): Observable<Traveler> {
+    return this.http.post<Traveler>(`${this.baseUrl}/travelers`, traveler).pipe(
+      tap((newBooking) => {
+        // Automatically fire a notification to db.json on success
+        this.notificationService
+          .sendNotification({
+            userId: Number(newBooking.userId), // Target the user who just booked
+            title: 'Traveler created!',
+            message: `New traveler ${traveler.fullName} added successfully!`,
+            type: 'ALERT',
+            isRead: false,
+            timestamp: new Date().toISOString(),
+          })
+          .subscribe();
       }),
     );
   }

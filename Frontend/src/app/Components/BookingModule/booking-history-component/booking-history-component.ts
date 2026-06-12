@@ -1,16 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BookingStatusPipe } from '../../../Pipes/booking-status-pipe';
 import { StatusHighlight } from '../../../Directives/status-highlight';
 import { Booking } from '../../../Models/booking';
 import { BookingService } from '../../../Services/booking-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { NavbarComponent } from '../../Shared/navbar-component/navbar-component';
+import { AuthService } from '../../../Services/auth-service';
 
 @Component({
   selector: 'app-booking-history-component',
-  imports: [CommonModule, FormsModule, BookingStatusPipe, StatusHighlight, NavbarComponent],
+  imports: [CommonModule, FormsModule, BookingStatusPipe, StatusHighlight, NavbarComponent, RouterLink],
   templateUrl: './booking-history-component.html',
   styleUrl: './booking-history-component.css',
 })
@@ -20,14 +21,23 @@ export class BookingHistoryComponent implements OnInit {
   destinationsMap: { [key: number]: string } = {};
   searchText = '';
 
+  private authService=inject(AuthService);
+
   //to be fetched later
-  userId = 1;
+  userId = 0;
 
   constructor(
     private bookingService: BookingService,
     private router: Router,
     private changeDetection: ChangeDetectorRef,
-  ) {}
+  ) {
+    const currentUser= this.authService.currentUser();
+    if(currentUser && currentUser.id)
+      this.userId=currentUser.id;
+    else{
+      router.navigate(['/login']);
+    }
+  }
 
   ngOnInit(): void {
     this.loadBookings();
@@ -51,14 +61,11 @@ export class BookingHistoryComponent implements OnInit {
     });
   }
 
-  searchBooking(): void {
-    const keyword = this.searchText.toLowerCase();
-    this.filteredBookings = this.bookings.filter((booking) => {
-      this.destinationsMap[booking.destinationId]?.toLowerCase().includes(keyword);
-    });
-  }
-
   viewBooking(bookingId: number): void {
     this.router.navigate(['/customer/booking', bookingId]);
+  }
+
+  goBack(): void{
+    this.router.navigate(['/customer-dashboard']);
   }
 }

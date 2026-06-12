@@ -1,3 +1,7 @@
+.header-section{
+  display: flex;
+}
+
 .history-container{
 
   padding:20px;

@@ -1,0 +1,41 @@
+<div class="traveler-container">
+  <h2>Add Traveler</h2>
+
+  <form [formGroup]="travelerForm" (ngSubmit)="saveTraveler()">
+    <label>Full Name</label>
+    <input type="text" formControlName="fullName" />
+
+    <label>Age</label>
+    <input type="number" formControlName="age" />
+
+    <label>Gender</label>
+    <select formControlName="gender">
+      <option value="">Select Gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+
+    <label>Passport Number</label>
+    <input type="text" formControlName="passportNumber" />
+
+    <label>Relationship</label>
+    <select formControlName="relationship">
+      <option value="">Select Relationship</option>
+      <option>Self</option>
+      <option>Spouse</option>
+      <option>Child</option>
+      <option>Father</option>
+      <option>Mother</option>
+      <option>Brother</option>
+      <option>Sister</option>
+      <option>Friend</option>
+    </select>
+
+    <br /><br />
+
+    <button type="submit" [disabled]="travelerForm.invalid">Save Traveler</button>
+
+    <button type="button" (click)="cancel()">Cancel</button>
+  </form>
+</div>

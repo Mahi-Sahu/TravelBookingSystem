@@ -24,6 +24,7 @@ import { ManageNotificationsComponent } from './Components/AdminModule/manage-no
 import { ManageAvailabilityComponent } from './Components/AdminModule/manage-availability-component/manage-availability-component';
 import { ManageItinerariesComponent } from './Components/AdminModule/manage-itineraries-component/manage-itineraries-component';
 import { adminGuard, authGuard } from './Guards/auth-guard';
+import { AddTravelerComponent } from './Components/CustomerModule/add-traveler-component/add-traveler-component';
 
 export const routes: Routes = [
   //auth module:
@@ -40,6 +41,7 @@ export const routes: Routes = [
   { path: 'customer/booking/review', component: BookingReviewComponent, canActivate: [authGuard] },
   { path: 'customer/booking/confirmation', component: BookingConfirmationComponent, canActivate: [authGuard] },
   { path: 'customer/booking/history', component: BookingHistoryComponent, canActivate: [authGuard] },
+  { path: 'customer/traveler/add', component: AddTravelerComponent, canActivate: [authGuard]},
 
   //travel module
   { path: 'travel-catalog', component: TravelListComponent, canActivate: [authGuard] },
@@ -76,8 +78,8 @@ export const routes: Routes = [
     component: ManageItinerariesComponent,
     canActivate: [adminGuard],
   },
-  
+
   // Wildcard route for a 404 page (optional)
   { path: '**', redirectTo: 'login' },
-  
+
 ];
