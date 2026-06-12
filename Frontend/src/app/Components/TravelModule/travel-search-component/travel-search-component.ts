@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TravelDataService } from '../../../Services/travel-data';
+import { Store } from '@ngrx/store';
+import { updateFilters } from '../Store/travel.actions'; // Ensure this path matches your folder structure!
 
 @Component({
   selector: 'app-travel-search',
@@ -10,15 +11,18 @@ import { TravelDataService } from '../../../Services/travel-data';
   styleUrl: './travel-search-component.css'
 })
 export class TravelSearchComponent {
-  protected travelService = inject(TravelDataService);
+  private store = inject(Store); // Inject NgRx Store
 
   destination = '';
   travelType: 'all' | 'flight' | 'hotel' | 'package' = 'all';
 
   onSearch(): void {
-    this.travelService.updateFilters({
-      destination: this.destination,
-      travelType: this.travelType
-    });
+    // Dispatch action to NgRx
+    this.store.dispatch(updateFilters({
+      filters: {
+        destination: this.destination,
+        travelType: this.travelType
+      }
+    }));
   }
 }
