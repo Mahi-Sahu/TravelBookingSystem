@@ -24,9 +24,7 @@ export class CustomerProfileComponent implements OnInit {
   isEditMode = false;
   originalData: any;
   isSaving = false;
-
-  //to be taken as input
-  userId = 1;
+  userId = 0;
 
   constructor(
     private fb: FormBuilder,

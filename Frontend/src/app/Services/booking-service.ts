@@ -50,4 +50,8 @@ export class BookingService {
   getBookingsByUser(userId: number): Observable<Booking[]> {
     return this.http.get<Booking[]>(`${this.baseUrl}/bookings?userId=${userId}`);
   }
+
+  createTraveler(traveler: Traveler): Observable<Traveler> {
+    return this.http.post<Traveler>(`${this.baseUrl}/travelers`, traveler);
+  }
 }

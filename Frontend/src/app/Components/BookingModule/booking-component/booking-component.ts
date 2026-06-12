@@ -7,6 +7,7 @@ import { Traveler } from '../../../Models/traveler';
 import { Availaibility } from '../../../Models/availaibility';
 import { BookingService } from '../../../Services/booking-service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { AuthService } from '../../../Services/auth-service';
 
 @Component({
   selector: 'app-booking-component',
@@ -19,7 +20,7 @@ export class BookingComponent implements OnInit {
   destination?: Destination;
   selectedService?: TravelService;
   itineraryId = '';
-  itineraryDays: any[]=[];
+  itineraryDays: any[] = [];
 
   bookingForm!: FormGroup;
 
@@ -37,7 +38,9 @@ export class BookingComponent implements OnInit {
 
   totalPrice = 0;
 
-  userId = 1;
+  userId = 0;
+
+  private authService = inject(AuthService);
 
   constructor(
     private fb: FormBuilder,
@@ -45,7 +48,14 @@ export class BookingComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
-  ) {}
+  ) {
+    const currentUser = this.authService.currentUser();
+    if (currentUser && currentUser.id) {
+      this.userId = currentUser.id;
+    } else {
+      router.navigate(['/login']);
+    }
+  }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -63,7 +73,7 @@ export class BookingComponent implements OnInit {
         this.loadSelectedService(serviceId);
       }
     });
-    this.itineraryDays=history.state.itineraryDays || [];
+    this.itineraryDays = history.state.itineraryDays || [];
   }
 
   initializeForm(): void {
@@ -88,7 +98,9 @@ export class BookingComponent implements OnInit {
   }
 
   loadTravelers(): void {
+    console.log("user id:", this.userId);
     this.bookingService.getTravelersByUser(this.userId).subscribe((response) => {
+      console.log('Travelers:', response);
       this.travelers = response;
       this.cdr.detectChanges();
     });
@@ -104,7 +116,15 @@ export class BookingComponent implements OnInit {
   }
 
   addTraveler(): void {
-    this.router.navigate(['/customer/travelers/add']);
+    this.router.navigate(['/customer/traveler/add'], {
+      state: {
+        destination: this.destination,
+        selectedService: this.selectedService,
+        itineraryId: this.itineraryId,
+        itineraryDays: this.itineraryDays,
+      },
+    });
+    this.cdr.detectChanges();
   }
 
   toggleTraveler(travelerId: string, event: Event): void {

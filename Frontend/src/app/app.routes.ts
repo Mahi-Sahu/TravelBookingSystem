@@ -24,6 +24,7 @@ import { ManageNotificationsComponent } from './Components/AdminModule/manage-no
 import { ManageAvailabilityComponent } from './Components/AdminModule/manage-availability-component/manage-availability-component';
 import { ManageItinerariesComponent } from './Components/AdminModule/manage-itineraries-component/manage-itineraries-component';
 import { adminGuard } from './Guards/auth-guard';
+import { AddTravelerComponent } from './Components/CustomerModule/add-traveler-component/add-traveler-component';
 
 export const routes: Routes = [
   //auth module:
@@ -40,7 +41,7 @@ export const routes: Routes = [
   { path: 'customer/booking/review', component: BookingReviewComponent },
   { path: 'customer/booking/confirmation', component: BookingConfirmationComponent },
   { path: 'customer/booking/history', component: BookingHistoryComponent },
-  // { path: '/customer/traveler/add', component: AddTravelerComponent},
+  { path: 'customer/traveler/add', component: AddTravelerComponent},
 
   //travel module
   { path: 'travel-catalog', component: TravelListComponent },
