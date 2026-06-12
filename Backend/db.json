@@ -745,7 +745,7 @@
       "title": "Payment Received",
       "message": "Payment received for your Maldives booking.",
       "type": "PAYMENT",
-      "isRead": false,
+      "isRead": true,
       "createdAt": "2026-06-03T16:00:00"
     },
     {
