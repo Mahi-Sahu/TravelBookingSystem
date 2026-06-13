@@ -1,70 +1,91 @@
-/* Add to src/app/Components/TravelModule/travel-search-component/travel-search-component.css */
+:host {
+  display: block;
+  width: 100%;
+}
 .search-panel {
-  background: #ffffff;
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  border: 1px solid #e2e8f0;
+  width: 100%;
 }
-
 .search-panel h3 {
-  margin-top: 0;
-  margin-bottom: 16px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #0f172a;
+  font-size: 12.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
-
 .search-form {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
 }
-
 .form-input {
-  flex: 2;
-  min-width: 200px;
-  padding: 12px 16px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
+  flex: 2.2;
+  padding: 14px 20px;
+  margin: 0 !important;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
   font-size: 15px;
-  transition: all 0.2s ease;
-  background-color: #f8fafc;
+  color: var(--text-primary);
+  background-color: var(--bg-input);
+  transition: all var(--transition-fast);
 }
-
+.form-input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 4px rgba(50, 101, 113, 0.15);
+}
 .form-select {
   flex: 1;
-  min-width: 150px;
-  padding: 12px 16px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
+  min-width: 180px;
+  padding: 14px 20px;
+  margin: 0 !important;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  font-family: inherit;
   font-size: 15px;
-  background-color: #f8fafc;
-  cursor: pointer;
-}
-
-.form-input:focus, .form-select:focus {
-  outline: none;
-  border-color: #0284c7;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
-}
-
-.btn-search {
-  padding: 12px 28px;
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-  color: #ffffff;
   font-weight: 600;
-  border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  transition: all var(--transition-fast);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%235a4b4c' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 14px;
+  padding-right: 44px;
 }
-
+.form-select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 4px rgba(50, 101, 113, 0.15);
+}
+.btn-search {
+  padding: 14px 28px;
+  background-color: var(--highlight-color);
+  color: #ffffff;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 10px rgba(159, 74, 84, 0.2);
+}
 .btn-search:hover {
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+  background-color: var(--deep-mocha);
+  color: var(--highlight-color);
+  border-color: var(--highlight-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(159, 74, 84, 0.35);
 }
-
-.btn-search:active {
-  transform: scale(0.98);
+@media (max-width: 600px) {
+  .search-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .form-select {
+    width: 100%;
+  }
 }

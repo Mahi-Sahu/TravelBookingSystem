@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 110px 24px 40px 24px;
+  box-sizing: border-box;
+}
+.profile-container {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--border-color);
+}
+h2 {
+  font-weight: 800;
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}

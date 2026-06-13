@@ -19,30 +19,36 @@
     <p><strong>Rating:</strong> {{ selectedService?.rating }}</p>
   </div>
 
-  <form [formGroup]="bookingForm">
-    <label> Travel Date </label>
-    <input type="date" formControlName="travelDate" />
-  </form>
+  <div class="booking-form-pane">
+    <form [formGroup]="bookingForm">
+      <label> Travel Date </label>
+      <input type="date" formControlName="travelDate" />
+    </form>
 
-  <h3>Select Travelers</h3>
-  @for (traveler of travelers; track traveler.id) {
-    <div>
-      <input type="checkbox" [value]="traveler.id" (change)="toggleTraveler(traveler.id, $event)" />
-      {{ traveler.fullName }}
-      ({{ traveler.relationship }})
-    </div>
-  }
-  <button type="button" (click)="addTraveler()">+ Add New Traveler</button>
+    <h3>Select Travelers</h3>
+    @for (traveler of travelers; track traveler.id) {
+      <div>
+        <input
+          type="checkbox"
+          [value]="traveler.id"
+          (change)="toggleTraveler(traveler.id, $event)"
+        />
+        {{ traveler.fullName }}
+        ({{ traveler.relationship }})
+      </div>
+    }
+    <button type="button" (click)="addTraveler()">+ Add New Traveler</button>
 
-  @if (availability) {
-    <h4>Available Slots: {{ availability.availableSlots }}</h4>
-  }
+    @if (availability) {
+      <h4>Available Slots: {{ availability.availableSlots }}</h4>
+    }
 
-  <h3>Total Price: ₹{{ totalPrice }}</h3>
-  <button
-    (click)="proceedToReview()"
-    [disabled]="bookingForm.invalid || selectedTravelerIds.length === 0"
-  >
-    Review Booking
-  </button>
+    <h3>Total Price: ₹{{ totalPrice }}</h3>
+    <button
+      (click)="proceedToReview()"
+      [disabled]="bookingForm.invalid || selectedTravelerIds.length === 0"
+    >
+      Review Booking
+    </button>
+  </div>
 </div>

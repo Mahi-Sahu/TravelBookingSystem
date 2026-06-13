@@ -1,13 +1,14 @@
-import { Component, OnInit, inject, Input, Output, EventEmitter, computed } from '@angular/core';
+import { Component, OnInit, inject, Input, Output, EventEmitter, computed, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'; // Needed for the "Show All" link
 import { NotificationService } from '../../../Services/notification-service';
 import { AuthService } from '../../../Services/auth-service';
+import { NavbarComponent } from '../../Shared/navbar-component/navbar-component';
 
 @Component({
   selector: 'app-notification-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, forwardRef(() => NavbarComponent)],
   templateUrl: './notification-list-component.html',
   styleUrl: './notification-list-component.css',
 })

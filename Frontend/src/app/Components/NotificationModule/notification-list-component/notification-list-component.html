@@ -1,3 +1,7 @@
+@if (viewMode === 'full') {
+  <app-navbar></app-navbar>
+}
+
 <div
   class="notification-panel"
   [ngClass]="{ 'dropdown-view': viewMode === 'dropdown', 'full-view': viewMode === 'full' }"

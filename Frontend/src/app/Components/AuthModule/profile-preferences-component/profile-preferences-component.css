@@ -1,39 +1,54 @@
-.profile-container {
-  background: white;
+:host {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 110px 24px 40px 24px;
+  box-sizing: border-box;
+}
+.preferences-container {
+  background: var(--bg-card);
   padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 450px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--border-color);
 }
-
-.profile-container h2 {
-  text-align: center;
+h2 {
+  font-size: 26px;
+  font-weight: 800;
   margin-bottom: 24px;
-  font-size: 24px;
+  color: var(--text-primary);
 }
-
-form > div {
-  margin-bottom: 20px;
-}
-
 label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.actions {
   display: flex;
-  align-items: center;
-  font-size: 15px;
-  color: #444;
-  cursor: pointer;
+  gap: 16px;
+  margin-top: 32px;
 }
-
-input[type='checkbox'] {
-  width: auto;
-  margin-right: 12px;
-  transform: scale(1.2);
-  cursor: pointer;
+.actions button {
+  flex: 1;
 }
-
-select {
-  margin-top: 8px;
-  cursor: pointer;
-  background-color: #fafafa;
+.actions button[type='button'] {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1.5px solid var(--accent-color);
+  box-shadow: none;
+}
+.actions button[type='button']:hover {
+  background-color: var(--accent-light);
+  transform: translateY(-2px);
+}
+.actions button[type='submit'] {
+  background-color: var(--highlight-color);
+  color: #ffffff;
+}
+.actions button[type='submit']:hover {
+  background-color: var(--deep-mocha);
+  color: var(--highlight-color);
+  border-color: var(--highlight-color);
 }

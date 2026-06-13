@@ -1,71 +1,60 @@
-/* Add to src/app/Components/TravelModule/travel-filter-component/travel-filter-component.css */
-.filter-sidebar {
-  background: #ffffff;
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e2e8f0;
-}
-
-.filter-sidebar h4 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #64748b;
-}
-
-.filter-group {
-  margin-bottom: 28px;
-}
-
-.filter-group label {
-  display: block;
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #334155;
-}
-
-.range-slider {
+.filter-panel {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: center;
   width: 100%;
-  accent-color: #0284c7;
-  cursor: pointer;
 }
-
-.rating-options {
+@media (max-width: 600px) {
+  .filter-panel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+}
+.filter-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 !important;
+}
+.filter-group label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.75px;
+}
+.budget-slider {
+  margin: 10px 0 !important;
+  accent-color: var(--accent-color);
+}
+.rating-pills {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
 }
-
-.btn-filter, .btn-clear {
-  border: 1px solid #e2e8f0;
-  padding: 8px 12px;
-  background-color: #f1f5f9;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 500;
+.pill-btn {
+  background-color: var(--parchment);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-color);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  box-shadow: none;
+  margin-top: 0;
+  flex: 1;
+  transition: all var(--transition-fast);
 }
-
-.btn-filter:hover {
-  background-color: #e2e8f0;
-  border-color: #cbd5e1;
+.pill-btn:hover {
+  background-color: var(--soft-blush);
+  transform: none;
+  box-shadow: none;
 }
-
-.btn-clear {
-  background-color: #edf2f7;
-  color: #4a5568;
-  border-color: #cbd5e1;
-  width: 100%;
-  margin-top: 8px;
-  text-align: center;
-}
-
-.btn-clear:hover {
-  background-color: #e2e8f0;
-  color: #1a202c;
+.pill-btn.active {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
 }

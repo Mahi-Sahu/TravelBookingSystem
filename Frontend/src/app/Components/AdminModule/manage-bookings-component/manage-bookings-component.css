@@ -1,25 +1,117 @@
-/* Reuses the structural CSS from manage-travel-component.css */
-@import '../manage-travel-component/manage-travel-component.css';
+:host {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 110px 24px 40px 24px;
+  box-sizing: border-box;
+}
 
-.status-badge.pending {
-  background-color: #fff3e0;
-  color: #e65100;
+.admin-panel-container {
+  width: 100%;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.panel-header h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Admin Table */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--border-color);
+  margin-bottom: 30px;
+}
+
+.admin-table th {
+  background-color: var(--parchment);
+  color: var(--text-primary);
+  text-align: left;
+  padding: 16px 20px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.admin-table td {
+  padding: 16px 20px;
+  border-bottom: 1.5px solid var(--border-color);
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  transition: background-color var(--transition-fast);
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover td {
+  background-color: rgba(245, 228, 224, 0.15);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 4px;
+  text-transform: uppercase;
 }
 
 .status-badge.confirmed {
-  background-color: #e8f5e9;
-  color: #2e7d32;
+  background-color: var(--success-bg);
+  color: var(--success-color);
+}
+
+.status-badge.pending {
+  background-color: var(--warning-bg);
+  color: var(--warning-color);
 }
 
 .status-badge.cancelled {
-  background-color: #ffebee;
-  color: #c62828;
+  background-color: var(--error-bg);
+  color: var(--error-color);
 }
 
+.status-badge.rescheduled {
+  background-color: var(--accent-light);
+  color: var(--accent-color);
+}
+
+/* Status dropdown selector */
 .status-dropdown {
-  width: 130px;
-  padding: 6px;
-  margin: 0;
-  font-size: 12px;
-  border-radius: 4px;
+  padding: 8px 14px;
+  background-color: var(--parchment);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.status-dropdown:focus {
+  border-color: var(--border-focus);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(50, 101, 113, 0.12);
 }

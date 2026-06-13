@@ -1,61 +1,38 @@
-/* Add to src/app/Components/TravelModule/travel-comaparison-component/travel-comaparison-component.css */
-.comparison-board {
-  margin-top: 40px;
-  background: #ffffff;
-  padding: 24px;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-}
-
-.comparison-board h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 18px;
-  color: #0f172a;
-}
-
-.comparison-flex {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-}
-
-.comparison-item-column {
-  flex: 1;
-  min-width: 250px;
-  background: #f8fafc;
-  padding: 20px;
-  border-radius: 10px;
-  border-top: 4px solid #0284c7;
-  position: relative;
+:host {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 110px 24px 40px 24px;
   box-sizing: border-box;
 }
-
-.comparison-item-column h4 {
-  margin: 0 24px 8px 0;
-  font-size: 16px;
-  color: #1e293b;
+.comparison-container {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--border-color);
 }
-
-.highlight-price {
-  font-size: 18px;
+h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+th, td {
+  padding: 16px 20px;
+  border: 1.5px solid var(--border-color);
+  text-align: left;
+}
+th {
+  background-color: var(--soft-blush);
   font-weight: 700;
-  color: #16a34a;
-  margin: 8px 0;
 }
-
-.features-list {
-  padding-left: 0;
-  list-style: none;
-  margin-top: 16px;
-  border-top: 1px dashed #cbd5e1;
-  padding-top: 12px;
-}
-
-.features-list li {
-  font-size: 13px;
-  color: #475569;
-  margin-bottom: 6px;
+td:first-child {
+  font-weight: 700;
+  color: var(--text-primary);
+  background-color: var(--parchment);
 }

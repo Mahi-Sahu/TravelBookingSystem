@@ -1,27 +1,92 @@
-.profile-container{
-  width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+:host {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 110px 24px 40px 24px;
+  box-sizing: border-box;
 }
-
-form{
+.profile-container {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--border-color);
+}
+h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+.profile-header {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid var(--border-color);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
 }
-
-input{
-  width: 100%;
-  padding: 10px;
+.profile-header h3 {
+  font-size: 1.3rem;
+  margin: 0;
 }
-
-button{
-  padding: 10px;
-  cursor: pointer;
+.edit-btn {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1.5px solid var(--accent-color);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 0;
+  width: auto;
+  box-shadow: none;
 }
-
-small{
-  color: red;
+.edit-btn:hover {
+  background-color: var(--accent-light);
+  transform: translateY(-2px);
+}
+p {
+  font-size: 15px;
+  margin-bottom: 18px;
+  color: var(--text-secondary);
+}
+strong {
+  color: var(--text-primary);
+  display: inline-block;
+  width: 140px;
+  font-weight: 700;
+}
+form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+.actions button {
+  flex: 1;
+}
+.actions button[type='button'] {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1.5px solid var(--accent-color);
+  box-shadow: none;
+}
+.actions button[type='button']:hover {
+  background-color: var(--accent-light);
+  transform: translateY(-2px);
+}
+.actions button[type='submit'] {
+  background-color: var(--highlight-color);
+  color: #ffffff;
+}
+.actions button[type='submit']:hover {
+  background-color: var(--deep-mocha);
+  color: var(--highlight-color);
+  border-color: var(--highlight-color);
 }

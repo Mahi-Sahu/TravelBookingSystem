@@ -1,188 +1,179 @@
-/* Container & Resets */
-.home-container {
-  width: 100vw;
-  min-height: 100vh;
-  background-color: #f4f7f6;
-  overflow-x: hidden;
+:host {
+  display: block;
+  width: 100%;
 }
-
-/* --- HERO SECTION --- */
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
 .hero-section {
   position: relative;
-  height: 70vh;
+  height: 85vh;
+  min-height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* Uses a cool CSS gradient to act as an abstract enterprise background */
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  color: white;
-  padding: 0 20px;
+  background: radial-gradient(circle at top right, var(--stormy-teal), var(--cerulean));
+  color: #ffffff;
+  padding: 0 24px;
 }
-
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-  opacity: 0.5;
+  background-image: radial-gradient(rgba(245, 228, 224, 0.15) 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.4;
 }
-
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
-  animation: slideUp 0.8s ease-out;
+  animation: slideUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
 .badge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(159, 74, 84, 0.2);
+  color: var(--highlight-color);
   padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 15px;
+  border-radius: 30px;
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  border: 1px solid rgba(159, 74, 84, 0.4);
 }
-
+.hero-content h1 {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -0.025em;
+}
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   line-height: 1.6;
-  margin-bottom: 30px;
-  color: #d1e0ff;
+  margin-bottom: 36px;
+  color: var(--soft-blush);
 }
-
-/* Call to Action Buttons */
 .cta-group {
   display: flex;
-  gap: 15px;
+  gap: 16px;
   justify-content: center;
 }
-
 .btn {
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .btn-primary {
-  background: #3498db;
+  background: var(--highlight-color);
   color: white;
-  border: none;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+  border: 1.5px solid transparent;
+  box-shadow: 0 4px 14px rgba(159, 74, 84, 0.35);
 }
-
 .btn-primary:hover {
-  background: #2980b9;
+  background: var(--deep-mocha);
+  color: var(--highlight-color);
+  border-color: var(--highlight-color);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(159, 74, 84, 0.5);
 }
-
 .btn-outline {
   background: transparent;
   color: white;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
-
 .btn-outline:hover {
   background: white;
-  color: #1e3c72;
+  color: var(--deep-mocha);
+  border-color: white;
+  transform: translateY(-2px);
 }
-
-/* --- FEATURES SECTION --- */
 .features-section {
-  padding: 80px 10%;
-  background: white;
+  padding: 100px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
 .section-header {
   text-align: center;
   margin-bottom: 60px;
 }
-
 .section-header h2 {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 10px;
+  font-size: 2.25rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-weight: 800;
 }
-
 .section-header p {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 1.1rem;
 }
-
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
 }
-
 .feature-card {
-  background: #fdfdfd;
-  border: 1px solid #eee;
-  padding: 30px 20px;
-  border-radius: 12px;
-  text-align: center;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  padding: 40px 30px;
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  animation: slideUp 1s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
 .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  border-color: #3498db;
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--stormy-teal);
 }
-
 .icon-circle {
-  width: 60px;
-  height: 60px;
-  background: #eaf4fc;
-  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  background: var(--accent-light);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  margin: 0 auto 20px auto;
-  color: #3498db;
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: var(--stormy-teal);
 }
-
 .feature-card h3 {
-  color: #2c3e50;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
-
 .feature-card p {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
-
-/* Animations */
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+@media (max-width: 640px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .cta-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .btn {
+    width: 100%;
   }
 }

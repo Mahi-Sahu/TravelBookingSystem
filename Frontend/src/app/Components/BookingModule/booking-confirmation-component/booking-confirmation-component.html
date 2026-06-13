@@ -4,22 +4,20 @@
   }
 
   @if (!isSaving) {
-    <h2>Booking Confirmed</h2>
+    <div class="success-icon">✓</div>
+    <h2>Booking Confirmed!</h2>
+    <p class="success-message">Your trip has been booked successfully. Below are your booking details.</p>
 
     <div class="confirmation-card">
-      <p><strong> Booking ID: </strong>{{ savedBooking?.id }}</p>
-
-      <p><strong> Travel Date: </strong>{{ savedBooking?.travelDate }}</p>
-
-      <p><strong> Status: </strong>{{ savedBooking?.status }}</p>
-
-      <p><strong> Total Price: </strong>₹{{ savedBooking?.totalPrice }}</p>
+      <p><strong>Booking ID:</strong> <span>{{ savedBooking?.id }}</span></p>
+      <p><strong>Travel Date:</strong> <span>{{ savedBooking?.travelDate | date:'longDate' }}</span></p>
+      <p><strong>Status:</strong> <span class="status-confirmed">{{ savedBooking?.status }}</span></p>
+      <p><strong>Total Price:</strong> <span class="price-highlight">₹{{ savedBooking?.totalPrice }}</span></p>
     </div>
 
-    <div class="actions">
-      <button (click)="viewHistory()">View Booking History</button>
-
-      <button (click)="goToDashboard()">Go To Dashboard</button>
+    <div class="btn-group">
+      <button class="btn-secondary" (click)="viewHistory()">View Booking History</button>
+      <button class="btn-highlight" (click)="goToDashboard()">Go To Dashboard</button>
     </div>
   }
 </div>

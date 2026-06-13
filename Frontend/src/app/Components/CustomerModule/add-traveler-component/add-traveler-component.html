@@ -32,10 +32,9 @@
       <option>Friend</option>
     </select>
 
-    <br /><br />
-
-    <button type="submit" [disabled]="travelerForm.invalid">Save Traveler</button>
-
-    <button type="button" (click)="cancel()">Cancel</button>
+    <div class="actions">
+      <button type="submit" class="btn-highlight" [disabled]="travelerForm.invalid">Save Traveler</button>
+      <button type="button" class="btn-secondary" (click)="cancel()">Cancel</button>
+    </div>
   </form>
 </div>
