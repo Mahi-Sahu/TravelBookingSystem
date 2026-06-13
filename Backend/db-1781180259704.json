@@ -37,7 +37,7 @@
       "lastName": "Patel",
       "email": "sneha@gmail.com",
       "password": "sneha123",
-      "phone": "9876543213",
+      "phone": "9876543212",
       "city": "Ahmedabad"
     },
     {
@@ -246,42 +246,6 @@
       "gender": "Male",
       "passportNumber": "IND12359",
       "relationship": "Father"
-    },
-    {
-      "userId": 2,
-      "fullName": "Sneha Verma",
-      "age": 13,
-      "gender": "Female",
-      "passportNumber": "IND45678",
-      "relationship": "Sister",
-      "id": "hSZRtayNAdI"
-    },
-    {
-      "userId": 2,
-      "fullName": "Aditya Singh",
-      "age": 22,
-      "gender": "Male",
-      "passportNumber": "3444-4371-6891",
-      "relationship": "Friend",
-      "id": "vaD5PwwmjIg"
-    },
-    {
-      "userId": 2,
-      "fullName": "Balraj ",
-      "age": 23,
-      "gender": "Male",
-      "passportNumber": "4535-6527-9856",
-      "relationship": "Brother",
-      "id": "cbhh7lCvXg4"
-    },
-    {
-      "userId": 7,
-      "fullName": "deepu",
-      "age": 25,
-      "gender": "Male",
-      "passportNumber": "sshdiends",
-      "relationship": "Child",
-      "id": "j_D4hZP"
     }
   ],
   "destinations": [
@@ -292,8 +256,7 @@
       "price": 15000,
       "duration": "3 Days",
       "rating": 4.5,
-      "type": "Beach",
-      "url": "https://i.pinimg.com/736x/93/d6/b0/93d6b0a9671d8d40ecb86cc8593ce227.jpg"
+      "type": "Beach"
     },
     {
       "id": "2",
@@ -302,8 +265,7 @@
       "price": 12000,
       "duration": "4 Days",
       "rating": 4.7,
-      "type": "Hill Station",
-      "url": "https://i.pinimg.com/736x/67/85/e9/6785e9b732a2ca6b35204425c86e829c.jpg"
+      "type": "Hill Station"
     },
     {
       "id": "3",
@@ -312,8 +274,7 @@
       "price": 11000,
       "duration": "3 Days",
       "rating": 4.4,
-      "type": "Hill Station",
-      "url": "https://i.pinimg.com/736x/4b/17/24/4b172437856c6bff365a486e4dac01bb.jpg"
+      "type": "Hill Station"
     },
     {
       "id": "4",
@@ -322,8 +283,7 @@
       "price": 55000,
       "duration": "5 Days",
       "rating": 4.8,
-      "type": "International",
-      "url": "https://i.pinimg.com/1200x/e6/45/57/e64557dc736a16818349b81e895a8828.jpg"
+      "type": "International"
     },
     {
       "id": "5",
@@ -332,8 +292,7 @@
       "price": 65000,
       "duration": "6 Days",
       "rating": 4.9,
-      "type": "International",
-      "url": "https://i.pinimg.com/736x/43/03/82/430382ffafa86e09cb85e05cd771007c.jpg"
+      "type": "International"
     },
     {
       "id": "6",
@@ -342,8 +301,7 @@
       "price": 45000,
       "duration": "5 Days",
       "rating": 4.6,
-      "type": "International",
-      "url": "https://i.pinimg.com/736x/d6/14/5b/d6145b4add30b1b23ce2778f690e6209.jpg"
+      "type": "International"
     },
     {
       "id": "7",
@@ -352,8 +310,7 @@
       "price": 18000,
       "duration": "5 Days",
       "rating": 4.8,
-      "type": "Nature",
-      "url": "https://i.pinimg.com/1200x/dd/20/11/dd20110129f76269feb9389d0393c1c5.jpg"
+      "type": "Nature"
     },
     {
       "id": "8",
@@ -362,8 +319,7 @@
       "price": 22000,
       "duration": "6 Days",
       "rating": 4.9,
-      "type": "Nature",
-      "url": "https://i.pinimg.com/736x/43/e1/df/43e1df8549fef8de0549cb8210b9bb5d.jpg"
+      "type": "Nature"
     },
     {
       "id": "9",
@@ -372,8 +328,7 @@
       "price": 14000,
       "duration": "3 Days",
       "rating": 4.3,
-      "type": "Heritage",
-      "url": "https://i.pinimg.com/1200x/7c/f9/a4/7cf9a4e798828e604ba5bc7f3ef2bec4.jpg"
+      "type": "Heritage"
     },
     {
       "id": "10",
@@ -382,8 +337,7 @@
       "price": 10000,
       "duration": "2 Days",
       "rating": 4.2,
-      "type": "Heritage",
-      "url": "https://i.pinimg.com/1200x/05/ca/dc/05cadc833f715f017d20293f86e87e0a.jpg"
+      "type": "Heritage"
     },
     {
       "id": "11",
@@ -392,8 +346,7 @@
       "price": 28000,
       "duration": "5 Days",
       "rating": 4.8,
-      "type": "Beach",
-      "url": "https://i.pinimg.com/1200x/8e/87/f3/8e87f361b6a14578a5d04f833217b2df.jpg"
+      "type": "Beach"
     },
     {
       "id": "12",
@@ -402,8 +355,7 @@
       "price": 35000,
       "duration": "7 Days",
       "rating": 4.9,
-      "type": "Adventure",
-      "url": "https://i.pinimg.com/1200x/52/4a/94/524a9472eb463c0627adf15b7a538888.jpg"
+      "type": "Adventure"
     },
     {
       "id": "13",
@@ -412,8 +364,7 @@
       "price": 13000,
       "duration": "3 Days",
       "rating": 4.5,
-      "type": "Adventure",
-      "url": "https://i.pinimg.com/736x/cb/71/49/cb714920561dc0c6f83f7ed703ff2eae.jpg"
+      "type": "Adventure"
     },
     {
       "id": "14",
@@ -422,8 +373,7 @@
       "price": 16000,
       "duration": "4 Days",
       "rating": 4.6,
-      "type": "Heritage",
-      "url": "https://i.pinimg.com/736x/84/07/d3/8407d3619ab0eafcc72ad37896004d27.jpg"
+      "type": "Heritage"
     },
     {
       "id": "15",
@@ -432,8 +382,7 @@
       "price": 70000,
       "duration": "6 Days",
       "rating": 4.9,
-      "type": "International",
-      "url": "https://i.pinimg.com/1200x/6a/75/2a/6a752a260fda1adf763edf9d73a72a20.jpg"
+      "type": "International"
     },
     {
       "id": "16",
@@ -442,8 +391,7 @@
       "price": 85000,
       "duration": "5 Days",
       "rating": 5,
-      "type": "Luxury",
-      "url": "https://i.pinimg.com/1200x/2d/bd/3e/2dbd3e8fb73e347212fa0191fa2e99b5.jpg"
+      "type": "Luxury"
     },
     {
       "id": "17",
@@ -452,8 +400,7 @@
       "price": 14000,
       "duration": "4 Days",
       "rating": 4.4,
-      "type": "Hill Station",
-      "url": "https://i.pinimg.com/1200x/a1/99/91/a199917610b2ff6fcec525d67f64817d.jpg"
+      "type": "Hill Station"
     },
     {
       "id": "18",
@@ -462,28 +409,16 @@
       "price": 17000,
       "duration": "5 Days",
       "rating": 4.6,
-      "type": "Hill Station",
-      "url": "https://i.pinimg.com/1200x/24/d9/9b/24d99b004e122bcc49b915e262d857f2.jpg"
+      "type": "Hill Station"
     },
     {
       "id": "19",
-      "name": "Paris",
-      "country": "France",
-      "price": 120000,
-      "duration": "7 Days",
-      "rating": 4.9,
-      "type": "International",
-      "url": "https://i.pinimg.com/736x/2f/27/08/2f27088cf1149c60b423bb3836c5534c.jpg"
-    },
-    {
-      "id": "20",
-      "name": "London",
-      "country": "United Kingdom",
-      "price": 110000,
-      "duration": "6 Days",
-      "rating": 4.8,
-      "type": "International",
-      "url": "https://i.pinimg.com/736x/f7/6d/38/f76d380cf90b4e9584dd1e605143c0fe.jpg"
+      "name": "Delhi",
+      "country": "India",
+      "type": "Heritage",
+      "duration": "2",
+      "price": 1,
+      "rating": 3
     }
   ],
   "bookings": [
@@ -494,10 +429,6 @@
       "bookingDate": "2026-06-01",
       "travelDate": "2026-07-15",
       "travelers": 2,
-      "travelerIds": [
-        "1",
-        "2"
-      ],
       "status": "CONFIRMED",
       "totalPrice": 30000
     },
@@ -511,7 +442,7 @@
       "travelerIds": [
         "3"
       ],
-      "status": "CONFIRMED",
+      "status": "PENDING",
       "totalPrice": 55000
     },
     {
@@ -626,20 +557,6 @@
       "totalPrice": 14000
     },
     {
-      "id": "11",
-      "userId": 3,
-      "destinationId": 19,
-      "bookingDate": "2026-05-30",
-      "travelDate": "2026-09-15",
-      "travelers": 2,
-      "travelerIds": [
-        "4",
-        "5"
-      ],
-      "status": "CONFIRMED",
-      "totalPrice": 240000
-    },
-    {
       "id": "12",
       "userId": 4,
       "destinationId": 3,
@@ -679,292 +596,6 @@
       ],
       "status": "CONFIRMED",
       "totalPrice": 135000
-    },
-    {
-      "id": "15",
-      "userId": 8,
-      "destinationId": 20,
-      "bookingDate": "2026-06-06",
-      "travelDate": "2026-10-10",
-      "travelers": 2,
-      "travelerIds": [
-        "11",
-        "12"
-      ],
-      "status": "PENDING",
-      "totalPrice": 220000
-    },
-    {
-      "userId": "2",
-      "destinationId": 9,
-      "serviceId": "22",
-      "itineraryId": "",
-      "itineraryDays": [],
-      "travelDate": "2026-08-01",
-      "travelerIds": [
-        "3",
-        "13",
-        "hSZRtayNAdI"
-      ],
-      "travelers": 3,
-      "totalPrice": 21000,
-      "status": "PENDING",
-      "bookingDate": "2026-06-12",
-      "id": "gGiTsQ7FuYo"
-    },
-    {
-      "userId": "2",
-      "destinationId": 7,
-      "serviceId": "7",
-      "itineraryId": "2",
-      "itineraryDays": [
-        {
-          "id": "4",
-          "itineraryId": 2,
-          "dayNumber": 1,
-          "date": "2026-07-01",
-          "transportType": "Flight",
-          "transportFrom": "Lucknow",
-          "transportTo": "Kochi",
-          "transportTime": "08:30 AM",
-          "hotel": "Backwater Resort",
-          "checkInTime": "01:00 PM",
-          "activities": [
-            {
-              "activityName": "Fort Kochi Visit",
-              "activityTime": "07:00 PM"
-            },
-            {
-              "activityName": "Kathakali Show",
-              "activityTime": "08:30 PM"
-            }
-          ]
-        },
-        {
-          "id": "5",
-          "itineraryId": 2,
-          "dayNumber": 2,
-          "date": "2026-07-02",
-          "transportType": "Boat",
-          "transportFrom": "Alleppey",
-          "transportTo": "Backwaters",
-          "transportTime": "09:00 AM",
-          "hotel": "Backwater Resort",
-          "checkInTime": "-",
-          "activities": [
-            {
-              "activityName": "Houseboat Cruise",
-              "activityTime": "07:00 PM"
-            },
-            {
-              "activityName": "Village Walk",
-              "activityTime": "08:30 PM"
-            }
-          ]
-        },
-        {
-          "id": "6",
-          "itineraryId": 2,
-          "dayNumber": 3,
-          "date": "2026-07-03",
-          "transportType": "Cab",
-          "transportFrom": "Kochi",
-          "transportTo": "Munnar",
-          "transportTime": "08:00 AM",
-          "hotel": "Hill View Resort",
-          "checkInTime": "01:00 PM",
-          "activities": [
-            {
-              "activityName": "Tea Garden Visit",
-              "activityTime": "3:30 PM"
-            },
-            {
-              "activityName": "Sunset Point",
-              "activityTime": "06:00 PM"
-            }
-          ]
-        }
-      ],
-      "travelDate": "2026-07-02",
-      "travelerIds": [
-        "vaD5PwwmjIg",
-        "cbhh7lCvXg4",
-        "3"
-      ],
-      "travelers": 3,
-      "totalPrice": 54000,
-      "status": "PENDING",
-      "bookingDate": "2026-06-12",
-      "id": "7m2zKdYRlqQ"
-    },
-    {
-      "userId": "2",
-      "destinationId": 7,
-      "serviceId": "7",
-      "itineraryId": "2",
-      "itineraryDays": [
-        {
-          "id": "4",
-          "itineraryId": 2,
-          "dayNumber": 1,
-          "date": "2026-07-01",
-          "transportType": "Flight",
-          "transportFrom": "Lucknow",
-          "transportTo": "Kochi",
-          "transportTime": "08:30 AM",
-          "hotel": "Backwater Resort",
-          "checkInTime": "01:00 PM",
-          "activities": [
-            {
-              "activityName": "Fort Kochi Visit",
-              "activityTime": "07:00 PM"
-            },
-            {
-              "activityName": "Kathakali Show",
-              "activityTime": "08:30 PM"
-            }
-          ]
-        },
-        {
-          "id": "5",
-          "itineraryId": 2,
-          "dayNumber": 2,
-          "date": "2026-07-02",
-          "transportType": "Boat",
-          "transportFrom": "Alleppey",
-          "transportTo": "Backwaters",
-          "transportTime": "09:00 AM",
-          "hotel": "Backwater Resort",
-          "checkInTime": "-",
-          "activities": [
-            {
-              "activityName": "Houseboat Cruise",
-              "activityTime": "07:00 PM"
-            },
-            {
-              "activityName": "Village Walk",
-              "activityTime": "08:30 PM"
-            }
-          ]
-        },
-        {
-          "id": "6",
-          "itineraryId": 2,
-          "dayNumber": 3,
-          "date": "2026-07-03",
-          "transportType": "Cab",
-          "transportFrom": "Kochi",
-          "transportTo": "Munnar",
-          "transportTime": "08:00 AM",
-          "hotel": "Hill View Resort",
-          "checkInTime": "01:00 PM",
-          "activities": [
-            {
-              "activityName": "Tea Garden Visit",
-              "activityTime": "3:30 PM"
-            },
-            {
-              "activityName": "Sunset Point",
-              "activityTime": "06:00 PM"
-            }
-          ]
-        }
-      ],
-      "travelDate": "2026-07-02",
-      "travelerIds": [
-        "vaD5PwwmjIg",
-        "cbhh7lCvXg4",
-        "3"
-      ],
-      "travelers": 3,
-      "totalPrice": 54000,
-      "status": "PENDING",
-      "bookingDate": "2026-06-12",
-      "id": "Lq3MrashfMI"
-    },
-    {
-      "userId": "7",
-      "destinationId": 1,
-      "serviceId": "1",
-      "itineraryId": "1",
-      "itineraryDays": [
-        {
-          "id": "1",
-          "itineraryId": 1,
-          "dayNumber": 1,
-          "date": "2026-07-15",
-          "transportType": "Flight",
-          "transportFrom": "Delhi",
-          "transportTo": "Goa",
-          "transportTime": "09:00 AM",
-          "hotel": "Taj Resort Goa",
-          "checkInTime": "02:00 PM",
-          "activities": [
-            {
-              "activityName": "Beach Visit",
-              "activityTime": "04:00 PM"
-            },
-            {
-              "activityName": "Water Sports",
-              "activityTime": "06:00 PM"
-            }
-          ]
-        },
-        {
-          "id": "2",
-          "itineraryId": 1,
-          "dayNumber": 2,
-          "date": "2026-07-16",
-          "transportType": "Local Cab",
-          "transportFrom": "North Goa",
-          "transportTo": "South Goa",
-          "transportTime": "10:00 AM",
-          "hotel": "Taj Resort Goa",
-          "checkInTime": "-",
-          "activities": [
-            {
-              "activityName": "Dudhsagar Falls",
-              "activityTime": "11:00 AM"
-            },
-            {
-              "activityName": "Local Market",
-              "activityTime": "05:00 PM"
-            }
-          ]
-        },
-        {
-          "id": "3",
-          "itineraryId": 1,
-          "dayNumber": 3,
-          "date": "2026-07-17",
-          "transportType": "Cruise",
-          "transportFrom": "Goa Port",
-          "transportTo": "Mandovi River",
-          "transportTime": "06:00 PM",
-          "hotel": "Taj Resort Goa",
-          "checkInTime": "-",
-          "activities": [
-            {
-              "activityName": "Cruise Dinner",
-              "activityTime": "07:00 PM"
-            },
-            {
-              "activityName": "Live Music Show",
-              "activityTime": "08:30 PM"
-            }
-          ]
-        }
-      ],
-      "travelDate": "2000-12-08",
-      "travelerIds": [
-        "10",
-        "j_D4hZP"
-      ],
-      "travelers": 2,
-      "totalPrice": 30000,
-      "status": "PENDING",
-      "bookingDate": "2026-06-13",
-      "id": "7Ln7xEf"
     }
   ],
   "notifications": [
@@ -974,7 +605,7 @@
       "title": "Booking Confirmed",
       "message": "Your Goa trip has been confirmed.",
       "type": "BOOKING",
-      "isRead": true,
+      "isRead": false,
       "createdAt": "2026-06-05T10:00:00"
     },
     {
@@ -1001,7 +632,7 @@
       "title": "Travel Reminder",
       "message": "Your Kashmir trip starts in 5 days.",
       "type": "REMINDER",
-      "isRead": false,
+      "isRead": true,
       "createdAt": "2026-07-15T08:00:00"
     },
     {
@@ -1028,7 +659,7 @@
       "title": "Booking Cancelled",
       "message": "Your Andaman trip has been cancelled successfully.",
       "type": "CANCELLATION",
-      "isRead": true,
+      "isRead": false,
       "createdAt": "2026-06-01T10:30:00"
     },
     {
@@ -1046,7 +677,7 @@
       "title": "Payment Received",
       "message": "Payment received for your Maldives booking.",
       "type": "PAYMENT",
-      "isRead": true,
+      "isRead": false,
       "createdAt": "2026-06-03T16:00:00"
     },
     {
@@ -1120,87 +751,6 @@
       "type": "ACCOUNT",
       "isRead": false,
       "createdAt": "2026-06-06T12:10:00"
-    },
-    {
-      "id": "18",
-      "userId": 1,
-      "type": "PROMOTION",
-      "title": "hi hi",
-      "message": "you got ac class",
-      "isRead": false,
-      "createdAt": "2026-06-11T12:35:43.609Z"
-    },
-    {
-      "userId": 2,
-      "title": "Traveler created!",
-      "message": "New traveler Sneha Verma added successfully!",
-      "type": "ALERT",
-      "isRead": true,
-      "timestamp": "2026-06-12T05:15:49.205Z",
-      "id": "DYnSQGdLK9o"
-    },
-    {
-      "userId": "2",
-      "title": "Booking Confirmed!",
-      "message": "Your booking (ID: gGiTsQ7FuYo) has been successfully confirmed. Have a great trip!",
-      "type": "ALERT",
-      "isRead": true,
-      "timestamp": "2026-06-12T05:16:56.725Z",
-      "id": "bPnjzXZNhiI"
-    },
-    {
-      "userId": 2,
-      "title": "Traveler created!",
-      "message": "New traveler Aditya Singh added successfully!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-12T06:50:42.091Z",
-      "id": "-trafEzQLTY"
-    },
-    {
-      "userId": 2,
-      "title": "Traveler created!",
-      "message": "New traveler Balraj  added successfully!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-12T06:51:33.620Z",
-      "id": "aqMpUA7DQxQ"
-    },
-    {
-      "userId": "2",
-      "title": "Booking Confirmed!",
-      "message": "Your booking (ID: 7m2zKdYRlqQ) has been successfully confirmed. Have a great trip!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-12T06:53:22.208Z",
-      "id": "LBu4gW_yOwo"
-    },
-    {
-      "userId": "2",
-      "title": "Booking Confirmed!",
-      "message": "Your booking (ID: Lq3MrashfMI) has been successfully confirmed. Have a great trip!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-12T06:53:49.487Z",
-      "id": "IQe1KqIv54Q"
-    },
-    {
-      "userId": 7,
-      "title": "Traveler created!",
-      "message": "New traveler deepu added successfully!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-13T04:36:08.627Z",
-      "id": "qmZSXfJ"
-    },
-    {
-      "userId": "7",
-      "title": "Booking Confirmed!",
-      "message": "Your booking (ID: 7Ln7xEf) has been successfully confirmed. Have a great trip!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-13T04:36:31.117Z",
-      "id": "Y0OkxmZ"
     }
   ],
   "travelServices": [
@@ -1212,8 +762,7 @@
       "provider": "MakeMyTrip",
       "price": 15000,
       "duration": "3 Days",
-      "rating": 4.5,
-      "serviceUrl": "https://i.pinimg.com/736x/ed/e2/6b/ede26bf9a54e60b519966abc5f043ad3.jpg"
+      "rating": 4.5
     },
     {
       "id": "2",
@@ -1223,8 +772,7 @@
       "provider": "Taj Hotels",
       "price": 8000,
       "duration": "2 Nights",
-      "rating": 4.7,
-      "serviceUrl": "https://i.pinimg.com/1200x/dc/23/bd/dc23bdd8e2251ab3afc0ffdc605dd289.jpg"
+      "rating": 4.7
     },
     {
       "id": "3",
@@ -1234,8 +782,7 @@
       "provider": "Yatra",
       "price": 12000,
       "duration": "4 Days",
-      "rating": 4.6,
-      "serviceUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb7Vm8uxW1Ep4aKtDKYb98fHnHQ-rwLuijPQ&s"
+      "rating": 4.6
     },
     {
       "id": "4",
@@ -1245,8 +792,7 @@
       "provider": "Emirates",
       "price": 30000,
       "duration": "4 Hours",
-      "rating": 4.8,
-      "serviceUrl": "https://i.pinimg.com/736x/67/99/38/6799383661eef5f9a9b8e18ded21423f.jpg"
+      "rating": 4.8
     },
     {
       "id": "5",
@@ -1256,8 +802,7 @@
       "provider": "Thomas Cook",
       "price": 55000,
       "duration": "5 Days",
-      "rating": 4.9,
-      "serviceUrl": "https://i.pinimg.com/1200x/0d/b8/c7/0db8c78892dc5f3b9033c7ede0536928.jpg"
+      "rating": 4.9
     },
     {
       "id": "6",
@@ -1267,8 +812,7 @@
       "provider": "EaseMyTrip",
       "price": 65000,
       "duration": "6 Days",
-      "rating": 4.8,
-      "serviceUrl": "https://i.pinimg.com/736x/e1/c0/ba/e1c0ba5d2e8eea9e428c9a78cc65605e.jpg"
+      "rating": 4.8
     },
     {
       "id": "7",
@@ -1278,8 +822,7 @@
       "provider": "TravelTriangle",
       "price": 18000,
       "duration": "5 Days",
-      "rating": 4.8,
-      "serviceUrl": "https://i.pinimg.com/736x/1a/db/ae/1adbae26adc30f2005e934ea76a4d6b2.jpg"
+      "rating": 4.8
     },
     {
       "id": "8",
@@ -1289,8 +832,7 @@
       "provider": "Goibibo",
       "price": 22000,
       "duration": "6 Days",
-      "rating": 4.9,
-      "serviceUrl": "https://i.pinimg.com/736x/75/83/28/75832896e4b3c255aa4ed2a06d2cbfd1.jpg"
+      "rating": 4.9
     },
     {
       "id": "9",
@@ -1300,8 +842,7 @@
       "provider": "Thrillophilia",
       "price": 35000,
       "duration": "7 Days",
-      "rating": 4.9,
-      "serviceUrl": "https://i.pinimg.com/736x/91/a1/77/91a177ff2deb9a4e3bfd90e6962382a2.jpg"
+      "rating": 4.9
     },
     {
       "id": "10",
@@ -1311,8 +852,7 @@
       "provider": "MakeMyTrip",
       "price": 70000,
       "duration": "6 Days",
-      "rating": 4.9,
-      "serviceUrl": "https://i.pinimg.com/736x/d7/38/06/d73806e1d718bf24f32d7a244db5eeb4.jpg"
+      "rating": 4.9
     },
     {
       "id": "11",
@@ -1322,30 +862,7 @@
       "provider": "Club Med",
       "price": 85000,
       "duration": "5 Days",
-      "rating": 5,
-      "serviceUrl": "https://thumbs.dreamstime.com/b/vertical-banner-maldives-luxury-water-villas-perfect-scenery-over-bungalows-luxurious-travel-destination-use-wallpaper-155553995.jpg"
-    },
-    {
-      "id": "12",
-      "destinationId": 19,
-      "serviceName": "Paris Discovery Tour",
-      "serviceType": "PACKAGE",
-      "provider": "Thomas Cook",
-      "price": 120000,
-      "duration": "7 Days",
-      "rating": 4.9,
-      "serviceUrl": "https://i.pinimg.com/736x/05/74/63/057463219192134641fb9ab526261c8e.jpg"
-    },
-    {
-      "id": "13",
-      "destinationId": 20,
-      "serviceName": "London Heritage Tour",
-      "serviceType": "PACKAGE",
-      "provider": "Yatra",
-      "price": 110000,
-      "duration": "6 Days",
-      "rating": 4.8,
-      "serviceUrl": "https://i.pinimg.com/736x/63/ce/ed/63ceed9ff7ef2f41ec8187a7403f8590.jpg"
+      "rating": 5
     },
     {
       "id": "14",
@@ -1355,324 +872,7 @@
       "provider": "Goibibo",
       "price": 45000,
       "duration": "5 Days",
-      "rating": 4.7,
-      "serviceUrl": "https://i.pinimg.com/736x/46/0b/12/460b12335bddb2dc6df65def17dc0b3b.jpg"
-    },
-    {
-      "id": "15",
-      "destinationId": 11,
-      "serviceName": "Andaman Island Tour",
-      "serviceType": "PACKAGE",
-      "provider": "TravelTriangle",
-      "price": 28000,
-      "duration": "5 Days",
-      "rating": 4.8,
-      "serviceUrl": "https://i.pinimg.com/1200x/c9/51/8c/c9518c6754c82f797ece4a8cca5421d8.jpg"
-    },
-    {
-      "id": "16",
-      "destinationId": 3,
-      "serviceName": "Shimla Hill Retreat Package",
-      "serviceType": "PACKAGE",
-      "provider": "MakeMyTrip",
-      "price": 11000,
-      "duration": "3 Days",
-      "rating": 4.5,
-      "serviceUrl": "https://i.pinimg.com/736x/ac/7b/74/ac7b741976fb888c55887b2ecbeff350.jpg"
-    },
-    {
-      "id": "17",
-      "destinationId": 3,
-      "serviceName": "Shimla Luxury Hotel Stay",
-      "serviceType": "HOTEL",
-      "provider": "Oberoi Hotels",
-      "price": 6500,
-      "duration": "2 Nights",
-      "rating": 4.7,
-      "serviceUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgzbGB0jnHWgrJyGqaSOMSNhDFWmY6JOhbrg&s"
-    },
-    {
-      "id": "18",
-      "destinationId": 3,
-      "serviceName": "Kufri Adventure Tour",
-      "serviceType": "ACTIVITY",
-      "provider": "Himachal Tourism",
-      "price": 2500,
-      "duration": "1 Day",
-      "rating": 4.6,
-      "serviceUrl": "https://i.pinimg.com/736x/48/6a/27/486a27a3d3e0b6e06272415b3c2b2655.jpg"
-    },
-    {
-      "id": "19",
-      "destinationId": 3,
-      "serviceName": "Delhi to Shimla Volvo Transfer",
-      "serviceType": "TRANSPORT",
-      "provider": "HRTC",
-      "price": 1800,
-      "duration": "8 Hours",
-      "rating": 4.4
-    },
-    {
-      "id": "20",
-      "destinationId": 9,
-      "serviceName": "Jaipur Royal Heritage Package",
-      "serviceType": "PACKAGE",
-      "provider": "Thomas Cook",
-      "price": 14000,
-      "duration": "3 Days",
-      "rating": 4.5,
-      "serviceUrl": "https://i.pinimg.com/736x/ff/6f/53/ff6f531cddf6214c180042d423145b7d.jpg"
-    },
-    {
-      "id": "21",
-      "destinationId": 9,
-      "serviceName": "Amber Fort & City Tour",
-      "serviceType": "ACTIVITY",
-      "provider": "Rajasthan Tourism",
-      "price": 2500,
-      "duration": "1 Day",
-      "rating": 4.7,
-      "serviceUrl": "https://i.pinimg.com/736x/2a/46/18/2a4618853baab0579b078af8041c4234.jpg"
-    },
-    {
-      "id": "22",
-      "destinationId": 9,
-      "serviceName": "Jaipur Palace Hotel Stay",
-      "serviceType": "HOTEL",
-      "provider": "ITC Rajputana",
-      "price": 7000,
-      "duration": "2 Nights",
-      "rating": 4.8,
-      "serviceUrl": "https://i.pinimg.com/736x/d4/1a/a9/d41aa9a1ffe00510af72ece3f9a8e930.jpg"
-    },
-    {
-      "id": "23",
-      "destinationId": 9,
-      "serviceName": "Pink City Sightseeing Cab",
-      "serviceType": "TRANSPORT",
-      "provider": "Savaari",
-      "price": 1800,
-      "duration": "8 Hours",
-      "rating": 4.4
-    },
-    {
-      "id": "24",
-      "destinationId": 10,
-      "serviceName": "Agra Heritage Package",
-      "serviceType": "PACKAGE",
-      "provider": "MakeMyTrip",
-      "price": 10000,
-      "duration": "2 Days",
-      "rating": 4.3,
-      "serviceUrl": "https://i.pinimg.com/1200x/d8/9c/da/d89cda18680930ffae8a8c5e304340d0.jpg"
-    },
-    {
-      "id": "25",
-      "destinationId": 10,
-      "serviceName": "Taj Mahal Guided Tour",
-      "serviceType": "ACTIVITY",
-      "provider": "UP Tourism",
-      "price": 1800,
-      "duration": "4 Hours",
-      "rating": 4.8,
-      "serviceUrl": "https://i.pinimg.com/1200x/38/71/f3/3871f3b74f8074225157c600b1da5723.jpg"
-    },
-    {
-      "id": "26",
-      "destinationId": 10,
-      "serviceName": "Agra Luxury Hotel Stay",
-      "serviceType": "HOTEL",
-      "provider": "Taj Hotels",
-      "price": 5500,
-      "duration": "1 Night",
-      "rating": 4.7,
-      "serviceUrl": "https://i.pinimg.com/1200x/e9/2f/2c/e92f2c7d8a26c5d7072791f6b8493492.jpg"
-    },
-    {
-      "id": "27",
-      "destinationId": 10,
-      "serviceName": "Delhi-Agra Express Transfer",
-      "serviceType": "TRANSPORT",
-      "provider": "Savaari",
-      "price": 2200,
-      "duration": "4 Hours",
-      "rating": 4.5
-    },
-    {
-      "id": "28",
-      "destinationId": 13,
-      "serviceName": "Rishikesh Adventure Package",
-      "serviceType": "PACKAGE",
-      "provider": "Thrillophilia",
-      "price": 13000,
-      "duration": "3 Days",
-      "rating": 4.7,
-      "serviceUrl": "https://i.pinimg.com/736x/f9/82/36/f98236448055dd3ce97ffcf01c8b1c6c.jpg"
-    },
-    {
-      "id": "29",
-      "destinationId": 13,
-      "serviceName": "White Water Rafting Experience",
-      "serviceType": "ACTIVITY",
-      "provider": "Rishikesh Adventures",
-      "price": 2000,
-      "duration": "4 Hours",
-      "rating": 4.8,
-      "serviceUrl": "https://i.pinimg.com/736x/6d/71/27/6d7127470eb0c4fa982a69d7ab4f0fbf.jpg"
-    },
-    {
-      "id": "30",
-      "destinationId": 13,
-      "serviceName": "Ganga View Resort Stay",
-      "serviceType": "HOTEL",
-      "provider": "Sterling Holidays",
-      "price": 4500,
-      "duration": "2 Nights",
-      "rating": 4.6,
-      "serviceUrl": "https://i.pinimg.com/736x/e0/d8/2b/e0d82bc4911f45d91fb178b41c315e26.jpg"
-    },
-    {
-      "id": "31",
-      "destinationId": 13,
-      "serviceName": "Rishikesh Camping & Bonfire",
-      "serviceType": "ACTIVITY",
-      "provider": "Camp Ganga Waves",
-      "price": 3000,
-      "duration": "1 Night",
-      "rating": 4.7,
-      "serviceUrl": "https://i.pinimg.com/736x/16/e5/18/16e5184499ded5fa9cc3720efce31556.jpg"
-    },
-    {
-      "id": "32",
-      "destinationId": 14,
-      "serviceName": "Udaipur Royal Heritage Package",
-      "serviceType": "PACKAGE",
-      "provider": "Thomas Cook",
-      "price": 16000,
-      "duration": "4 Days",
-      "rating": 4.7,
-      "serviceUrl": "https://i.pinimg.com/736x/4c/a4/6e/4ca46e79a4c2707af8aa23fc19cf4a1d.jpg"
-    },
-    {
-      "id": "33",
-      "destinationId": 14,
-      "serviceName": "Lake Pichola Boat Ride",
-      "serviceType": "ACTIVITY",
-      "provider": "Rajasthan Tourism",
-      "price": 1200,
-      "duration": "2 Hours",
-      "rating": 4.8,
-      "serviceUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLo1969lnHaqd52IsDIUDFhElzM1MlNGdW0Q&s"
-    },
-    {
-      "id": "34",
-      "destinationId": 14,
-      "serviceName": "Udaipur Palace Hotel Stay",
-      "serviceType": "HOTEL",
-      "provider": "Taj Lake Palace",
-      "price": 8500,
-      "duration": "2 Nights",
-      "rating": 4.9,
-      "serviceUrl": "https://i.pinimg.com/1200x/a8/bc/b0/a8bcb0d49c53fd19a400d1a357805c72.jpg"
-    },
-    {
-      "id": "35",
-      "destinationId": 14,
-      "serviceName": "City Palace & Heritage Tour",
-      "serviceType": "ACTIVITY",
-      "provider": "Udaipur Tourism",
-      "price": 1800,
-      "duration": "5 Hours",
-      "rating": 4.7,
-      "serviceUrl": "https://i.pinimg.com/736x/88/35/dd/8835ddb7fa5d3c1582505ee967937992.jpg"
-    },
-    {
-      "id": "36",
-      "destinationId": 17,
-      "serviceName": "Ooty Hill Station Package",
-      "serviceType": "PACKAGE",
-      "provider": "MakeMyTrip",
-      "price": 14000,
-      "duration": "4 Days",
-      "rating": 4.5,
-      "serviceUrl": "https://i.pinimg.com/736x/8c/8f/ae/8c8fae16c4e1b8fa7fc73722ebc0257f.jpg"
-    },
-    {
-      "id": "37",
-      "destinationId": 17,
-      "serviceName": "Nilgiri Mountain Railway Ride",
-      "serviceType": "ACTIVITY",
-      "provider": "Tamil Nadu Tourism",
-      "price": 1200,
-      "duration": "3 Hours",
-      "rating": 4.8,
-      "serviceUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBFBDDGhW_Q4kX7np8XEjcGhXUcxHWOg5efg&s"
-    },
-    {
-      "id": "38",
-      "destinationId": 17,
-      "serviceName": "Ooty Lake Resort Stay",
-      "serviceType": "HOTEL",
-      "provider": "Sterling Holidays",
-      "price": 6000,
-      "duration": "2 Nights",
-      "rating": 4.6,
-      "serviceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1242530412153508386/original/ea77dc47-7316-4e71-aafd-3ca6561686f1.jpeg"
-    },
-    {
-      "id": "39",
-      "destinationId": 17,
-      "serviceName": "Botanical Garden & Doddabetta Tour",
-      "serviceType": "ACTIVITY",
-      "provider": "Ooty Travels",
-      "price": 1800,
-      "duration": "1 Day",
-      "rating": 4.5,
-      "serviceUrl": "https://media-cdn.tripadvisor.com/media/photo-s/1c/71/c7/d0/ooty-botanical-garden.jpg"
-    },
-    {
-      "id": "40",
-      "destinationId": 18,
-      "serviceName": "Darjeeling Tea Valley Package",
-      "serviceType": "PACKAGE",
-      "provider": "Yatra",
-      "price": 17000,
-      "duration": "5 Days",
-      "rating": 4.7,
-      "serviceUrl": "https://i.pinimg.com/736x/d6/7d/e7/d67de75f1058a0233f4f2c69bd25efc5.jpg"
-    },
-    {
-      "id": "41",
-      "destinationId": 18,
-      "serviceName": "Darjeeling Himalayan Railway Ride",
-      "serviceType": "ACTIVITY",
-      "provider": "West Bengal Tourism",
-      "price": 1500,
-      "duration": "2 Hours",
-      "rating": 4.8,
-      "serviceUrl": "https://i.pinimg.com/736x/35/a9/f2/35a9f254643c7c0e9a2b60649550ebc6.jpg"
-    },
-    {
-      "id": "42",
-      "destinationId": 18,
-      "serviceName": "Tea Garden Resort Stay",
-      "serviceType": "HOTEL",
-      "provider": "Mayfair Hotels",
-      "price": 7000,
-      "duration": "2 Nights",
-      "rating": 4.7,
-      "serviceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1486667518017488374/original/abd82471-ad7a-4052-800a-7b698cd960e9.jpeg?im_w=720"
-    },
-    {
-      "id": "43",
-      "destinationId": 18,
-      "serviceName": "Tiger Hill Sunrise Tour",
-      "serviceType": "ACTIVITY",
-      "provider": "Darjeeling Tours",
-      "price": 2000,
-      "duration": "5 Hours",
-      "rating": 4.9,
-      "serviceUrl": "https://i.pinimg.com/1200x/fc/6c/8c/fc6c8c62cd6e2c2c857722dd74f03e0d.jpg"
+      "rating": 4.7
     }
   ],
   "itineraries": [
@@ -1727,16 +927,6 @@
       "status": "UPCOMING"
     },
     {
-      "id": "6",
-      "bookingId": 11,
-      "userId": 3,
-      "destinationId": 19,
-      "title": "Paris Discovery",
-      "startDate": "2026-09-15",
-      "endDate": "2026-09-22",
-      "status": "UPCOMING"
-    },
-    {
       "id": "7",
       "bookingId": 14,
       "userId": 6,
@@ -1744,16 +934,6 @@
       "title": "Thailand Family Tour",
       "startDate": "2026-08-12",
       "endDate": "2026-08-17",
-      "status": "UPCOMING"
-    },
-    {
-      "id": "8",
-      "bookingId": 15,
-      "userId": 8,
-      "destinationId": 20,
-      "title": "London Vacation",
-      "startDate": "2026-10-10",
-      "endDate": "2026-10-16",
       "status": "UPCOMING"
     },
     {
@@ -2123,90 +1303,6 @@
       ]
     },
     {
-      "id": "17",
-      "itineraryId": 6,
-      "dayNumber": 1,
-      "date": "2026-09-15",
-      "transportType": "Flight",
-      "transportFrom": "Delhi",
-      "transportTo": "Paris",
-      "transportTime": "06:00 AM",
-      "hotel": "Paris Grand Hotel",
-      "checkInTime": "02:00 PM",
-      "activities": [
-        {
-          "activityName": "Eiffel Tower Visit",
-          "activityTime": "05:00 PM"
-        },
-        {
-          "activityName": "Seine River Cruise",
-          "activityTime": "08:30 PM"
-        }
-      ]
-    },
-    {
-      "id": "18",
-      "itineraryId": 6,
-      "dayNumber": 2,
-      "date": "2026-09-16",
-      "transportType": "Metro",
-      "transportFrom": "Central Paris",
-      "transportTo": "Eiffel Tower",
-      "transportTime": "09:00 AM",
-      "hotel": "Paris Grand Hotel",
-      "checkInTime": "-",
-      "activities": [
-        {
-          "activityName": "Louvre Mueseum Tour",
-          "activityTime": "01:00 PM"
-        },
-        {
-          "activityName": "Paris Cafe Visit",
-          "activityTime": "06:30 PM"
-        }
-      ]
-    },
-    {
-      "id": "19",
-      "itineraryId": 6,
-      "dayNumber": 3,
-      "date": "2026-09-17",
-      "transportType": "Metro",
-      "transportFrom": "Paris",
-      "transportTo": "Louvre Museum",
-      "transportTime": "10:00 AM",
-      "hotel": "Paris Grand Hotel",
-      "checkInTime": "03:00 PM",
-      "activities": [
-        {
-          "activityName": "Notre Dame Visit",
-          "activityTime": "07:00 PM"
-        }
-      ]
-    },
-    {
-      "id": "20",
-      "itineraryId": 6,
-      "dayNumber": 4,
-      "date": "2026-09-18",
-      "transportType": "Train",
-      "transportFrom": "Paris",
-      "transportTo": "Versailles",
-      "transportTime": "08:00 AM",
-      "hotel": "Paris Grand Hotel",
-      "checkInTime": "10:00 AM",
-      "activities": [
-        {
-          "activityName": "Versailles Paris Tour",
-          "activityTime": "11:00 AM"
-        },
-        {
-          "activityName": "Garden Walk",
-          "activityTime": "05:30 PM"
-        }
-      ]
-    },
-    {
       "id": "21",
       "itineraryId": 7,
       "dayNumber": 1,
@@ -2269,90 +1365,6 @@
         {
           "activityName": "Parasailing",
           "activityTime": "05:30 PM"
-        }
-      ]
-    },
-    {
-      "id": "24",
-      "itineraryId": 8,
-      "dayNumber": 1,
-      "date": "2026-10-10",
-      "transportType": "Flight",
-      "transportFrom": "Delhi",
-      "transportTo": "London",
-      "transportTime": "05:30 AM",
-      "hotel": "Royal London Hotel",
-      "checkInTime": "03:00 PM",
-      "activities": [
-        {
-          "activityName": "London Eye",
-          "activityTime": "07:00 PM"
-        },
-        {
-          "activityName": "Thames Cruise",
-          "activityTime": "08:30 PM"
-        }
-      ]
-    },
-    {
-      "id": "25",
-      "itineraryId": 8,
-      "dayNumber": 2,
-      "date": "2026-10-11",
-      "transportType": "Metro",
-      "transportFrom": "Central London",
-      "transportTo": "London Eye",
-      "transportTime": "09:00 AM",
-      "hotel": "Royal London Hotel",
-      "checkInTime": "-",
-      "activities": [
-        {
-          "activityName": "Buckingham Palace",
-          "activityTime": "04:00 PM"
-        },
-        {
-          "activityName": "Hyde Park",
-          "activityTime": "07:30 PM"
-        }
-      ]
-    },
-    {
-      "id": "26",
-      "itineraryId": 8,
-      "dayNumber": 3,
-      "date": "2026-10-12",
-      "transportType": "Metro",
-      "transportFrom": "London",
-      "transportTo": "Tower Bridge",
-      "transportTime": "10:00 AM",
-      "hotel": "Royal London Hotel",
-      "checkInTime": "-",
-      "activities": [
-        {
-          "activityName": "Tower Bridge Visit",
-          "activityTime": "07:00 PM"
-        },
-        {
-          "activityName": "Bourogh Market",
-          "activityTime": "08:30 PM"
-        }
-      ]
-    },
-    {
-      "id": "27",
-      "itineraryId": 8,
-      "dayNumber": 4,
-      "date": "2026-10-13",
-      "transportType": "Train",
-      "transportFrom": "London",
-      "transportTo": "Windsor",
-      "transportTime": "08:00 AM",
-      "hotel": "Royal London Hotel",
-      "checkInTime": "-",
-      "activities": [
-        {
-          "activityName": "Windsor Castel Tour",
-          "activityTime": "07:00 PM"
         }
       ]
     },
@@ -2597,197 +1609,10 @@
       "status": "LIMITED"
     },
     {
-      "id": "12",
-      "serviceId": 12,
-      "availableSlots": 20,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "13",
-      "serviceId": 13,
-      "availableSlots": 18,
-      "status": "AVAILABLE"
-    },
-    {
       "id": "14",
       "serviceId": 14,
       "availableSlots": 14,
       "status": "AVAILABLE"
-    },
-    {
-      "id": "15",
-      "serviceId": 15,
-      "availableSlots": 3,
-      "status": "LIMITED"
-    },
-    {
-      "id": "16",
-      "serviceId": 16,
-      "availableSlots": 20,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "17",
-      "serviceId": 17,
-      "availableSlots": 8,
-      "status": "LIMITED"
-    },
-    {
-      "id": "18",
-      "serviceId": 18,
-      "availableSlots": 15,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "19",
-      "serviceId": 19,
-      "availableSlots": 20,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "20",
-      "serviceId": 20,
-      "availableSlots": 3,
-      "status": "LIMITED"
-    },
-    {
-      "id": "21",
-      "serviceId": 21,
-      "availableSlots": 15,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "22",
-      "serviceId": 22,
-      "availableSlots": 23,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "23",
-      "serviceId": 23,
-      "availableSlots": 6,
-      "status": "LIMITED"
-    },
-    {
-      "id": "24",
-      "serviceId": 24,
-      "availableSlots": 15,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "25",
-      "serviceId": 25,
-      "availableSlots": 20,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "26",
-      "serviceId": 26,
-      "availableSlots": 8,
-      "status": "LIMITED"
-    },
-    {
-      "id": "27",
-      "serviceId": 27,
-      "availableSlots": 15,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "28",
-      "serviceId": 28,
-      "availableSlots": 20,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "29",
-      "serviceId": 29,
-      "availableSlots": 8,
-      "status": "LIMITED"
-    },
-    {
-      "id": "30",
-      "serviceId": 30,
-      "availableSlots": 15,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "31",
-      "serviceId": 31,
-      "availableSlots": 20,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "32",
-      "serviceId": 32,
-      "availableSlots": 8,
-      "status": "LIMITED"
-    },
-    {
-      "id": "33",
-      "serviceId": 33,
-      "availableSlots": 15,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "34",
-      "serviceId": 34,
-      "availableSlots": 20,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "35",
-      "serviceId": 35,
-      "availableSlots": 8,
-      "status": "LIMITED"
-    },
-    {
-      "id": "36",
-      "serviceId": 36,
-      "availableSlots": 15,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "37",
-      "serviceId": 37,
-      "availableSlots": 20,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "38",
-      "serviceId": 38,
-      "availableSlots": 8,
-      "status": "LIMITED"
-    },
-    {
-      "id": "39",
-      "serviceId": 39,
-      "availableSlots": 15,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "40",
-      "serviceId": 40,
-      "availableSlots": 20,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "41",
-      "serviceId": 41,
-      "availableSlots": 8,
-      "status": "LIMITED"
-    },
-    {
-      "id": "42",
-      "serviceId": 42,
-      "availableSlots": 15,
-      "status": "AVAILABLE"
-    },
-    {
-      "id": "43",
-      "serviceId": 43,
-      "availableSlots": 15,
-      "status": "AVAILABLE"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

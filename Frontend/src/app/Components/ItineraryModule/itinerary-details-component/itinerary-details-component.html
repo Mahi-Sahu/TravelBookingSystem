@@ -1,25 +1,43 @@
 <div class="details-content-wrapper">
   <div class="action-top-row">
-    <button class="back-link-btn" (click)="onBack.emit()">← Return to Stack</button>
-    <app-download-summary 
-  [itinerary]="itinerary" 
-  [days]="itineraryService.selectedItineraryDays()"
-  [coTravelers]="coTravelers()"> 
-</app-download-summary>
+    <button class="back-link-btn" (click)="onBack.emit()">Back to Trips</button>
+    <app-download-summary
+      [itinerary]="itinerary"
+      [days]="itineraryService.selectedItineraryDays()"
+      [coTravelers]="coTravelers()">
+    </app-download-summary>
   </div>
 
   <div class="details-hero-banner">
     <h2>{{ itinerary.title }} Detailed Plan</h2>
     <p class="timeline-span">
-      <strong>Core Window:</strong> {{ itinerary.startDate | date:'longDate' }} to {{ itinerary.endDate | date:'longDate' }}
+      <strong>Travel Dates:</strong> {{ itinerary.startDate | date:'longDate' }} to {{ itinerary.endDate | date:'longDate' }}
     </p>
+    <p><strong>Status:</strong> {{ itinerary.status }}</p>
+  </div>
+
+  <div class="traveler-summary">
+    <h3>Traveler Details</h3>
+    @if (travelersLoading()) {
+      <p>Loading travelers...</p>
+    } @else if (travelerError()) {
+      <p>{{ travelerError() }}</p>
+    } @else if (coTravelers().length > 0) {
+      <ul>
+        @for (traveler of coTravelers(); track traveler.id) {
+          <li>{{ traveler.fullName }}{{ traveler.age ? ' - Age ' + traveler.age : '' }}</li>
+        }
+      </ul>
+    } @else {
+      <p>No traveler details available.</p>
+    }
   </div>
 
   <div class="itinerary-timeline-axis">
     @for (daySchedule of itineraryService.selectedItineraryDays(); track daySchedule.id) {
       <app-day-wise-itinerary [dayPlan]="daySchedule"></app-day-wise-itinerary>
     } @empty {
-      <p class="no-days-alert">No daily sub-routing details mapped items exist on the server for this entry reference.</p>
+      <p class="no-days-alert">No day-wise itinerary has been added for this trip yet.</p>
     }
   </div>
 </div>
