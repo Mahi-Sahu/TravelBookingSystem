@@ -24,6 +24,10 @@
     <section class="catalog-grid-results">
       @for (pkg of travelService.selectedDestinationServices(); track pkg.id) {
         <div class="travel-card" style="cursor: pointer;" (click)="onPackageSelect(pkg)">
+          <div class="card-image">
+            <img [src]="pkg.serviceUrl" [alt]="pkg.serviceName">
+          </div>
+
           <div class="card-header">
             <span class="type-badge" [ngStyle]="{'background': pkg.serviceType === 'FLIGHT' ? '#e0e7ff' : '#fce7f3', 'color': pkg.serviceType === 'FLIGHT' ? '#4338ca' : '#be185d'}">
               {{ pkg.serviceType }}

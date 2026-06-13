@@ -17,6 +17,7 @@ export interface TravelServiceItem {
   price: number;
   duration: string;
   rating: number;
+  serviceUrl?: string;
 }
 
 // New filter interface specifically for pre-loading and filtering destinations
@@ -51,6 +52,7 @@ export interface TravelItem {
   rating: number;
   features: string[];
   timing: string;
+  url?: string;
 }
 
 export interface TravelServicePackage {
@@ -62,4 +64,5 @@ export interface TravelServicePackage {
   price: number;
   duration: string;
   rating: number;
+  serviceUrl?: string;
 }
