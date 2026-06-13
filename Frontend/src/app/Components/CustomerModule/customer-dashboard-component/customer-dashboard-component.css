@@ -31,16 +31,16 @@
   margin: 0;
 }
 .dashboard-actions button {
-  background-color: var(--highlight-color);
-  color: #ffffff;
+  background-color: var(--soft-blush);
+  color: var(--deep-mocha);
   border: 1.5px solid transparent;
   box-shadow: 0 4px 10px rgba(159, 74, 84, 0.25);
   margin-top: 0;
 }
 .dashboard-actions button:hover {
   background-color: var(--deep-mocha);
-  color: var(--highlight-color);
-  border-color: var(--highlight-color);
+  color: var(--soft-blush);
+  border-color: var(--soft-blush);
   box-shadow: 0 6px 16px rgba(159, 74, 84, 0.45);
   transform: translateY(-2px);
 }

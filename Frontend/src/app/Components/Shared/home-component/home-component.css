@@ -87,8 +87,8 @@
 }
 .btn-primary:hover {
   background: var(--deep-mocha);
-  color: var(--highlight-color);
-  border-color: var(--highlight-color);
+  color: white;
+  border-color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(159, 74, 84, 0.5);
 }

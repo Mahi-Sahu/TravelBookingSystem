@@ -136,8 +136,8 @@ label {
 }
 .booking-form-pane button:last-of-type:not([type='button']):hover {
   background-color: var(--deep-mocha);
-  color: var(--highlight-color);
-  border-color: var(--highlight-color);
+  color: wheat;
+  border-color: wheat;
   box-shadow: 0 6px 16px rgba(159, 74, 84, 0.45);
 }
 h4 {

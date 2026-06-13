@@ -118,8 +118,8 @@ h3, h4 {
 }
 .card-footer button:last-of-type:hover {
   background-color: var(--deep-mocha);
-  color: var(--highlight-color);
-  border-color: var(--highlight-color);
+  color: var(--soft-blush);
+  border-color: var(--soft-blush);
   box-shadow: 0 6px 14px rgba(159, 74, 84, 0.45);
   transform: translateY(-1.5px);
 }

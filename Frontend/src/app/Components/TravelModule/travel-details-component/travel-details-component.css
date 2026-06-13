@@ -156,7 +156,7 @@
 }
 .btn-primary-action:hover {
   background-color: var(--deep-mocha);
-  color: var(--highlight-color);
-  border-color: var(--highlight-color);
+  color: var(--soft-blush);
+  border-color: var(--soft-blush);
   box-shadow: 0 6px 16px rgba(159, 74, 84, 0.45);
 }

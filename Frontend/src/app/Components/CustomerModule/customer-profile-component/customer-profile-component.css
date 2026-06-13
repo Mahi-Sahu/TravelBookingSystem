@@ -87,6 +87,6 @@ form label {
 }
 .actions button[type='submit']:hover {
   background-color: var(--deep-mocha);
-  color: var(--highlight-color);
-  border-color: var(--highlight-color);
+  color: wheat;
+  border-color: wheat;
 }

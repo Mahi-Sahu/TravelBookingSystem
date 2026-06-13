@@ -273,15 +273,6 @@
       "passportNumber": "4535-6527-9856",
       "relationship": "Brother",
       "id": "cbhh7lCvXg4"
-    },
-    {
-      "userId": 1,
-      "fullName": "abc",
-      "age": 12,
-      "gender": "Female",
-      "passportNumber": "dscsdc",
-      "relationship": "Spouse",
-      "id": "zeJO2EDDbFo"
     }
   ],
   "destinations": [
@@ -1182,15 +1173,6 @@
       "isRead": false,
       "timestamp": "2026-06-12T06:53:49.487Z",
       "id": "IQe1KqIv54Q"
-    },
-    {
-      "userId": 1,
-      "title": "Traveler created!",
-      "message": "New traveler abc added successfully!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-12T09:40:02.971Z",
-      "id": "d5cE8-prPoI"
     },
     {
       "userId": "1",
