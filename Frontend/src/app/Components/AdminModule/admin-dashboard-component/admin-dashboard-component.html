@@ -1,42 +1,89 @@
+<app-admin-navbar></app-admin-navbar>
+
 <div class="dashboard-container">
-    <div class="dashboard-header">
-        <h2>Admin Dashboard</h2>
-        <p>Welcome back, {{ adminName }}</p>
-    </div>
 
     <div class="admin-grid">
+
         <div class="admin-card" routerLink="/admin/manage-travel">
+
             <h3>Manage Travel</h3>
-            <p>Add, edit, or remove travel packages and flights.</p>
+
+            <p>
+                Add, edit, or remove travel packages and flights.
+            </p>
+
         </div>
+
         <div class="admin-card" routerLink="/admin/manage-bookings">
+
             <h3>Manage Bookings</h3>
-            <p>View customer bookings, update statuses, and handle cancellations.</p>
+
+            <p>
+                View customer bookings and update statuses.
+            </p>
+
         </div>
+
         <div class="admin-card" routerLink="/admin/manage-destinations">
+
             <h3>Manage Destinations</h3>
-            <p>Update destination catalogs and region guides.</p>
+
+            <p>
+                Update destination catalogs and region guides.
+            </p>
+
         </div>
+
         <div class="admin-card" routerLink="/admin/manage-availability">
+
             <h3>Travel Availability</h3>
-            <p>Monitor and manage seat capacity and trip availability.</p>
+
+            <p>
+                Monitor seat capacity and trip availability.
+            </p>
+
         </div>
 
         <div class="admin-card" routerLink="/admin/manage-itineraries">
+
             <h3>Trip Itineraries</h3>
-            <p>Manage day-wise schedules, destinations, and travel plans.</p>
+
+            <p>
+                Manage schedules and travel plans.
+            </p>
+
         </div>
+
         <div class="admin-card" routerLink="/admin/reports">
+
             <h3>System Reports</h3>
-            <p>View revenue, user registration, and booking statistics.</p>
+
+            <p>
+                View revenue and booking analytics.
+            </p>
+
         </div>
+
         <div class="admin-card" routerLink="/admin/manage-pricing">
+
             <h3>Manage Pricing</h3>
-            <p>Set dynamic pricing, discounts, and tax rates.</p>
+
+            <p>
+                Set pricing rules and discounts.
+            </p>
+
         </div>
+
         <div class="admin-card" routerLink="/admin/manage-notifications">
-            <h3>Alerts & Notifications</h3>
-            <p>Send system-wide alerts or targeted customer emails.</p>
+
+            <h3>Notifications</h3>
+
+            <p>
+                Send alerts and customer notifications.
+            </p>
+
         </div>
+
     </div>
+
 </div>

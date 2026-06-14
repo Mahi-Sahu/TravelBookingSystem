@@ -109,6 +109,16 @@
       "phone": "8176317831",
       "city": "Noida",
       "id": "TosUqGKabnk"
+    },
+    {
+      "role": "CUSTOMER",
+      "firstName": "Deep",
+      "lastName": "Gupta",
+      "email": "deep@gmail.com",
+      "password": "deep123",
+      "phone": "6392648101",
+      "city": "Jalaun",
+      "id": "nP53u4q"
     }
   ],
   "travelers": [
@@ -687,24 +697,6 @@
     },
     {
       "userId": "2",
-      "destinationId": 9,
-      "serviceId": "22",
-      "itineraryId": "",
-      "itineraryDays": [],
-      "travelDate": "2026-08-01",
-      "travelerIds": [
-        "3",
-        "13",
-        "hSZRtayNAdI"
-      ],
-      "travelers": 3,
-      "totalPrice": 21000,
-      "status": "PENDING",
-      "bookingDate": "2026-06-12",
-      "id": "gGiTsQ7FuYo"
-    },
-    {
-      "userId": "2",
       "destinationId": 7,
       "serviceId": "7",
       "itineraryId": "2",
@@ -1119,69 +1111,6 @@
       "message": "you got ac class",
       "isRead": false,
       "createdAt": "2026-06-11T12:35:43.609Z"
-    },
-    {
-      "userId": 2,
-      "title": "Traveler created!",
-      "message": "New traveler Sneha Verma added successfully!",
-      "type": "ALERT",
-      "isRead": true,
-      "timestamp": "2026-06-12T05:15:49.205Z",
-      "id": "DYnSQGdLK9o"
-    },
-    {
-      "userId": "2",
-      "title": "Booking Confirmed!",
-      "message": "Your booking (ID: gGiTsQ7FuYo) has been successfully confirmed. Have a great trip!",
-      "type": "ALERT",
-      "isRead": true,
-      "timestamp": "2026-06-12T05:16:56.725Z",
-      "id": "bPnjzXZNhiI"
-    },
-    {
-      "userId": 2,
-      "title": "Traveler created!",
-      "message": "New traveler Aditya Singh added successfully!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-12T06:50:42.091Z",
-      "id": "-trafEzQLTY"
-    },
-    {
-      "userId": 2,
-      "title": "Traveler created!",
-      "message": "New traveler Balraj  added successfully!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-12T06:51:33.620Z",
-      "id": "aqMpUA7DQxQ"
-    },
-    {
-      "userId": "2",
-      "title": "Booking Confirmed!",
-      "message": "Your booking (ID: 7m2zKdYRlqQ) has been successfully confirmed. Have a great trip!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-12T06:53:22.208Z",
-      "id": "LBu4gW_yOwo"
-    },
-    {
-      "userId": "2",
-      "title": "Booking Confirmed!",
-      "message": "Your booking (ID: Lq3MrashfMI) has been successfully confirmed. Have a great trip!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-12T06:53:49.487Z",
-      "id": "IQe1KqIv54Q"
-    },
-    {
-      "userId": "1",
-      "title": "Booking Confirmed!",
-      "message": "Your booking (ID: n_28KjLA5cA) has been successfully confirmed. Have a great trip!",
-      "type": "ALERT",
-      "isRead": false,
-      "timestamp": "2026-06-12T09:40:17.948Z",
-      "id": "i40UuphlLbA"
     }
   ],
   "travelServices": [

@@ -1,0 +1,41 @@
+<nav class="top-navbar">
+
+    <!-- Left -->
+
+    <div class="nav-brand">
+        <h2 routerLink="/admin/dashboard" style="cursor: pointer">
+            TravelPro
+        </h2>
+    </div>
+
+    <!-- Center -->
+
+    <div class="nav-center">
+
+        <span class="dashboard-title">
+
+            Admin Dashboard
+
+        </span>
+
+    </div>
+
+    <!-- Right -->
+
+    <div class="nav-actions">
+
+        <div class="admin-greeting">
+
+            Welcome, {{ adminName }}
+
+        </div>
+
+        <button class="logout-btn" (click)="logout()">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</nav>
