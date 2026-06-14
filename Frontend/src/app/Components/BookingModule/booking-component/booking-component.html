@@ -44,7 +44,7 @@
     }
 
     <h3>Total Price: ₹{{ totalPrice }}</h3>
-    <button class="btn-highlight"
+    <button
       (click)="proceedToReview()"
       [disabled]="bookingForm.invalid || selectedTravelerIds.length === 0"
     >
